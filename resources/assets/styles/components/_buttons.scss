@@ -1,0 +1,102 @@
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+    appearance: none !important;
+    -moz-appearance: none !important;
+    -webkit-appearance: none !important;
+}
+
+.btnA {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 173px;
+    height: 63px;
+    @include generate-transition(all, 0.3s, ease-in-out);
+
+    &.bg-BDA673-btn {
+        background-color: $color-BDA673;
+        border: 1px solid $color-BDA673;
+        color: $white;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &.bgdark-BDA673-btn {
+        background-color: $color-BDA673;
+        border: 1px solid $color-BDA673;
+        color: $color-2C2924;
+        
+        &:hover {
+            background-color: transparent;
+            color: $white;
+        }
+    }
+
+    &.bg-8B6E3D-btn {
+        background-color: $color-8B6E3D;
+        border: 1px solid $color-8B6E3D;
+        color: $color-FFFAF6;
+
+        &:hover {
+            background-color: transparent;
+            color: $color-2C2924;
+        }
+    }
+
+    &.bgdark-8B6E3D-btn {
+        background-color: $color-8B6E3D;
+        border: 1px solid $color-8B6E3D;
+        color: $color-FFFAF6;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &.border-8B6E3D-btn {
+        background-color: transparent;
+        border: 1px solid $color-8B6E3D;
+        color: $color-8B6E3D;
+
+        &:hover {
+            background-color: $color-8B6E3D;
+            color: $white;
+        }
+    }
+
+    &.border-FFFAF6-btn {
+        background-color: transparent;
+        border: 1px solid $color-FFFAF6;
+        color: $white;
+
+        &:hover {
+            background-color: $color-FFFAF6;
+            color: $color-2C2924;
+        }
+    }
+
+    &.bg-FFFAF6-btn {
+        background-color: $color-FFFAF6;
+        border: 1px solid $color-FFFAF6;
+        color: $color-141414;
+
+        &:hover {
+            background-color: $color-FFFAF6;
+        }
+    }
+
+    &.bgdark-FFFAF6-btn {
+        background-color: $color-FFFAF6;
+        border: 1px solid $color-FFFAF6;
+        color: $color-141414;
+
+        &:hover {
+            background-color: transparent;
+            color: $color-2C2924;
+        }
+    }
+}

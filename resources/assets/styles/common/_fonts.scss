@@ -1,0 +1,29 @@
+@font-face {
+    font-family: "LouiseWalkerScriptDEMO";
+    src: url('/wp-content/themes/rfw/assets/fonts/LouiseWalkerScriptDEMO.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "URWClassico";
+    src: url('/wp-content/themes/rfw/assets/fonts/URWClassico.ttf') format('truetype');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "URWClassicoMed";
+    src: url('/wp-content/themes/rfw/assets/fonts/URWClassicoMed.ttf') format('truetype');
+    font-style: normal;
+}
+
+.louise {
+    font-family: "LouiseWalkerScriptDEMO";
+}
+
+.classic {
+    font-family: "URWClassico";
+}
+
+.classic-med {
+    font-family: "URWClassicoMed";
+}
