@@ -388,6 +388,33 @@
     letter-spacing: $space-0_3;
 }
 
+// radius
+.radius-3 {
+    border-radius: $radius-3;
+}
+
+.radius-5 {
+    border-radius: $radius-5;
+}
+
+// border css
+.border-EBEBEB {
+    border: 2px solid $color-EBEBEB;
+}
+
+.border-top-EBEBEB {
+    border-top: 2px solid $color-EBEBEB;
+}
+
+.border-bottom-EBEBEB {
+    border-bottom: 2px solid $color-EBEBEB;
+}
+
+// opacity css
+.opacity-55 {
+    opacity: 55%;
+}
+
 @include media-breakpoint-down(lg) {
 
     // font size

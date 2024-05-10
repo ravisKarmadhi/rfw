@@ -1,0 +1,21 @@
+.event-open-section{
+    .back-all{
+        img{
+            width: 8px;
+        }
+    }
+    .event-open-img{
+        height: 786px;
+    }
+    .event-open-details{
+        &>div{
+            &:last-child{
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+    .book-ticket-box{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+}
