@@ -5,7 +5,7 @@
 ?>
 <main>
     <div class="spacing dpt-230"></div>
-    <section class="event-open-section ">
+    <section class="event-open-section">
         <div class="container px-p-0">
             <div class="px-p-p">
                 <a href="" class="text-decoration-none back-all d-flex align-item-center dmb-50 classic font-18 leading-20 fw-normal text-2C2924">

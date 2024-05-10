@@ -24,6 +24,10 @@ button,
         height: 50px;
     }
 
+    &.h-44px {
+        height: 44px;
+    }
+
     @include media-breakpoint-down(lg) {
         &.res-w-160px {
             width: 160px;
