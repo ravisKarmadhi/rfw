@@ -108,6 +108,15 @@
 .spacing-1_2
 .spacing-0_3
 
+// radius
+.radius-3
+.radius-5
+
+// border css
+.border-EBEBEB
+.border-top-EBEBEB 
+.border-bottom-EBEBEB
+
 // font family
 .louise 
 .classic 

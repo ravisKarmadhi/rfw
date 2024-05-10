@@ -6,6 +6,9 @@
     }
     .event-open-img{
         height: 786px;
+        @include media-breakpoint-down(lg){
+            height: 348px;
+        }
     }
     .event-open-details{
         &>div{
@@ -17,5 +20,18 @@
     .book-ticket-box{
         padding-left: 40px;
         padding-right: 40px;
+        @include media-breakpoint-down(lg){
+            padding-left: 26px;
+            padding-right: 26px;
+        }
+    }
+}
+
+.related-item{
+    .related-img{
+        height: 300px;
+        @include media-breakpoint-down(lg){
+            height: 227px;
+        }
     }
 }

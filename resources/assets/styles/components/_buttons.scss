@@ -13,7 +13,22 @@ button,
     justify-content: center;
     width: 173px;
     height: 63px;
+    padding: 5px;
     @include generate-transition(all, 0.3s, ease-in-out);
+
+    &.w-110px {
+        width: 110px;
+    }
+
+    &.h-50px {
+        height: 50px;
+    }
+
+    @include media-breakpoint-down(lg) {
+        &.res-w-160px {
+            width: 160px;
+        }
+    }
 
     &.bg-BDA673-btn {
         background-color: $color-BDA673;
@@ -22,17 +37,17 @@ button,
 
         &:hover {
             background-color: transparent;
+            color: $color-2C2924;
         }
     }
 
     &.bgdark-BDA673-btn {
         background-color: $color-BDA673;
         border: 1px solid $color-BDA673;
-        color: $color-2C2924;
-        
+        color: $white;
+
         &:hover {
             background-color: transparent;
-            color: $white;
         }
     }
 
@@ -85,7 +100,8 @@ button,
         color: $color-141414;
 
         &:hover {
-            background-color: $color-FFFAF6;
+            background-color: transparent;
+            color: $color-FFFAF6;
         }
     }
 
