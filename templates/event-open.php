@@ -67,7 +67,7 @@
 
     <section class="related-section">
         <div class="container">
-            <div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60">Related Events</div>
+            <div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60 res-font-24 res-leading-30 tmb-45">Related Events</div>
             <div class="related-slider col-sm-12 col-10">
                 <div class="related-item">
                     <div class="related-img dmb-30">
