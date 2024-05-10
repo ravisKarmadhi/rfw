@@ -1,0 +1,38 @@
+.accommodation-hero-section{
+    .accommodation-hero-img {
+        height: 495px;
+        @include media-breakpoint-down(lg){
+            height: 470px;
+        }
+    }
+    .accommodation-hero-content{
+        height: calc(100% - 110px);
+        @include media-breakpoint-down(lg){
+            height: calc(100% - 148px);
+        }
+    }
+}
+
+.farmhouse-img{
+    height: 300px;
+    @include media-breakpoint-down(lg){
+        height: 215px;
+    }
+}
+
+.farmhouse-item{
+    &:first-child{
+        border-top: 2px solid $color-EBEBEB;
+        @include media-breakpoint-down(lg){
+            border-top: 0px !important;
+            padding-top: 0px !important;
+        }
+    }
+    
+    &:last-child{
+        @include media-breakpoint-down(lg){
+            border-bottom:0px !important;
+            padding-bottom: 0px !important;
+        }
+    }
+}
