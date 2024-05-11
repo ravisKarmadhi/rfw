@@ -1,0 +1,155 @@
+.footer {
+    background: linear-gradient(180deg, $color-FFFAF6 28%, $color-2C2924 28%);
+
+    @include media-breakpoint-down(lg) {
+        background: linear-gradient(180deg, $color-FFFAF6 16%, $color-2C2924 16%);
+    }
+    
+    &.white-footer {
+        background: linear-gradient(180deg, $color-2C2924 28%, $color-2C2924 28%);
+        @include media-breakpoint-down(lg) {
+            background: linear-gradient(180deg, $color-2C2924 16%, $color-2C2924 16%);
+        }
+    }
+
+    &.white-footer,
+    &.white-footer.res-yellow-footer {
+        .instagram-section {
+            .footer-title {
+                color: $white;
+            }
+
+            .social-icons-group {
+                .social-item {
+                    background-color: rgba($color: $white, $alpha: 0.1);
+
+                    img {
+                        &.white-icon {
+                            display: block !important;
+                        }
+
+                        &.black-icon {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.res-yellow-footer {
+        @include media-breakpoint-down(lg) {
+            background: linear-gradient(180deg, $color-2C2924 16%, $color-8B6E3D 16%);
+
+            .instagram-section {
+                .footer-title {
+                    color: $white;
+                }
+
+                .social-icons-group {
+                    .social-item {
+                        background-color: rgba($color: $white, $alpha: 0.1);
+
+                        img {
+                            &.white-icon {
+                                display: block !important;
+                            }
+
+                            &.black-icon {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .instagram-section {
+        .social-icons-group {
+            .social-item {
+                height: 40px;
+                width: 40px;
+                background-color: rgba($color: $color-2C2924, $alpha: 0.1);
+
+                @include media-breakpoint-down(lg) {
+                    height: 30px;
+                    width: 30px;
+                }
+
+                &:first-child {
+                    @include media-breakpoint-down(lg) {
+                        margin-left: 0 !important;
+                    }
+                }
+
+                img {
+                    height: 15px;
+
+                    @include media-breakpoint-down(lg) {
+                        height: 13px;
+                    }
+
+                    &.white-icon {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .instagram-slider {
+            height: 248px;
+
+            @include media-breakpoint-down(lg) {
+                height: 125px;
+            }
+        }
+    }
+
+    .main-footer {
+        .footer-menu-links {
+            li {
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+
+        .footer-contact-item {
+            @include media-breakpoint-up(xxl) {
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+
+        .footer-details {
+            padding-left: 69px;
+
+            @include media-breakpoint-down(xl) {
+                padding-left: 30px;
+            }
+            @include media-breakpoint-down(lg) {
+                padding-left: 0px;
+            }
+
+            .footer-contact-group {
+                .footer-contact-img {
+                    background-color: rgba($color: $white, $alpha: 0.1);
+                    height: 43px;
+                    min-height: 43px;
+                    width: 43px;
+                    min-width: 43px;
+
+                    img {
+                        width: 15px;
+                    }
+                }
+            }
+        }
+
+        .design-text {
+            height: 12px;
+        }
+    }
+}
