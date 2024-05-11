@@ -98,6 +98,7 @@
 .leading-98
 .leading-84
 .leading-90
+.leading-105
 .leading-120
 .leading-158
 .leading-174

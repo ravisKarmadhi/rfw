@@ -42,6 +42,31 @@ export class Plugins {
           breakpoint: 768,
           settings: {
             slidesToShow: 2,
+            slidesToShow: 3,
+          }
+        }
+      ]
+    });
+
+    $('.instagram-slider').slick({
+      infinite: true,
+      slidesToShow: 5,
+      slidesToScroll: 1,
+      arrows: false,
+      speed: 1000,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1299,
+          settings: {
+            slidesToShow: 4,
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 4,
           }
         },
         {
@@ -51,7 +76,9 @@ export class Plugins {
           }
         }
       ]
-    })
+    });
+    
+    // accommodation slider js
     $('.single-product-slider').slick({
       slidesToShow: 1,
       slidesToScroll: 1,
