@@ -44,10 +44,16 @@
 
 .single-product-slider {
     height: 422px;
+    @include media-breakpoint-down(lg){
+        height: 360px;
+    }
 }
 
 .single-product-group {
     height: 100px;
+    @include media-breakpoint-down(lg){
+        height: 76px;
+    }
 }
 
 .dates-group {
@@ -58,14 +64,5 @@
     .dates-item {
         height: 21px;
         width: 21px;
-    }
-}
-
-.from-to-details{
-    margin-left: -12px;
-    margin-right: -12px;
-    &>div{
-        padding-left: 12px;
-        padding-right: 12px;
     }
 }

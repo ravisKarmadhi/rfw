@@ -48,6 +48,14 @@ export class Plugins {
         focusOnSelect: false,
         infinite: false,
         arrows: false,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 3,
+            }
+          }
+        ]
       });
 
     $('.single-product-slider').on('afterChange', function (event, slick, currentSlide) {
