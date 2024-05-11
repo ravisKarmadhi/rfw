@@ -1,11 +1,30 @@
-.related-slider{
-    .slick-list{
+.related-slider {
+    .slick-list {
         margin-left: -8px;
         margin-right: -8px;
-        @include media-breakpoint-down(sm){
+
+        @include media-breakpoint-down(sm) {
             overflow: visible;
         }
-        .slick-slide{
+
+        .slick-slide {
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+    }
+}
+
+
+.events-card-slider {
+    .slick-list {
+        margin-left: -8px;
+        margin-right: -8px;
+
+        @include media-breakpoint-down(sm) {
+            overflow: visible;
+        }
+
+        .slick-slide {
             padding-left: 8px;
             padding-right: 8px;
         }

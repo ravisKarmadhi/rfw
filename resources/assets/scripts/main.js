@@ -5,6 +5,8 @@ import "select2/dist/js/select2.js";
 import { App } from './parts/app.js'
 import { Plugins } from './parts/plugins.js'
 import { Parts } from './parts/parts.js'
+import { Button } from './parts/button.js'
+import { Home } from './parts/home.js'
 
 
 // export for others scripts to use
@@ -30,6 +32,13 @@ $(function () {
 
   window.parts = new Parts();
   window.parts.init();
+
+
+  window.button = new Button();
+  window.button.init();
+
+  window.home = new Home();
+  window.home.init();
 });
 
 // ===========================================================================
