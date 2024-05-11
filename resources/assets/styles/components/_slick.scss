@@ -30,3 +30,33 @@
         }
     }
 }
+
+.single-product-slider,
+.single-product-group {
+    div {
+        height: 100%;
+    }
+}
+
+.single-product-group {
+    .slick-list {
+        margin-left: -4px;
+        margin-right: -4px;
+
+        @include media-breakpoint-down(lg) {
+            overflow: visible;
+            margin-left: -2px;
+            margin-right: -2px;
+        }
+
+        .slick-slide {
+            padding-left: 4px;
+            padding-right: 4px;
+
+            @include media-breakpoint-down(lg) {
+                padding-left: 2px;
+                padding-right: 2px;
+            }
+        }
+    }
+}
