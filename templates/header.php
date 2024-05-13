@@ -1,7 +1,7 @@
 <!-- Modal -->
 
 <div class="modal video-modal fade" id="videoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="mohea-dialog modal-dialog-centered modal-lg">
         <div class="modal-content border-0 rounded-0 bg-transparent">
             <div class="modal-body p-0 position-relative">
                 <button class="p-0 bg-transparent border-0 pause-video mt-n5 bg-2D4232 rounded-circle p-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
@@ -15,3 +15,10 @@
         </div>
     </div>
 </div>
+<header class="">
+    <div class="header-section">
+        <div class="container">
+
+        </div>
+    </div>
+</header>

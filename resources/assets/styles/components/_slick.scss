@@ -32,7 +32,8 @@
 }
 
 .single-product-slider,
-.single-product-group {
+.single-product-group,
+.instagram-slider {
     div {
         height: 100%;
     }
@@ -56,6 +57,28 @@
             @include media-breakpoint-down(lg) {
                 padding-left: 2px;
                 padding-right: 2px;
+            }
+        }
+    }
+}
+
+.instagram-slider {
+    .slick-list {
+        margin-left: -6px;
+        margin-right: -6px;
+
+        @include media-breakpoint-down(lg) {
+            margin-left: -3px;
+            margin-right: -3px;
+        }
+
+        .slick-slide {
+            padding-left: 6px;
+            padding-right: 6px;
+
+            @include media-breakpoint-down(lg) {
+                padding-left: 3px;
+                padding-right: 3px;
             }
         }
     }

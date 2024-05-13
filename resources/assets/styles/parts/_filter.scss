@@ -1,0 +1,19 @@
+    .activity-category {
+        .activity-button {
+            min-width: 131px !important;
+            height: 37px;
+
+            &:first-child {
+                margin-left: 0px !important;
+            }
+
+            &.active {
+                background-color: $color-2D4232 !important;
+                color: $color-FFFAF6 !important;
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            margin-left: 37px !important;
+        }
+    }

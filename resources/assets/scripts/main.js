@@ -8,7 +8,7 @@ import { Parts } from './parts/parts.js'
 import { Button } from './parts/button.js'
 import { Home } from './parts/home.js'
 import { Video } from './parts/video.js'
-
+import { Filter } from './parts/filter.js';
 
 // export for others scripts to use
 window.$ = $;
@@ -34,6 +34,8 @@ $(function () {
   window.parts = new Parts();
   window.parts.init();
 
+  window.filter = new Filter();
+  window.filter.init();
 
   window.button = new Button();
   window.button.init();

@@ -51,7 +51,10 @@ $grid-breakpoints: (
 @import "pages/_cart";
 @import "pages/_event";
 @import "pages/_accommodation";
+@import "pages/_gallery";
 
+// parts css
+@import "parts/_filter";
 @import "parts/_image_content";
 @import "parts/_view_gallery";
 @import "parts/_brochure";
