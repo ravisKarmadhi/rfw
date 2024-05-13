@@ -3,29 +3,108 @@
     &.galleryModal {
         .modal-dialog {
             max-width: 995px;
+            z-index: 99;
+
+            @include media-breakpoint-down(lg) {
+                height: auto !important;
+                overflow-y: visible !important;
+            }
+
+            @include media-breakpoint-down(xl) {
+                max-width: 880px !important;
+            }
+
+            @include media-breakpoint-down(lg) {
+                max-width: 704px !important;
+            }
+
+            @include media-breakpoint-down(md) {
+                max-width: 318px !important;
+                margin: 0 auto;
+            }
+
+            &.modal-dialog-centered {
+                @include media-breakpoint-down(lg) {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: end;
+                }
+            }
 
             .modal-content {
-                height: 587px;
                 border-radius: 0px !important;
                 background-color: transparent !important;
+                border: 0px !important;
+
+                @include media-breakpoint-down(lg) {
+                    padding: 40px 0px;
+                }
 
                 .modal-body {
                     padding: 0px !important;
 
                     .carousel {
+                        .carousel-inner {
+                            height: 587px;
+
+                            @include media-breakpoint-down(lg) {
+                                height: 450px !important;
+                            }
+
+                            @include media-breakpoint-down(md) {
+                                height: 318px !important;
+                            }
+                        }
+
                         .carousel-arrows {
                             .carousel-arrow {
+                                height: 25px;
+                                width: 25px;
+                                background-color: $color-BDA673;
+                                opacity: 1;
+                                border-radius: 50%;
+                                bottom: 0px;
+
+                                @include media-breakpoint-down(lg) {
+                                    width: 30px !important;
+                                    height: 30px !important;
+                                }
 
                                 .carousel-control-prev-icon,
                                 .carousel-control-next-icon {
                                     opacity: 1 !important;
-                                    width: 1rem !important;
+                                    width: 14px !important;
                                 }
                             }
                         }
                     }
                 }
             }
+        }
+    }
+}
+
+.modal-backdrop {
+    @include media-breakpoint-down(lg) {
+        --bs-backdrop-opacity: 0.9;
+    }
+}
+
+.close-icon {
+    padding: 20px 20px 0 0;
+
+    @include media-breakpoint-down(lg) {
+        padding: 0px !important;
+    }
+
+    svg {
+        width: 25px !important;
+        height: 25px !important;
+
+        @include media-breakpoint-down(lg) {
+            width: 27px !important;
+            height: 27px !important;
         }
     }
 }
