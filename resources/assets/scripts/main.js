@@ -9,6 +9,7 @@ import { Button } from './parts/button.js'
 import { Home } from './parts/home.js'
 import { Video } from './parts/video.js'
 import { Filter } from './parts/filter.js';
+import { Header } from './parts/header.js';
 
 // export for others scripts to use
 window.$ = $;
@@ -45,6 +46,9 @@ $(function () {
 
   window.video = new Video();
   window.video.init();
+  
+  window.Header = new Header();
+  window.Header.init();
 });
 
 // ===========================================================================

@@ -7,7 +7,7 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   outputFolder: '../assets',
   publicFolder: 'assets',
-  proxyTarget: 'http://localhost',
+  proxyTarget: 'http://localhost:8080/RFW',
   watch: [
     '../**/*.php'
   ]

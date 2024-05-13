@@ -1,0 +1,190 @@
+.header {
+    z-index: 999;
+    @include generate-transition(all, 0.3s, ease-in-out);
+
+    &.header-fixed,
+    &.header-fixed.header-black {
+        background-color: $color-2C2924;
+        padding-top: 30px;
+        @include media-breakpoint-down(lg){
+            padding-top: 30px !important;
+        }
+
+        .header-logo {
+            width: 99px !important;
+
+            .head-black-logo,
+            .head-white-logo,
+            .res-head-white-logo,
+            .res-head-black-logo {
+                display: none !important;
+            }
+
+            .head-fixed-logo {
+                display: block !important;
+            }
+        }
+
+        .burger-menu-btn {
+
+            &::before,
+            &::after,
+            .burger-menu-line {
+                background-color: $color-FFFAF6 !important;
+            }
+        }
+    }
+
+    &.header-black {
+        .header-logo {
+
+            .head-fixed-logo,
+            .head-white-logo {
+                display: none;
+            }
+
+            .head-black-logo {
+                @include media-breakpoint-up(lg) {
+                    display: block !important;
+                }
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            .res-head-white-logo,
+            .head-black-logo {
+                display: none !important;
+            }
+
+            .res-head-black-logo {
+                display: block !important;
+            }
+        }
+
+        .burger-menu-btn {
+
+            &::before,
+            &::after,
+            .burger-menu-line {
+                background-color: $color-2C2924 !important;
+            }
+        }
+    }
+
+    .header-section {
+        .header-logo {
+            width: 190px;
+
+            @include media-breakpoint-down(lg) {
+                width: 99px;
+            }
+
+            .head-black-logo,
+            .head-fixed-logo {
+                display: none;
+            }
+
+            .res-head-white-logo,
+            .res-head-black-logo {
+                @include media-breakpoint-up(lg) {
+                    display: none;
+                }
+            }
+
+            @include media-breakpoint-down(lg) {
+                .head-white-logo,
+                .head-black-logo,
+                .res-head-black-logo {
+                    display: none;
+                }
+            }
+        }
+
+        .burger-menu-btn {
+            height: 20px;
+            width: 27px;
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: $white;
+            }
+
+            .burger-menu-line {
+                height: 2px;
+            }
+        }
+
+        .offcanvas {
+            &.header-offcanvas {
+                width: 495px;
+                padding-left: 65px;
+                padding-right: 75px;
+
+                @include media-breakpoint-down(lg) {
+                    padding-left: 36px;
+                    padding-right: 36px;
+                }
+
+                .canvas-close {
+                    opacity: 0.16;
+                }
+
+                .navigation {
+                    .nav-menu {
+                        li {
+                            &:last-child {
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                    }
+                }
+
+                .header-btn-group {
+                    .btnA {
+                        &:last-child {
+                            margin-right: 0 !important;
+                        }
+
+                        &:nth-child(1) {
+                            width: 155px;
+                        }
+
+                        &:nth-child(2) {
+                            width: 183px;
+                        }
+                    }
+                }
+
+                .header-login {
+                    .header-login-img {
+                        background-color: rgba($color: $white, $alpha: 0.09);
+                        height: 42px;
+                        width: 42px;
+
+                        img {
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.offcanvas-backdrop {
+    &.show {
+        opacity: 0.67;
+    }
+}
