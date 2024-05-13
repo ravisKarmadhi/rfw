@@ -15,19 +15,19 @@
         </div>
     </div>
 </div>
+<!-- black header color class - header-black -->
 <header class="header position-fixed top-0 w-100 dpt-50 tpt-70 dpb-30">
    <div class="header-section">
         <div class="container">
             <div class="d-flex">
                 <div class="col-lg-3"></div>
                 <div class="col-6 d-flex align-items-center justify-content-lg-center">
-                    <a href="" class="text-decoration-none d-inline-block header-logo d-none d-lg-block">
+                    <a href="" class="text-decoration-none d-inline-block header-logo">
                         <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/logo-white.svg" alt="" class="head-white-logo w-100">
                         <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/logo-black.svg" alt="" class="head-black-logo w-100">
-                    </a>
-                    <a href="" class="text-decoration-none d-inline-block header-logo res-header-logo d-lg-none">
-                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-white-logo.svg" alt="" class="head-white-logo w-100">
-                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-black-logo.svg" alt="" class="head-black-logo w-100">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-white-logo.svg" alt="" class="head-fixed-logo w-100">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-white-logo.svg" alt="" class="res-head-white-logo w-100">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-black-logo.svg" alt="" class="res-head-black-logo w-100">
                     </a>
                 </div>
                 <div class="col-lg-3 col-6 d-flex align-items-center justify-content-end">
