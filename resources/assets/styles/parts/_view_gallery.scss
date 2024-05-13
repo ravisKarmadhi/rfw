@@ -9,27 +9,63 @@
         }
     }
 
+    &.bg-FFFAF6-sec {
+        background-color: $color-FFFAF6;
+
+        .text {
+            color: $color-2C2924;
+        }
+    }
+
     .image-timeless {
         .first-img {
             width: 247px;
             height: 318px;
+
+            @include media-breakpoint-down(xl) {
+                width: 127px;
+                height: 163px;
+                right: -70px;
+                left: auto !important;
+            }
         }
 
         .second-img {
             width: 279px;
             height: 179px;
+
+            @include media-breakpoint-down(xl) {
+                width: 186px;
+                height: 119px;
+                left: 0 !important;
+            }
         }
 
         .third-img {
             width: 403px;
             height: 258px;
             left: 240px;
+
+
+            @include media-breakpoint-down(xl) {
+                width: 207px;
+                height: 133px;
+                left: -130px !important;
+                bottom: 40px !important;
+            }
         }
 
         .four-img {
             width: 279px;
             height: 358px;
             bottom: 60px;
+
+            @include media-breakpoint-down(xl) {
+                width: 142px;
+                height: 182px;
+                bottom: 0 !important;
+                right: 14px !important;
+            }
         }
     }
 }

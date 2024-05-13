@@ -168,7 +168,7 @@ textarea {
     margin-bottom: 0px !important;
   }
 
-  .tpt-0 {
+  .m-0 {
     padding-top: 0px !important;
   }
 
@@ -247,6 +247,14 @@ textarea {
   }
 }
 
+.dpt-00 {
+  padding: 0 !important;
+}
+
+.dpb-00 {
+  padding: 0 !important;
+}
+
 @media (max-width: 991px) {
   @for $i from 1 through 70 {
     .tpt-#{$i*5} {
@@ -258,6 +266,14 @@ textarea {
     .tpb-#{$i*5} {
       padding-bottom: #{5 * $i}px !important;
     }
+  }
+
+  .tpt-00 {
+    padding-top: 0 !important;
+  }
+
+  .tpb-00 {
+    padding-bottom: 0 !important;
   }
 }
 
@@ -272,5 +288,13 @@ textarea {
     .mpb-#{$i*5} {
       padding-bottom: #{5 * $i}px !important;
     }
+  }
+
+  .mpt-00 {
+    padding-top: 0 !important;
+  }
+
+  .mpb-00 {
+    padding-bottom: 0 !important;
   }
 }

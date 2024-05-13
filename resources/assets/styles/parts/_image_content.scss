@@ -2,6 +2,14 @@
     min-height: 745px;
     height: 100%;
 
+    &.image-content-left {
+        .row {
+            @include media-breakpoint-down(lg) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
     &.bgcream-content-img {
         background-color: $color-FFFAF6;
 
@@ -30,13 +38,90 @@
         }
     }
 
+    &.bgblack-content-img {
+        background-color: $color-2C2924;
+
+        .text {
+            color: $color-FFFAF6;
+        }
+
+        .btns-row {
+            a {
+                height: 63px;
+
+                &:nth-child(odd) {
+                    background-color: $color-8B6E3D;
+                    border: 1px solid $color-8B6E3D;
+                    color: $color-FFFAF6;
+                    margin-right: 16px;
+                }
+
+                &:nth-child(even) {
+                    background-color: $color-FFFAF6;
+                    border: 1px solid $color-8B6E3D;
+                    color: $color-8B6E3D;
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+    &.bggold-content-img {
+        background-color: $color-BDA673;
+
+        .text {
+            color: $color-FFFAF6;
+        }
+
+        .btns-row {
+            a {
+                height: 63px;
+
+                &:nth-child(odd) {
+                    background-color: $color-2C2924;
+                    border: 1px solid $color-2C2924;
+                    color: $color-FFFAF6;
+                    margin-right: 16px;
+                }
+
+                &:nth-child(even) {
+                    background-color: $color-FFFAF6;
+                    border: 1px solid $color-FFFAF6;
+                    color: $color-2C2924;
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
     .content-image {
-        width: 720px;
+        @include media-breakpoint-up(xxl) {
+            width: 720px;
+        }
+
+        @include media-breakpoint-down(xxl) {
+            width: 620px;
+
+            @include media-breakpoint-down(xl) {
+                width: 560px;
+
+                @include media-breakpoint-down(lg) {
+                    width: 100%;
+                    height: 390px !important;
+                }
+
+            }
+        }
+
+
     }
 
 }
 
 .details-content {
-    min-height: 745px;
+    @include media-breakpoint-up(lg) {
+        min-height: 745px;
+    }
+
     height: 100%;
 }

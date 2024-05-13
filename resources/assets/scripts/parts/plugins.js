@@ -39,7 +39,7 @@ export class Plugins {
       prevArrow: $(".events-card-btn .slick--prev"),
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 992,
           settings: {
             slidesToShow: 2,
             slidesToShow: 3,
