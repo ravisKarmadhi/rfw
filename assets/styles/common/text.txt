@@ -84,8 +84,8 @@
 
 .leading-16
 .leading-20
-.leading-24
 .leading-26
+.leading-24
 .leading-28
 .leading-30
 .leading-40

@@ -130,4 +130,17 @@ button,
             color: $color-2C2924;
         }
     }
+
+    @include media-breakpoint-down(lg) {
+        &.res-bg-2C2924-btn {
+            border: 1px solid $color-2C2924;
+            background-color: $color-2C2924;
+            color: $white;
+
+            &:hover {
+                border: 1px solid $white;
+                background-color: transparent;
+            }
+        }
+    }
 }
