@@ -11,9 +11,12 @@ button,
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 173px;
+    min-width: 173px;
+    width: fit-content;
     height: 63px;
     padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
     @include generate-transition(all, 0.3s, ease-in-out);
 
     &.w-110px {

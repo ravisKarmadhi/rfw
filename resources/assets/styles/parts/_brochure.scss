@@ -1,0 +1,8 @@
+.single-brochure {
+    height: 507px;
+
+    @include media-breakpoint-down(lg) {
+        height: 273px;
+        margin-bottom: 13px;
+    }
+}

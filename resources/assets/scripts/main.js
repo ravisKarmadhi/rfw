@@ -7,6 +7,7 @@ import { Plugins } from './parts/plugins.js'
 import { Parts } from './parts/parts.js'
 import { Button } from './parts/button.js'
 import { Home } from './parts/home.js'
+import { Video } from './parts/video.js'
 
 
 // export for others scripts to use
@@ -39,6 +40,9 @@ $(function () {
 
   window.home = new Home();
   window.home.init();
+
+  window.video = new Video();
+  window.video.init();
 });
 
 // ===========================================================================

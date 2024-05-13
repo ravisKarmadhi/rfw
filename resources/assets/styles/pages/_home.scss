@@ -3,3 +3,15 @@
         height: 310px;
     }
 }
+
+.home-hero {
+    @include media-breakpoint-down(lg) {
+        height: 845px !important;
+    }
+}
+
+.want-brochure-sec {
+    @include media-breakpoint-down(lg) {
+        background-color: $color-2D4232;
+    }
+}
