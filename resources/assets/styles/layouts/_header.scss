@@ -1,0 +1,98 @@
+.header {
+    z-index: 999;
+    @include generate-transition(all , 0.3s , ease-in-out);
+
+    &.header-fixed{
+        background-color: $color-2C2924;
+    }
+    .header-section {
+        .header-logo {
+            width: 190px;
+
+            .head-black-logo {
+                display: none;
+            }
+        }
+        .res-header-logo{
+            width: 99px;
+        }
+
+        .burger-menu-btn {
+            height: 20px;
+            width: 27px;
+
+            &::before {
+                top: 0;
+            }
+
+            &::after {
+                bottom: 0;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background-color: $white;
+            }
+
+            .burger-menu-line {
+                height: 2px;
+            }
+        }
+        .offcanvas{
+            &.header-offcanvas{
+                width: 495px;
+                padding-left: 65px;
+                padding-right: 75px;
+                @include media-breakpoint-down(lg){
+                    padding-left: 36px;
+                    padding-right: 36px;
+                }
+                .canvas-close{
+                    opacity: 0.16;
+                }
+                .navigation{
+                    .nav-menu{
+                        li{
+                            &:last-child{
+                                margin-bottom: 0 !important;
+                            }
+                        }
+                    }
+                }
+                .header-btn-group{
+                    .btnA{
+                        &:last-child{
+                            margin-right: 0 !important;
+                        }
+                        &:nth-child(1){
+                            width: 155px;
+                        }
+                        &:nth-child(2){
+                            width: 183px;
+                        }
+                    }
+                }
+                .header-login{
+                    .header-login-img{
+                        background-color: rgba($color: $white, $alpha: 0.09);
+                        height: 42px;
+                        width: 42px;
+                        img{
+                            width: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.offcanvas-backdrop {
+    &.show {
+        opacity: 0.67;
+    }
+}
