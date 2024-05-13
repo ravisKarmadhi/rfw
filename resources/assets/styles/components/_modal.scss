@@ -118,3 +118,32 @@
         }
     }
 }
+
+.offcanvas {
+    &.supplier-offcanvas {
+        width: 720px;
+        padding-left: 66px;
+        padding-right: 55px;
+        
+        @include media-breakpoint-down(lg){
+            padding-left: 36px;
+            padding-right: 36px;
+        }
+
+        .offcanvas-close{
+            width: 32px;
+            @include media-breakpoint-down(lg){
+                width: 27px;
+            }
+        }
+        .modal-logo{
+            width: 99px;
+        }
+        .supplier-modal-img {
+            height: 260px;
+            @include media-breakpoint-down(lg){
+                height: 318px;
+            }
+        }
+    }
+}

@@ -31,10 +31,10 @@
                     </a>
                 </div>
                 <div class="col-lg-3 col-6 d-flex align-items-center justify-content-end">
-                    <a href="" class="text-decoration-none d-inline-flex align-items-center burger-menu-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <a href="" class="text-decoration-none d-inline-flex align-items-center burger-menu-btn position-relative" data-bs-toggle="offcanvas" data-bs-target="#headerCanvas" aria-controls="headerCanvas">
                         <div class="burger-menu-line bg-white w-100"></div>
                     </a>
-                    <div class="header-offcanvas offcanvas offcanvas-end bg-2C2924 res-w-100 border-0 dpt-75 tpt-70 dpb-50 overflow-auto" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="header-offcanvas offcanvas offcanvas-end bg-2C2924 res-w-100 border-0 dpt-75 tpt-70 dpb-50 overflow-auto" tabindex="-1" id="headerCanvas" aria-labelledby="headerCanvasLabel">
                         <div class="d-flex align-items-center justify-content-lg-end justify-content-between dmb-70">
                             <a href="" class="text-decoration-none d-inline-block res-header-logo d-lg-none">
                                 <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-white-logo.svg" alt="">
