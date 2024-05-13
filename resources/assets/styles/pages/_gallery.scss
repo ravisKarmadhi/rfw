@@ -1,0 +1,43 @@
+.gallery-section {
+    .filter-activity {
+        margin-left: -8px !important;
+        margin-right: -8px !important;
+
+        @include media-breakpoint-down(md) {
+            margin-left: -4px !important;
+            margin-right: -4px !important;
+        }
+
+        .filter-img {
+            width: 33.33%;
+            height: 366px;
+
+            &:nth-child(6n) {
+                width: 100%;
+                height: 553px;
+            }
+
+            &:nth-child(12n - 4),
+            &:nth-child(12n - 11) {
+                width: 58%;
+                height: 460px;
+            }
+
+            &:nth-child(12n - 5),
+            &:nth-child(12n - 10) {
+                width: 42%;
+                height: 460px;
+            }
+
+            @include media-breakpoint-down(xl) {
+                width: 50% !important;
+                height: 350px !important;
+            }
+
+            @include media-breakpoint-down(md) {
+                width: 50% !important;
+                height: 155px !important;
+            }
+        }
+    }
+}

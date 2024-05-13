@@ -1,0 +1,31 @@
+.modal {
+
+    &.galleryModal {
+        .modal-dialog {
+            max-width: 995px;
+
+            .modal-content {
+                height: 587px;
+                border-radius: 0px !important;
+                background-color: transparent !important;
+
+                .modal-body {
+                    padding: 0px !important;
+
+                    .carousel {
+                        .carousel-arrows {
+                            .carousel-arrow {
+
+                                .carousel-control-prev-icon,
+                                .carousel-control-next-icon {
+                                    opacity: 1 !important;
+                                    width: 1rem !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
