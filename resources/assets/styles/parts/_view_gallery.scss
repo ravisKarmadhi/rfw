@@ -1,0 +1,35 @@
+.view-gallery-sec {
+    cursor: grab;
+
+    &.bg-2D4232-sec {
+        background-color: $color-2D4232;
+
+        .text {
+            color: $color-FFFAF6;
+        }
+    }
+
+    .image-timeless {
+        .first-img {
+            width: 247px;
+            height: 318px;
+        }
+
+        .second-img {
+            width: 279px;
+            height: 179px;
+        }
+
+        .third-img {
+            width: 403px;
+            height: 258px;
+            left: 240px;
+        }
+
+        .four-img {
+            width: 279px;
+            height: 358px;
+            bottom: 60px;
+        }
+    }
+}

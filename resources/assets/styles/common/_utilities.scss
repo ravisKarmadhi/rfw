@@ -363,6 +363,10 @@
     line-height: $Leading-90;
 }
 
+.leading-105 {
+    line-height: $Leading-105;
+}
+
 .leading-120 {
     line-height: $Leading-120;
 }
@@ -413,6 +417,14 @@
 // opacity css
 .opacity-55 {
     opacity: 55%;
+}
+
+.opacity-52 {
+    opacity: 52%;
+}
+
+.opacity-58 {
+    opacity: 58%;
 }
 
 @include media-breakpoint-down(lg) {
@@ -641,6 +653,10 @@
 
     .res-leading-90 {
         line-height: $Leading-90;
+    }
+
+    .res-Leading-105 {
+        line-height: $Leading-105;
     }
 
     .res-leading-120 {

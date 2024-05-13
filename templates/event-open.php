@@ -5,7 +5,7 @@
 ?>
 <main>
     <div class="spacing dpt-230"></div>
-    <section class="event-open-section ">
+    <section class="event-open-section">
         <div class="container px-p-0">
             <div class="px-p-p">
                 <a href="" class="text-decoration-none back-all d-flex align-item-center dmb-50 classic font-18 leading-20 fw-normal text-2C2924">
@@ -65,46 +65,54 @@
     </section>
     <div class="spacing dmb-75"></div>
 
-    <section class="related-section">
+    <section class="related-section overflow-hidden">
         <div class="container">
             <div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60 res-font-24 res-leading-30 tmb-45">Related Events</div>
             <div class="related-slider col-sm-12 col-10">
                 <div class="related-item">
-                    <div class="related-img dmb-30">
-                        <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
-                    </div>
-                    <div class="related-content">
-                        <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
-                        <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
-                    </div>
-                </div>  
+                    <a href="" class="d-inline-block text-decoration-none w-100">
+                        <div class="related-img dmb-30">
+                            <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
+                        </div>
+                        <div class="related-content">
+                            <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
+                            <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
+                        </div>
+                    </a>
+                </div>
                 <div class="related-item">
-                    <div class="related-img dmb-30">
-                        <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
-                    </div>
-                    <div class="related-content">
-                        <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
-                        <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Beer Tasting</div>
-                    </div>
-                </div>  
+                    <a href="" class="d-inline-block text-decoration-none w-100">
+                        <div class="related-img dmb-30">
+                            <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
+                        </div>
+                        <div class="related-content">
+                            <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
+                            <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
+                        </div>
+                    </a>
+                </div>
                 <div class="related-item">
-                    <div class="related-img dmb-30">
-                        <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
-                    </div>
-                    <div class="related-content">
-                        <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
-                        <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Open House</div>
-                    </div>
-                </div>  
+                    <a href="" class="d-inline-block text-decoration-none w-100">
+                        <div class="related-img dmb-30">
+                            <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
+                        </div>
+                        <div class="related-content">
+                            <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
+                            <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
+                        </div>
+                    </a>
+                </div>
                 <div class="related-item">
-                    <div class="related-img dmb-30">
-                        <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
-                    </div>
-                    <div class="related-content">
-                        <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
-                        <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
-                    </div>
-                </div>  
+                    <a href="" class="d-inline-block text-decoration-none w-100">
+                        <div class="related-img dmb-30">
+                            <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/details-15.png" alt="details-15.png" class="w-100 h-100 object-cover">
+                        </div>
+                        <div class="related-content">
+                            <div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
+                            <div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28">Wine Tasting</div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>

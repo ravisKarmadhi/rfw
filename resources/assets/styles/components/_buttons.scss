@@ -20,8 +20,20 @@ button,
         width: 110px;
     }
 
+    &.w-204px {
+        width: 204px;
+    }
+
+    &.w-126px {
+        width: 126px;
+    }
+
     &.h-50px {
         height: 50px;
+    }
+
+    &.h-44px {
+        height: 44px;
     }
 
     @include media-breakpoint-down(lg) {
