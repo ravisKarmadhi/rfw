@@ -1,0 +1,72 @@
+.explore-with-image {
+    .explore-image {
+        height: 666px;
+
+        @include media-breakpoint-down(lg) {
+            height: 390px;
+
+        }
+    }
+}
+
+.logo-layer-included {
+    opacity: 0.4;
+}
+
+.menu-bottom {
+    @include media-breakpoint-down(lg) {
+        background-color: $color-2D4232 !important;
+        padding: 20px 0;
+    }
+
+    ul {
+        @include media-breakpoint-down(lg) {
+            padding-bottom: 18px;
+        }
+
+        li {
+            padding: 12px 25px;
+
+            @include media-breakpoint-down(lg) {
+                padding: 18px 0;
+            }
+
+            a {
+                color: $color-2C2924;
+
+                @include media-breakpoint-down(lg) {
+                    color: $color-FFFAF6 !important;
+                }
+            }
+
+            &.active {
+                @include media-breakpoint-up(lg) {
+                    padding: 0;
+                }
+
+                a {
+                    color: $color-FFFAF6;
+                    background-color: $color-8B6E3D;
+                    padding: 12px 25px;
+
+                    @include media-breakpoint-down(lg) {
+                        padding: 0 !important;
+                        color: $color-8B6E3D !important;
+                        background-color: transparent;
+
+
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.explore-banner {
+    height: 198px;
+
+    @include media-breakpoint-down(lg) {
+        height: 220px;
+    }
+}

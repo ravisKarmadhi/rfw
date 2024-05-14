@@ -9,6 +9,7 @@ import { Button } from './parts/button.js'
 import { Home } from './parts/home.js'
 import { Video } from './parts/video.js'
 import { Filter } from './parts/filter.js';
+import { Menulink } from './parts/menulink.js';
 
 // export for others scripts to use
 window.$ = $;
@@ -45,6 +46,9 @@ $(function () {
 
   window.video = new Video();
   window.video.init();
+
+  window.menulink = new Menulink();
+  window.menulink.init();
 });
 
 // ===========================================================================

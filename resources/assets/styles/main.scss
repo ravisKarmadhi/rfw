@@ -52,9 +52,14 @@ $grid-breakpoints: (
 @import "pages/_event";
 @import "pages/_accommodation";
 @import "pages/_gallery";
+@import "pages/_venue";
+@import "pages/_stay";
+
+
 
 // parts css
 @import "parts/_filter";
 @import "parts/_image_content";
 @import "parts/_view_gallery";
 @import "parts/_brochure";
+@import "parts/_sleeps";

@@ -1,0 +1,23 @@
+.single-sleeps {
+    height: 490px;
+
+
+    @include media-breakpoint-down(lg) {
+        height: 390px;
+        margin-top: 10px;
+
+
+        .single-sleeps-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+.sleeps-sections {
+    @include media-breakpoint-down(lg) {
+        margin-top: -10px;
+    }
+}

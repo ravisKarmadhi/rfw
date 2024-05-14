@@ -83,3 +83,19 @@
         }
     }
 }
+
+.image-content {
+    .slick-prev {
+        position: absolute;
+        bottom: 50px;
+        z-index: 1;
+        right: 64px;
+    }
+
+    .slick-next {
+        position: absolute;
+        bottom: 50px;
+        z-index: 1;
+        right: 28px;
+    }
+}
