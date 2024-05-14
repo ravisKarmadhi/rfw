@@ -175,12 +175,55 @@
             }
         }
     }
+
+    &.logout-modal {
+        .modal-dialog {
+            max-width: 830px;
+
+            @include media-breakpoint-down(lg) {
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .modal-content {
+                height: 303px;
+                @include media-breakpoint-down(lg){
+                    background-color: $white;
+                }
+                .close-btn-main{
+                    @include media-breakpoint-down(lg){
+                        top: 100px !important;
+                        right: 40px !important;
+                    }
+
+                    .close-btn {
+                        width: 25px;
+                    }
+                }
+
+                .logout-btn-group {
+                    .btnA {
+                        &:last-child {
+                            margin-right: 0 !important;
+                            @include media-breakpoint-down(lg){
+                                margin-bottom: 0 !important;   
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .modal-backdrop {
     @include media-breakpoint-down(lg) {
         --bs-backdrop-opacity: 0.9;
     }
+}
+
+.modal-logo {
+    width: 99px;
 }
 
 .offcanvas {
@@ -200,10 +243,6 @@
             @include media-breakpoint-down(lg) {
                 width: 27px;
             }
-        }
-
-        .modal-logo {
-            width: 99px;
         }
 
         .supplier-modal-img {
