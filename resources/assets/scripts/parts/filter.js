@@ -15,6 +15,22 @@ export class Filter {
             $(".activity-button").click(function () {
                 $(this).toggleClass("active").siblings().removeClass("active");
             });
+
+
+            $(".faq-button").click(function () {
+                var value = $(this).attr('data-filter');
+                if (value == "all") {
+                  $('.faq-closet-item').show('500');
+                }
+                else {
+                  $(".faq-closet-item").not('.' + value).hide('1000');
+                  $('.faq-closet-item').filter('.' + value).show('1000');
+                }
+              });
+            
+              $(".faq-button").click(function () {
+                $(this).toggleClass("active").siblings().removeClass("active");
+            });
         })
     }
 }

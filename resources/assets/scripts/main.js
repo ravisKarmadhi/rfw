@@ -1,27 +1,28 @@
-import $ from 'jquery';
-import '@popperjs/core';
-import 'bootstrap/dist/js/bootstrap';
+import $ from "jquery";
+import "@popperjs/core";
+import "bootstrap/dist/js/bootstrap";
 import "select2/dist/js/select2.js";
-import { App } from './parts/app.js'
-import { Plugins } from './parts/plugins.js'
-import { Parts } from './parts/parts.js'
-import { Button } from './parts/button.js'
-import { Home } from './parts/home.js'
-import { Video } from './parts/video.js'
-import { Filter } from './parts/filter.js';
+import { App } from "./parts/app.js";
+import { Plugins } from "./parts/plugins.js";
+import { Parts } from "./parts/parts.js";
+import { Button } from "./parts/button.js";
+import { Home } from "./parts/home.js";
+import { Video } from "./parts/video.js";
+import { Filter } from "./parts/filter.js";
+import { Accordion } from "./parts/accordion.js";
+import { Privacy } from "./parts/privacy.js";
 
 // export for others scripts to use
 window.$ = $;
 window.jQuery = jQuery;
 
 $(function () {
-
   window.windowWidth = $(window).width();
   window.windowHeight = $(window).height();
 
-  window.isiPhone = navigator.userAgent.toLowerCase().indexOf('iphone');
-  window.isiPad = navigator.userAgent.toLowerCase().indexOf('ipad');
-  window.isiPod = navigator.userAgent.toLowerCase().indexOf('ipod');
+  window.isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+  window.isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+  window.isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
 
   //Functions List Below
 
@@ -44,6 +45,12 @@ $(function () {
   window.home.init();
 
   window.video = new Video();
+  window.video.init();
+
+  window.video = new Accordion();
+  window.video.init();
+
+  window.video = new Privacy();
   window.video.init();
 });
 

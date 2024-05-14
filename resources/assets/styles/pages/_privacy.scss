@@ -1,0 +1,60 @@
+.privacy-bg {
+    background-color: rgba($color: white, $alpha: 0.2);
+}
+
+.privacy-left-content {
+    .privacy-links {
+        top: 217px;
+
+        .active {
+            a {
+                border-left: 1px solid $color-FFFAF6;
+                padding-left: 16px;
+            }
+        }
+
+
+        ul {
+            @include media-breakpoint-down(lg) {
+                display: flex;
+            }
+
+            li {
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
+
+    }
+}
+
+.privacy-content {
+    padding-top: 114px;
+
+    @include media-breakpoint-down(lg) {
+        padding-top: 50px;
+    }
+
+    &:first-child {
+        padding-top: 254px;
+
+        @include media-breakpoint-down(lg) {
+            padding-top: 85px;
+        }
+    }
+}
+
+.privacy-re-img {
+    height: 630px;
+    right: 0%;
+
+    @include media-breakpoint-down(lg) {
+        height: 360px;
+        right: 13%;
+    }
+
+    @include media-breakpoint-down(md) {
+        right: -37%;
+    }
+}
