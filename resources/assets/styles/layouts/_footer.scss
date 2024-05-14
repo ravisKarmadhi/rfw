@@ -1,8 +1,8 @@
 .footer {
-    background: linear-gradient(180deg, $color-FFFAF6 28%, $color-2C2924 28%);
+    background: linear-gradient(180deg, transparent 28%, $color-2C2924 28%);
 
     @include media-breakpoint-down(lg) {
-        background: linear-gradient(180deg, $color-FFFAF6 16%, $color-2C2924 16%);
+        background: linear-gradient(180deg, transparent 16%, $color-2C2924 16%);
     }
     
     &.white-footer {

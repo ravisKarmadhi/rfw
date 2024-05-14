@@ -5,26 +5,26 @@
             <div class="d-flex flex-wrap align-items-center justify-content-center dmb-30">
                 <div class="footer-title classic font-28 leading-30 text-2C2924 me-lg-3 res-font-20 res-w-100 text-center tmb-10">Follow us @royleforestweddings</div>
                 <div class="social-icons-group d-flex align-items-center justify-content-center res-w-100">
-                    <div class="social-item d-flex align-items-center justify-content-center rounded-circle ms-2">
+                    <a href="" class="text-decoration-none social-item d-inline-flex align-items-center justify-content-center rounded-circle ms-2">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="black-icon">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="white-icon">
-                    </div>
-                    <div class="social-item d-flex align-items-center justify-content-center rounded-circle ms-2">
+                    </a>
+                    <a href="" class="text-decoration-none social-item d-inline-flex align-items-center justify-content-center rounded-circle ms-2">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="black-icon">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="white-icon">
-                    </div>
-                    <div class="social-item d-flex align-items-center justify-content-center rounded-circle ms-2">
+                    </a>
+                    <a href="" class="text-decoration-none social-item d-inline-flex align-items-center justify-content-center rounded-circle ms-2">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="black-icon">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="white-icon">
-                    </div>
-                    <div class="social-item d-flex align-items-center justify-content-center rounded-circle ms-2">
+                    </a>
+                    <a href="" class="text-decoration-none social-item d-inline-flex align-items-center justify-content-center rounded-circle ms-2">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="black-icon">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="white-icon">
-                    </div>
-                    <div class="social-item d-flex align-items-center justify-content-center rounded-circle ms-2">
+                    </a>
+                    <a href="" class="text-decoration-none social-item d-inline-flex align-items-center justify-content-center rounded-circle ms-2">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="black-icon">
                         <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/footer-insta-black.svg" alt="" class="white-icon">
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="instagram-slider">
