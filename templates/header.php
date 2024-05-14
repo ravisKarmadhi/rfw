@@ -1,4 +1,4 @@
-<header class="">
+<header class="header position-fixed top-0 w-100 dpt-50 tpt-70 dpb-30">
     <div class="header-section">
         <div class="container">
             <div class="d-flex">
