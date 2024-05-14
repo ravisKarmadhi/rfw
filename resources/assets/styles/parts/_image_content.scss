@@ -154,6 +154,32 @@
 
     }
 
+    .content-image-small {
+        width: 40%;
+
+        .slick-list {
+            height: 100%;
+
+            .slick-track {
+                height: 100%;
+
+                .slick-slide {
+                    height: 100%;
+
+                    div {
+                        height: 100%;
+                    }
+
+                }
+            }
+        }
+
+        @include media-breakpoint-down(lg) {
+            width: 100% !important;
+            height: 390px !important;
+        }
+
+    }
 }
 
 .details-content {

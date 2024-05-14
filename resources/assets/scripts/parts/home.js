@@ -56,7 +56,10 @@ export class Home {
                     img.css('transform', 'translate(' + moveX + 'px, ' + moveY + 'px)');
                 });
             }
-        });
 
+            $('#close-bottom-home').click(function () {
+                $('#bottom-home').addClass('d-none');
+            })
+        });
     }
 }

@@ -234,3 +234,13 @@
 </section>
 
 <div class="spacing dpt-160 tpt-80"></div>
+
+
+<div class="bg-BDA673  lh-1 py-2 position-fixed z-2 bottom-0 left-0 w-100 text-center " id="bottom-home">
+    <p class="text-decoration-none text-FFFAF6 classic fw-normal font-14 leading-20 col-9 mx-auto d-block">
+        Are we your dream venue? <span class="d-lg-inline-block d-block"> <a href="#" class="text-decoration-none text-FFFAF6 classic fw-normal font-14 lh-1"> Book a visit today, choose your slot now </a></span>
+    </p>
+    <button class="bg-transparent p-0 bg-transparent border-0 position-absolute end-0 top-center me-4" id="close-bottom-home">
+        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close.svg" class="" alt="" />
+    </button>
+</div>
