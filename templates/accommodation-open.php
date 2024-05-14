@@ -89,7 +89,7 @@
                             </button>
                             <div class="supplier-offcanvas offcanvas offcanvas-end overflow-auto dpt-65 dpb-80 border-0 tpt-70 tpb-35" tabindex="-1" id="supplierCanvas" aria-labelledby="supplierCanvasLabel">
                                 <div class="d-flex align-item-center justify-content-lg-end justify-content-between dmb-20 tmb-75">
-                                    <div class="modal-logo">
+                                    <div class="modal-logo d-lg-none">
                                         <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-black-logo.svg" alt="" class="res-head-black-logo w-100">
                                     </div>
                                     <button type="button" class="offcanvas-close text-reset bg-transparent border-0 p-0 h-fit" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -109,7 +109,7 @@
                                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
                                     </div>
                                 </div>
-                                <div class="supplier-modal-img w-100 tmb-35">
+                                <div class="supplier-modal-img w-100 dmb-35">
                                     <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/Gallery-2.png" alt="" class="h-100 w-100 object-cover">
                                 </div>
                                 <div class="classic font-16 leading-28 text-2C2924 res-font-15 res-leading-26">
