@@ -6,7 +6,8 @@ export class Select {
                 closeOnSelect: true,
                 minimumResultsForSearch: Infinity,
                 allowClear: false,
-                dropdownCssClass: "categories-select2"
+                dropdownCssClass: "categories-select2",
+                dropdownParent:$("#downloadModal")
             });
         })
     }
