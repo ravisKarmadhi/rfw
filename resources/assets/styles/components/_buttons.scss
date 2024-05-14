@@ -131,6 +131,17 @@ button,
         }
     }
 
+    &.border-2C2924-btn {
+        background-color: transparent;
+        border: 1px solid $color-2C2924;
+        color: $color-2C2924;
+
+        &:hover {
+            background-color: $color-2C2924;
+            color: $white;
+        }
+    }
+
     @include media-breakpoint-down(lg) {
         &.res-bg-2C2924-btn {
             border: 1px solid $color-2C2924;

@@ -93,7 +93,7 @@
                                         <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-black-logo.svg" alt="" class="res-head-black-logo w-100">
                                     </div>
                                     <button type="button" class="offcanvas-close text-reset bg-transparent border-0 p-0 h-fit" data-bs-dismiss="offcanvas" aria-label="Close">
-                                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close-canvas.svg" alt="" class="w-100">   
+                                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close-canvas.svg" alt="" class="w-100">
                                     </button>
                                 </div>
                                 <div class="classic font-35 leading-40 fw-normal text-2C2924 dmb-50 tmb-35">Supplier Name</div>
@@ -102,7 +102,7 @@
                                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                                     </div>
                                     <div>
-                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
+                                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                                     </div>
                                     <div>
                                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
@@ -125,12 +125,12 @@
             <div class="border-bottom-EBEBEB d-lg-block d-none"></div>
         </div>
     </section>
-    
+
     <div class="spacing dmb-75 tmb-170"></div>
 
     <section class="related-section overflow-hidden">
         <div class="container">
-            <div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60 res-font-24 res-leading-30 tmb-45">Related Rooms</div>
+            <div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60 res-font-24 res-leading-30 tmb-45" data-bs-toggle="modal" data-bs-target="#logoutModal">Related Rooms</div>
             <div class="related-slider col-sm-12 col-10">
                 <div class="related-item">
                     <a href="" class="d-inline-block text-decoration-none w-100">
@@ -180,4 +180,25 @@
         </div>
     </section>
     <div class="spacing dmb-120 tmb-150"></div>
+
+    <div class="modal logout-modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable res-h-100">
+            <div class="modal-content bg-FFFAF6 border-0 rounded-0 align-item-center justify-content-center res-h-vh overflow-auto">
+                <div class="close-btn-main position-absolute top-0 end-0 dmt-20 me-3">
+                    <button type="button" class="close-btn bg-transparent border-0 p-0" data-bs-dismiss="modal" aria-label="Close">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close-canvas.svg" alt="" class="w-100">
+                    </button>
+                </div>
+                <div class="col-8 mx-auto tpt-150">
+                    <div class="text-center classic font-31 leading-40 fw-normal text-2C2924 dmb-30 res-font-36 res-leading-40 tmb-45">
+                        Are you sure you want to logout?
+                    </div>
+                    <div class="logout-btn-group d-flex flex-wrap align-item-center justify-content-center">
+                        <a href="" class="text-decoration-none btnA bg-BDA673-btn w-204px classic font-15 leading-20 me-lg-3 mb-lg-0 mb-3">Yes Please</a>
+                        <a href="" class="text-decoration-none btnA border-2C2924-btn w-204px classic font-15 leading-20 me-lg-3 mb-lg-0 mb-3">Wait, Not Yet</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>

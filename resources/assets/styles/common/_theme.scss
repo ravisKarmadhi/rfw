@@ -68,7 +68,7 @@
   }
 
   .res-h-100 {
-    height: 100%;
+    height: 100% !important;
   }
 
   .res-w-auto {
@@ -76,7 +76,7 @@
   }
 
   .res-h-vh {
-    height: 100vh;
+    height: 100vh !important;
   }
 
   .res-w-fit {
