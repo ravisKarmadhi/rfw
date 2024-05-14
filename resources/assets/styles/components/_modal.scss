@@ -9,6 +9,48 @@
 }
 
 .modal {
+    &.download-modal {
+        .modal-dialog {
+            max-width: 777px;
+
+            .modal-content {
+                border-radius: $radius-5 !important;
+                border: 0px !important;
+
+                .close-icon {
+                    padding: 30px 30px 0 0;
+
+                    @include media-breakpoint-down(lg) {
+                        padding: 0px !important;
+                    }
+
+                    svg {
+                        width: 20px !important;
+                        height: 20px !important;
+
+                        @include media-breakpoint-down(lg) {
+                            width: 27px !important;
+                            height: 27px !important;
+                        }
+                    }
+                }
+
+                .modal-body {
+                    padding: 0px !important;
+
+                    .form-input {
+                        height: 64px;
+
+                        input,
+                        select {
+                            background-color: rgba($color: #2C2924, $alpha: 0.03);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 
     &.galleryModal {
         .modal-dialog {
@@ -49,6 +91,24 @@
 
                 @include media-breakpoint-down(lg) {
                     padding: 40px 0px;
+                }
+
+                .close-icon {
+                    padding: 20px 20px 0 0;
+
+                    @include media-breakpoint-down(lg) {
+                        padding: 0px !important;
+                    }
+
+                    svg {
+                        width: 25px !important;
+                        height: 25px !important;
+
+                        @include media-breakpoint-down(lg) {
+                            width: 27px !important;
+                            height: 27px !important;
+                        }
+                    }
                 }
 
                 .modal-body {
@@ -98,24 +158,6 @@
 .modal-backdrop {
     @include media-breakpoint-down(lg) {
         --bs-backdrop-opacity: 0.9;
-    }
-}
-
-.close-icon {
-    padding: 20px 20px 0 0;
-
-    @include media-breakpoint-down(lg) {
-        padding: 0px !important;
-    }
-
-    svg {
-        width: 25px !important;
-        height: 25px !important;
-
-        @include media-breakpoint-down(lg) {
-            width: 27px !important;
-            height: 27px !important;
-        }
     }
 }
 
