@@ -11,6 +11,7 @@ import { Video } from './parts/video.js'
 import { Filter } from './parts/filter.js';
 import { Header } from './parts/header.js';
 import { Select } from './parts/select.js';
+import { Menulink } from './parts/menulink.js';
 
 // export for others scripts to use
 window.$ = $;
@@ -53,6 +54,9 @@ $(function () {
 
   window.select = new Select();
   window.select.init();
+
+  window.menulink = new Menulink();
+  window.menulink.init();
 });
 
 // ===========================================================================

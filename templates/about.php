@@ -67,19 +67,21 @@
     </div>
 </section>
 
-<section class="image-content image-content-left position-relative bgblack-content-img tpt-70">
+<section class="image-content overflow-hidden  image-content-left position-relative bgblack-content-img tpt-70" id="">
     <div class="container px-p-0">
         <div class="row ">
-            <div class="col-lg-6 h-100 tmt-40">
+            <div class="col-lg-6 h-100 tmt-40  half-image">
                 <div class="content-image position-absolute start-0 top-0 p-relative h-100">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-1.png" class="w-100 h-100 object-cover" alt="" />
-                    <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
-                    </button>
+                    <div>
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-1.png" class="w-100 h-100 object-cover" alt="" />
+                        <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center ms-auto">
-                <div class="pe-lg-4 me-lg-4 px-p-p">
+                <div class="me-lg-4 px-p-p">
                     <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">How it all started</div>
                     <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</div>
                 </div>
@@ -94,11 +96,11 @@
     </div>
 </section>
 
-<section class="image-content position-relative bgcream-content-img tpt-70">
+<section class="image-content overflow-hidden  position-relative bgcream-content-img tpt-70" id="">
     <div class="container px-p-0">
         <div class="row ">
             <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center">
-                <div class="pe-lg-4 me-lg-4 px-p-p">
+                <div class="me-lg-4 px-p-p">
                     <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">Family run 5th generation farm</div>
                     <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</div>
                 </div>
@@ -108,31 +110,35 @@
                     </a>
                 </div>
             </div>
-            <div class="col-lg-6 h-100 tmt-40">
+            <div class="col-lg-6 h-100 tmt-40  half-image">
                 <div class="content-image position-absolute p-relative end-0 top-0 h-100">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-2.png" class="w-100 h-100 object-cover" alt="" />
-                    <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
-                    </button>
+                    <div>
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-2.png" class="w-100 h-100 object-cover" alt="" />
+                        <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<section class="image-content image-content-left position-relative bggold-content-img tpt-70">
+<section class="image-content overflow-hidden  image-content-left position-relative bggold-content-img tpt-70" id="">
     <div class="container px-p-0">
         <div class="row ">
-            <div class="col-lg-6 h-100 tmt-40">
+            <div class="col-lg-6 h-100 tmt-40  half-image">
                 <div class="content-image position-absolute start-0 top-0 p-relative h-100">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-3.png" class="w-100 h-100 object-cover" alt="" />
-                    <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
-                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
-                    </button>
+                    <div>
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/video-3.png" class="w-100 h-100 object-cover" alt="" />
+                        <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                        </button>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center ms-auto">
-                <div class="pe-lg-4 me-lg-4 px-p-p">
+                <div class="me-lg-4 px-p-p">
                     <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">Eco Friendly at heart</div>
                     <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam. Lorem ipsum dolor sit amet, consetetur sadipscing elitr. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy</div>
                 </div>

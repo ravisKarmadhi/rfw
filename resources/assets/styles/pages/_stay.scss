@@ -1,0 +1,15 @@
+.video-img-play {
+    height: 620px;
+
+    @include media-breakpoint-down(lg) {
+        height: 390px;
+    }
+}
+
+.video-img-pause {
+    &:hover {
+        #pause-banner-video {
+            display: block !important;
+        }
+    }
+}
