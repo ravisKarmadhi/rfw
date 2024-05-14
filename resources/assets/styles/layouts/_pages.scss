@@ -1,0 +1,8 @@
+.map-section {
+    height: 694px;
+
+    @include media-breakpoint-down(lg) {
+        height: 318px;
+    }
+
+}
