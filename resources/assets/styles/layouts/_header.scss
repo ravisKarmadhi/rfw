@@ -2,6 +2,19 @@
     z-index: 999;
     @include generate-transition(all, 0.3s, ease-in-out);
 
+    // &.header-fixed-os {
+    //     transform: translateY(0) !important;
+    // }
+
+    // &.hidden {
+    //     transform: translateY(-40px);
+
+    //     @include media-breakpoint-down(lg) {
+    //         transform: translateY(-150%);
+    //     }
+    // }
+
+    // header fixed css
     &.header-fixed,
     &.header-fixed.header-black {
         background-color: $color-2C2924;
@@ -35,6 +48,7 @@
         }
     }
 
+    // header black css
     &.header-black {
         .header-logo {
 
