@@ -1,5 +1,5 @@
-    .activity-category {
-        .activity-button {
+    .activity-category,.faq-category {
+        .activity-button ,.faq-button{
             min-width: 131px !important;
             height: 37px;
 
@@ -17,3 +17,22 @@
             margin-left: 37px !important;
         }
     }
+ .faq-category {
+       .faq-button{
+           background-color: rgba($color: $color-EBEBEB, $alpha: 0.1);
+            &.active {
+                background-color: $color-BDA673 !important;
+            }
+        }
+    }
+
+    .faq-input{
+        background-color: rgba($color: $color-707070, $alpha: 0.1);
+        ::placeholder{
+            font-size: 15px;
+            line-height: 20px;
+            color:rgba($color: $color-FFFAF6, $alpha: 0.33);
+        }
+    }
+
+

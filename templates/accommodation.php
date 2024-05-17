@@ -36,7 +36,7 @@
                         <div class="col-lg-7 col-12 col-12 order-1 order-lg-0">
                             <div class="classic font-28 leading-40 text-2C2924 text-capitalize pb-3">The Farmhouse</div>
                             <div class="classic font-16 leading-20 text-2C2924">Sleeps - 6 | Nights - 1</div>
-                            <div class="classic font-14 leading-24 text-2C2924 dpt-30 dpb-30 col-lg-10 col-12">Labore et
+                            <div class="classic font-14 leading-24 text-2C2924 dpt-30 dpb-30 col-lg-10 col-12 pe-1">Labore et
                                 dolore
                                 magna
                                 aliquyam
