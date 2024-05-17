@@ -58,7 +58,7 @@ $(function () {
 
   window.menulink = new Menulink();
   window.menulink.init();
-  
+
   window.video = new Accordion();
   window.video.init();
 
