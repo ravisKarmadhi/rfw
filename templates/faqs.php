@@ -240,7 +240,22 @@
         </div>
     </section>
     <div class="spacing dpt-200"></div>
-    <section>
+    <section class="explore-with-image" id="clearing">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-11 mx-auto text-center px-lg-2">
+                    <div class="classic font-34 leading-42 res-font-40 text-FFFAF6 top-heading-explore dmb-25">
+                        Can’t find what you’re looking for?
+                    </div>
+                    <div class="classic font-15 leading-28 text-FFFAF6 fw-normal dmb-35 tmb-20">
+                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+                    </div>
+                    <a href="" target="" class="btnA bgdark-8B6E3D-btn text-decoration-none classic font-15 mx-auto">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
     <div class="spacing dpb-200"></div>
 </main>
