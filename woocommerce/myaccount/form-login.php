@@ -65,24 +65,24 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				<div class="col-lg-10 col-11">
 					<h2 class="classic font-31 leading-40 text-2C2924 dmb-40 tmb-25">Once you have paid the deposit you will receive access to:</h2>
 					<ul class="login-radio-check list-none ps-0 mb-0">
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35">
+						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
 							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="login-checkmark rounded-circle"></span>
+							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
 							Invoice Management
 						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35">
+						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
 							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="login-checkmark rounded-circle"></span>
+							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
 							Downloads
 						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35">
+						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
 							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="login-checkmark rounded-circle"></span>
+							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
 							Offers from our suppliers
 						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35">
+						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
 							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="login-checkmark rounded-circle"></span>
+							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
 							Your own planing portal
 						</li>
 					</ul>

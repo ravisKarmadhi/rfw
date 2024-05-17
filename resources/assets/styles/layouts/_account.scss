@@ -20,58 +20,65 @@
     }
 }
 
-.login-radio-check {
-    li {
+.main-label {
+    display: block;
+    position: relative;
+    padding-left: 32px;
+
+    &li {
         &:last-child {
             margin-bottom: 0 !important;
         }
+    }
 
-        display: block;
-        position: relative;
-        padding-left: 32px;
-
-        .login-check-input {
-            // height: 18px;
-            // width: 18px;
-            // background-color: $color-8B6E3D;
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
+    @include media-breakpoint-down(lg) {
+        &:last-child {
+            margin-bottom: 0 !important;
         }
+    }
 
-        .login-checkmark {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 18px;
-            width: 18px;
-            background-color: $white;
-        }
+    .login-check-input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
 
-        .login-check-input:checked~.login-checkmark {
-            background-color: $color-8B6E3D;
-        }
+    .login-checkmark {
+        height: 18px;
+        width: 18px;
+        border: 1px solid $color-8B6E3D;
 
-        .login-checkmark:after {
+        &::after {
             content: "";
             position: absolute;
             display: none;
-        }
-
-        .login-check-input:checked~.login-checkmark:after {
-            display: block;
-        }
-
-        .login-checkmark:after {
-            left: 7px;
-            top: 4px;
+            left: 6px;
+            top: 3px;
             width: 5px;
             height: 8px;
-            border: solid white;
+            border: solid $white;
             border-width: 0 2px 2px 0;
             -webkit-transform: rotate(45deg);
             -ms-transform: rotate(45deg);
             transform: rotate(45deg);
+        }
+    }
+
+    .login-check-input:checked~.login-checkmark {
+        background-color: $color-8B6E3D;
+    }
+
+    .login-check-input:checked~.login-checkmark::after {
+        display: block;
+    }
+
+    &.valid {
+        .login-checkmark {
+            background-color: $color-8B6E3D;
+        }
+
+        .login-checkmark::after {
+            display: block;
         }
     }
 }
