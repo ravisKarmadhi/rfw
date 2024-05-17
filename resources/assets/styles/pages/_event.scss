@@ -35,3 +35,10 @@
         }
     }
 }
+
+div#page > #header, div#page > hr {
+    display: none;
+}
+div#footer {
+    display: none;
+}
