@@ -55,7 +55,59 @@ $page_builder = get_field('page_builder');
       </div>
     </section>
 
+    <?php elseif (get_row_layout() == 'small_hero_section') : 
 
+$small_hero_section_background_image = get_sub_field('background_image');  
+
+$small_hero_section_heading = get_sub_field('heading');  
+
+?>
+
+  <!-- accommodation-hero-section -->
+
+<section class="accommodation-hero-section position-relative">
+
+  <?php if(!empty($small_hero_section_background_image['url'])): ?>
+
+    <div class="accommodation-hero-img position-relative">
+
+        <img class="h-100 w-100 object-cover"
+
+            src="<?php echo $small_hero_section_background_image['url']; ?>" alt="">
+
+        <div class="bg-layer bg-black opacity-50 position-absolute top-0 start-0 w-100 h-100"></div>
+
+    </div>
+
+  <?php endif; ?>
+
+    <?php if(!empty($small_hero_section_heading)): ?>
+
+    <div class="accommodation-hero-content position-absolute w-100 text-center z-3 bottom-0 start-0">
+
+        <div class="container h-100">
+
+            <div class="d-flex align-items-center justify-content-center h-100">
+
+                <div class="col-lg-6 col-12">
+
+                    <div class="louise font-120 res-font-77 leading-139 res-leading-120 text-FFFAF6 w-100">
+
+                        <?php echo $small_hero_section_heading; ?>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <?php endif; ?>
+
+</section>
     <?php elseif (get_row_layout() == 'bottom_fix_line') :
       $bottom_fix_line_text = get_sub_field('text');
       $bottom_fix_line_link = get_sub_field('link');
@@ -100,8 +152,9 @@ $page_builder = get_field('page_builder');
       elseif($left_right_image_content_background_color == 'green'):
         $background_color = "bgdarkgeen-content-img";
       endif;
+      $clas = ($left_right_image_content_left__right_image == 'left') ? "image-content-left " : "";
     ?>
-    <section class="image-content overflow-hidden  position-relative <?php echo $background_color; ?> tpt-70" id="<?php echo $master_slug; ?>">
+    <section class="image-content overflow-hidden  position-relative <?php echo $clas; ?> <?php echo $background_color; ?> tpt-70" id="<?php echo $master_slug; ?>">
       <div class="container px-p-0">
           <div class="row ">
             <?php if($left_right_image_content_left__right_image == 'left'): ?>
@@ -862,11 +915,11 @@ if(!empty($farmhouse_items)):
                 $mobile = get_sub_field('mobile');
 
                 $desktop_mb = $desktop['margin_bottom'];
-                $desktop_mb_main = (!empty($desktop['margin_bottom'])) ? " dmb-" : "";
+                $desktop_mb_main = (!empty($desktop['margin_bottom'])) ? " dpb-" : "";
                 $tablet_mb = $tablet['margin_bottom'];
-                $tablet_mb_main = (!empty($tablet['margin_bottom'])) ? " tmb-" : "";
+                $tablet_mb_main = (!empty($tablet['margin_bottom'])) ? " tpb-" : "";
                 $mobile_mb = $mobile['margin_bottom'];
-                $mobile_mb_main = (!empty($mobile['margin_bottom'])) ? " mmb-" : "";
+                $mobile_mb_main = (!empty($mobile['margin_bottom'])) ? " mpb-" : "";
             ?>
                 <div class="spacing <?php echo $desktop_mb_main;
                                     echo $desktop_mb;
@@ -874,6 +927,65 @@ if(!empty($farmhouse_items)):
                                     echo $tablet_mb;
                                     echo $mobile_mb_main;
                                     echo $mobile_mb; ?>"></div>
+
+<?php elseif (get_row_layout() == 'products') : ?>
+<?php
+   $product_value = new WP_Query([
+       'post_type' => 'product',
+       'posts_per_page' => -1,
+       'orderby' => 'date',
+       'order' => 'ASC',
+   ]);
+   ?>
+<?php if ($product_value->have_posts()) : ?>
+<!-- farmhouse-section -->
+<section class="farmhouse-section">
+   <div class="container">
+      <div class="col-lg-10 col-12 mx-auto">
+         <?php
+            while ($product_value->have_posts()) : $product_value->the_post();
+                $id       = get_the_ID();
+                $ntitle   = get_the_title();
+                $post_excerpt = get_the_excerpt();
+                $product = wc_get_product($id);
+                $price = $product->get_price();
+                $price_htm_1 = '';
+                if ($product->get_sale_price()) :
+                    $price_htm_1 .= $product->get_price_html();
+                else :
+                    $price_htm_1 .=  $product->get_price_html();
+                endif;
+                $sleeps = get_field('sleeps',$id); 
+                $night = get_field('night',$id); 
+            ?>
+         <div class="dpb-35 tpb-70 dpt-35 tpt-70 farmhouse-item border-bottom-EBEBEB">
+            <a href="<?php echo get_permalink($id); ?>" class="d-flex flex-column flex-lg-row align-items-center flex-wrap text-decoration-none">
+               <div class="col-lg-7 col-12 col-12 order-1 order-lg-0">
+                  <div class="classic font-28 leading-40 text-2C2924 text-capitalize pb-3"><?php echo $ntitle; ?></div>
+                  <div class="classic font-16 leading-20 text-2C2924"><?php echo $sleeps; ?> <?php if(!empty($night)): ?>| <?php echo $night; ?><?php endif; ?></div>
+                  <div class="classic font-14 leading-24 text-2C2924 dpt-30 dpb-30 col-lg-10 col-12"><?php echo $post_excerpt; ?></div>
+                  <div class="d-flex align-items-center">
+                     <div class="classic-med font-16 leading-20 text-2C2924 me-2">From</div>
+                     <div class="classic font-16 leading-20 text-2C2924"><?php echo $price_htm_1; ?></div>
+                  </div>
+               </div>
+               <div class="col-lg-5 col-12 order-0 order-lg-1 ps-lg-2">
+                  <div class="farmhouse-img w-100 tmb-35">
+                     <img class="h-100 w-100 object-cover"
+                        src="<?php echo get_the_post_thumbnail_url($id); ?>" alt="<?php echo $ntitle; ?>">
+                  </div>
+               </div>
+            </a>
+         </div>
+         <?php
+            endwhile; ?>
+      </div>
+   </div>
+</section>
+<?php endif; 
+   wp_reset_postdata();
+   
+   ?>
     <?php
             endif;
         endwhile;
