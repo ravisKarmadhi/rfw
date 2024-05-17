@@ -1,0 +1,77 @@
+.login-input {
+    background-color: rgba($color: $color-36332D, $alpha: 0.1);
+
+    &::placeholder {
+        font-family: "URWClassico";
+        font-size: $font-15;
+        line-height: $Leading-16;
+        color: $color-2C2924;
+    }
+}
+
+.login {
+    .form-row-wide {
+        .show-password-input {
+            display: none;
+            top: 50%;
+            right: 24px;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+.login-radio-check {
+    li {
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        display: block;
+        position: relative;
+        padding-left: 32px;
+
+        .login-check-input {
+            // height: 18px;
+            // width: 18px;
+            // background-color: $color-8B6E3D;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .login-checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 18px;
+            width: 18px;
+            background-color: $white;
+        }
+
+        .login-check-input:checked~.login-checkmark {
+            background-color: $color-8B6E3D;
+        }
+
+        .login-checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+        .login-check-input:checked~.login-checkmark:after {
+            display: block;
+        }
+
+        .login-checkmark:after {
+            left: 7px;
+            top: 4px;
+            width: 5px;
+            height: 8px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    }
+}
