@@ -12,6 +12,7 @@ import { Filter } from './parts/filter.js';
 import { Header } from './parts/header.js';
 import { Select } from './parts/select.js';
 import { Menulink } from './parts/menulink.js';
+import { Events } from './parts/events.js';
 
 // export for others scripts to use
 window.$ = $;
@@ -57,6 +58,9 @@ $(function () {
 
   window.menulink = new Menulink();
   window.menulink.init();
+
+  window.events = new Events();
+  window.events.init();
 });
 
 // ===========================================================================

@@ -172,28 +172,28 @@ function my_taxonomies_faq_type()
 }
 add_action('init', 'my_taxonomies_faq_type', 0);
 
-function subscribe_link(){
-  ?>
+function subscribe_link()
+{
+?>
   <!-- accommodation-hero-section -->
   <section class="accommodation-hero-section position-relative">
-        <div class="accommodation-hero-img position-relative">
-            <img class="h-100 w-100 object-cover"
-                src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/pagination-3.png" alt="">
-            <div class="bg-layer bg-black opacity-50 position-absolute top-0 start-0 w-100 h-100"></div>
-        </div>
-        <div class="accommodation-hero-content position-absolute w-100 text-center z-3 bottom-0 start-0">
-            <div class="container h-100">
-                <div class="d-flex align-items-center justify-content-center h-100">
-                    <div class="col-lg-6 col-12">
-                        <div class="louise font-120 res-font-77 leading-139 res-leading-120 text-FFFAF6 w-100">
-                            Event
-                        </div>
-                    </div>
-                </div>
+    <div class="accommodation-hero-img position-relative">
+      <img class="h-100 w-100 object-cover" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/pagination-3.png" alt="">
+      <div class="bg-layer bg-black opacity-50 position-absolute top-0 start-0 w-100 h-100"></div>
+    </div>
+    <div class="accommodation-hero-content position-absolute w-100 text-center z-3 bottom-0 start-0">
+      <div class="container h-100">
+        <div class="d-flex align-items-center justify-content-center h-100">
+          <div class="col-lg-6 col-12">
+            <div class="louise font-120 res-font-77 leading-139 res-leading-120 text-FFFAF6 w-100">
+              Event
             </div>
+          </div>
         </div>
-    </section>
-  <?php 
+      </div>
+    </div>
+  </section>
+<?php
 }
 
 add_shortcode('event_top_part', 'subscribe_link');
