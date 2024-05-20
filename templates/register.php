@@ -51,13 +51,13 @@ if (isset($_POST['register-firstname']) && !empty($_POST['register-firstname']))
 ?>
 
 <!-- <div class="dmt-105 tmt-75"></div> -->
-<section class="position-relative top-0 account-creation-page">
+<section class="position-relative top-0 account-creation-page dpt-250 dpb-115 tpt-230">
   <div class="container">
     <div class="container-inner containerX login_form-section">
       <form class="woocommerce-form contact-info woocommerce-form-register register auth-register-form" action="" method="POST">
         <div class="d-flex align-items-center h-100">
           <div class="row align-items-start w-100">
-            <div class="col-lg-6 pe-lg-2">
+            <!-- <div class="col-lg-6 pe-lg-2">
               <div class="pe-lg-5 me-lg-5">
                 <h2 class="">
                   <?php esc_html_e('Contact Information', 'woocommerce'); ?>
@@ -86,93 +86,76 @@ if (isset($_POST['register-firstname']) && !empty($_POST['register-firstname']))
                   </label>
                 </div>
               </div>
-
-            </div>
-            <div class="col-lg-6 ps-lg-2 tmt-65">
-              <div class="ps-lg-5 ms-lg-5">
-                <h2 class="title-main">
+            </div> -->
+            <div class="col-lg-6">
+              <div class="">
+                <h2 class="title-main classic font-35 leading-40 text-2C2924 dmb-40 tmb-30">
                   <?php esc_html_e('Sign-in Information', 'woocommerce'); ?>
                 </h2>
 
-                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                  <label class="crimson text-2D392A font-18px lh-1 mb-2 pb-1" for="user_login"><?php esc_html_e('Email Address*', 'woocommerce'); ?></label>
-                  <input type="mail" class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text" required name="register-email" placeholder="Email Address*" id="emailAddress" autocomplete="emailAddress" value="<?php echo (!empty($_POST['emailAddress'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide w-100 p-0 mb-lg-4 tmb-35">
+                  <label class="classic font-15 leading-16 text-2C2924 mb-2 w-100" for="user_login"><?php esc_html_e('Email Address*', 'woocommerce'); ?></label>
+                  <input type="mail" class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text login-input border-0 px-4 dpt-20 dpb-20 classic font-15 leading-16 text-2C2924 w-100" required name="register-email" placeholder="Email Address*" id="emailAddress" autocomplete="emailAddress" value="<?php echo (!empty($_POST['emailAddress'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
                 </p>
-                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                  <label class="crimson text-2D392A font-18px lh-1 mb-2 pb-1" for="user_login"><?php esc_html_e('Password*', 'woocommerce'); ?></label>
-                  <input type="password" class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text" required name="register-password" placeholder="Password*" id="register-password" autocomplete="password" value="<?php echo (!empty($_POST['password'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide w-100 p-0 mb-lg-4 tmb-35">
+                  <label class="classic font-15 leading-16 text-2C2924 mb-2 w-100" for="user_login"><?php esc_html_e('Password*', 'woocommerce'); ?></label>
+                  <input type="password" class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text login-input border-0 px-4 dpt-20 dpb-20 classic font-15 leading-16 text-2C2924 w-100" required name="register-password" placeholder="Password*" id="register-password" autocomplete="password" value="<?php echo (!empty($_POST['password'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
 
                 </p>
-                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                <div class="d-flex align-items-center justify-content-between mb-2 pb-1">
-                  <label class="crimson text-2D392A font-18px lh-1 " for="user_login"><?php esc_html_e('Confirm Password*', 'woocommerce'); ?></label>
-                  <div class="password-strength-group" data-strength="">
-                    <div class="password-strength-message">
-                      <div class="message-item d-none weak-password">
-                        Password Strength: <span style="color:#FF0000;">Weak</span>
-                      </div>
-
-                      <div class="message-item d-none okay-password">
-                        Password Strength: <span style="color:#FF0000;">Okay</span>
-                      </div>
-
-                      <div class="message-item d-none strong-password">
-                        Password Strength: <span style="color:#FF0000;">Strong</span>
-                      </div>
-
-                      <div class="message-item d-none very-strong-password">
-                        Password Strength: <span style="color:#FF0000;">Very Strong!</span>
-
-                      </div>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide w-100 p-0 mb-lg-4 tmb-35">
+                    <label class="classic font-15 leading-16 text-2C2924 mb-2 w-100" for="user_login"><?php esc_html_e('Confirm Password*', 'woocommerce'); ?></label>
+                    <input type="cpassword" required class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text login-input border-0 px-4 dpt-20 dpb-20 classic font-15 leading-16 text-2C2924 w-100" name="register-confirmpassword" placeholder="Confirm Password*" id="register-confirmpassword" autocomplete="cpassword" value="<?php echo (!empty($_POST['cpassword'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
+                </p>
+                <div class="password-strength-group dmb-25" data-strength="">
+                  <div class="password-strength-message">
+                    <div class="message-item d-none weak-password">
+                      Password Strength: <span style="color:red;">Weak</span>
                     </div>
-
+                    <div class="message-item d-none okay-password">
+                      Password Strength: <span style="color:#d7cc00;">Okay</span>
+                    </div>
+                    <div class="message-item d-none strong-password">
+                      Password Strength: <span style="color:#03a900;">Strong</span>
+                    </div>
+                    <div class="message-item d-none very-strong-password">
+                      Password Strength: <span style="color:#03a900;">Very Strong!</span>
+                    </div>
                   </div>
                 </div>
-                <input type="cpassword" required class="woocommerce-Input woocommerce-Input--text input-text input-text woocommerce-Input--text input-text" name="register-confirmpassword" placeholder="Confirm Password*" id="register-confirmpassword" autocomplete="cpassword" value="<?php echo (!empty($_POST['cpassword'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" />
 
-                </p>
-
-                <div class="dmt-15 d-lg-flex overflow-y-auto align-items-center">
-                  <label class="d-flex align-items-center" id="capital">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/assets.svg" class="pe-2 blank-check" alt="" />
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/fill-round-svg.svg" class="pe-2 d-none fill-check" alt="" />
-                    <span class="">
-                      ONE UPPERCASE CHARACTER
+                <div class="d-lg-flex overflow-y-auto align-items-center justify-content-between">
+                  <label class="d-flex align-items-center main-label p-0 me-2 mg-lg-0 mb-3" id="capital">
+                    <span class="position-relative top-0 start-0 rounded-circle login-checkmark rounded-circle me-3"></span>
+                    <span class="classic font-15 leading-16 text-2C2924 text-capitalize">
+                      one uppercase character
                     </span>
-                    <input type="checkbox" class="position-absolute opacity-0">
-                    <span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle"></span>
+                    <input type="checkbox" class="position-absolute opacity-0 login-check-input me-3">
                   </label>
-                  <label class="d-flex align-items-center" id="number">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/assets.svg" class="pe-2 blank-check" alt="" />
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/fill-round-svg.svg" class="pe-2 d-none fill-check" alt="" />
-                    <span class="">
-                      ONE NUMBER
+                  <label class="d-flex align-items-center main-label p-0 me-2 mg-lg-0 mb-3" id="number">
+                    <span class="position-relative top-0 start-0 rounded-circle login-checkmark rounded-circle me-3"></span>
+                    <span class="classic font-15 leading-16 text-2C2924 text-capitalize">
+                      one number
                     </span>
-                    <input type="checkbox" class="position-absolute opacity-0">
-                    <span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle"></span>
+                    <input type="checkbox" class="position-absolute opacity-0 login-check-input me-3">
                   </label>
-                  <label class="d-flex align-items-center" id="length">
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/assets.svg" class="pe-2 blank-check" alt="" />
-                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/03/fill-round-svg.svg" class="pe-2 d-none fill-check" alt="" />
-                    <span class="">
-                      8 CHARACTER (MIN)
+                  <label class="d-flex align-items-center main-label p-0 me-2 mg-lg-0 mb-3" id="length">
+                    <span class="position-relative top-0 start-0 rounded-circle login-checkmark rounded-circle me-3"></span>
+                    <span class="classic font-15 leading-16 text-2C2924 text-capitalize">
+                      8  character (min)
                     </span>
-                    <input type="checkbox" class="position-absolute opacity-0">
-                    <span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle"></span>
+                    <input type="checkbox" class="position-absolute opacity-0 login-check-input me-3">
                   </label>
                 </div>
 
                 <div class="d-lg-flex align-items-center dmt-35">
                   <div class="form-row d-flex flex-lg-row flex-column align-items-lg-center">
-                    <button type="submit" onclick="wrong_pass_alert()" class="woocommerce-button woocommerce-form-login__submit<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?>" name="login" value="<?php esc_attr_e('sign me in', 'woocommerce'); ?>">
-                      <?php esc_html_e('CREATE MY ACCOUNT', 'woocommerce'); ?>
+                    <button type="submit" onclick="wrong_pass_alert()" class="woocommerce-button woocommerce-form-login__submit<?php echo esc_attr(wc_wp_theme_get_element_class_name('button') ? ' ' . wc_wp_theme_get_element_class_name('button') : ''); ?> btnA w-204px bg-BDA673-btn classic font-15 leading-16 fw-normal me-4" name="login" value="<?php esc_attr_e('sign me in', 'woocommerce'); ?>">
+                      <?php esc_html_e('Create My Account', 'woocommerce'); ?>
                     </button>
-                    <p class="woocommerce-LostPassword lost_password tpt-25 tpb-40">
-
-                      <a href="<?php echo get_home_url(); ?>/my-account" class="">
+                    <p class="woocommerce-LostPassword lost_password tmt-30">
+                      <a href="<?php echo get_home_url(); ?>/my-account" class="classic font-12 leading-16 spacing-1_2 text-2C2924">
                         <?php esc_html_e('I ALREADY HAVE AN ACCOUNT', 'woocommerce'); ?>
                       </a>
-
                     </p>
                   </div>
                 </div>

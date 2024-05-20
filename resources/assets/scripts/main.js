@@ -1,6 +1,6 @@
-import $ from 'jquery';
-import '@popperjs/core';
-import 'bootstrap/dist/js/bootstrap';
+import $ from "jquery";
+import "@popperjs/core";
+import "bootstrap/dist/js/bootstrap";
 import "select2/dist/js/select2.js";
 import { App } from './parts/app.js'
 import { Plugins } from './parts/plugins.js'
@@ -13,19 +13,20 @@ import { Header } from './parts/header.js';
 import { Select } from './parts/select.js';
 import { Menulink } from './parts/menulink.js';
 import { Events } from './parts/events.js';
+import { Accordion } from "./parts/accordion.js";
+import { Privacy } from "./parts/privacy.js";
 
 // export for others scripts to use
 window.$ = $;
 window.jQuery = jQuery;
 
 $(function () {
-
   window.windowWidth = $(window).width();
   window.windowHeight = $(window).height();
 
-  window.isiPhone = navigator.userAgent.toLowerCase().indexOf('iphone');
-  window.isiPad = navigator.userAgent.toLowerCase().indexOf('ipad');
-  window.isiPod = navigator.userAgent.toLowerCase().indexOf('ipod');
+  window.isiPhone = navigator.userAgent.toLowerCase().indexOf("iphone");
+  window.isiPad = navigator.userAgent.toLowerCase().indexOf("ipad");
+  window.isiPod = navigator.userAgent.toLowerCase().indexOf("ipod");
 
   //Functions List Below
 
@@ -61,6 +62,11 @@ $(function () {
 
   window.events = new Events();
   window.events.init();
+  window.video = new Accordion();
+  window.video.init();
+
+  window.video = new Privacy();
+  window.video.init();
 });
 
 // ===========================================================================
