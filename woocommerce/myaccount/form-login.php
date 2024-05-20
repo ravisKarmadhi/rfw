@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+$heading = get_field('heading');
+$lists = get_field('lists');
 do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
@@ -63,29 +65,20 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 			</div>
 			<div class="col-lg-5 col-12 ms-auto">
 				<div class="col-lg-10 col-11">
-					<h2 class="classic font-31 leading-40 text-2C2924 dmb-40 tmb-25">Once you have paid the deposit you will receive access to:</h2>
+				<?php if(!empty($heading)): ?>
+					<h2 class="classic font-31 leading-40 text-2C2924 dmb-40 tmb-25"><?php echo $heading; ?></h2>
+					<?php endif; ?>
+					<?php if(!empty($lists)): ?>
 					<ul class="login-radio-check list-none ps-0 mb-0">
+					<?php foreach($lists as $list_custom): ?>
 						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
 							<input type="checkbox" checked name="" class="login-check-input me-3">
 							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
-							Invoice Management
+							<?php echo $list_custom['list']; ?>
 						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
-							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
-							Downloads
-						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
-							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
-							Offers from our suppliers
-						</li>
-						<li class="classic font-15 leading-20 text-2C2924 d-flex align-items-center dmb-35 main-label">
-							<input type="checkbox" checked name="" class="login-check-input me-3">
-							<span class="position-absolute top-0 start-0 rounded-circle login-checkmark rounded-circle"></span>
-							Your own planing portal
-						</li>
+						<?php endforeach; ?>
 					</ul>
+					<?php endif; ?>
 				</div>
 			</div>
 		</div>
