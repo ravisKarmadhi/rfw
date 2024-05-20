@@ -1,0 +1,21 @@
+.closet-header {
+    &.active {
+        .accordion-header-img{
+            transform:  rotate(45deg) !important;
+        }
+    }
+}
+
+.closet-header {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.faq-closet-item{
+    background-color: rgba($color: $color-707070, $alpha: 0.1);
+}
+
+.closet-content {
+    display: none;
+    padding: 10px;
+}
