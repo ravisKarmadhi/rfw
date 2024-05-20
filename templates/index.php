@@ -973,7 +973,42 @@ if(!empty($farmhouse_items)):
         wp_reset_postdata();
         ?>
 
-<?php elseif (get_row_layout() == 'faq') : ?>
+<?php elseif (get_row_layout() == 'faq') : 
+$args = array(
+    'taxonomy' => 'faq-type',
+    'orderby' => 'name',
+    'order'   => 'ASC',
+    'hide_empty' => 0
+  );
+
+  $cats = get_categories($args);
+ $args_cat = [
+    'post_type' => 'faq',
+    'posts_per_page' => 5,
+    'orderby' => 'date',
+    'order' => 'ASC',
+    'paged' => get_query_var('paged') ? get_query_var('paged') : 1
+];
+
+if (isset($_GET['faq_main']) && !empty($_GET['faq_main']) && $_GET['faq_main'] != 'all') {
+
+    $tax_query = array(
+        array(
+            'taxonomy' => 'faq-type',
+            'field' => 'slug',
+            'terms' => explode(',', $_GET['faq_main']),
+        ),
+    );
+    $args_cat['tax_query'] = $tax_query;
+}
+if (isset($_GET['search_faq']) && !empty($_GET['search_faq'])) {
+
+    $args_cat['s'] = $_GET['search_faq'];
+}
+
+$faq = new WP_Query($args_cat);    
+ if ($faq->have_posts()) : 
+?>
   <section class="faq-section">
         <div class="container px-p-0">
             <div class="classic font-44 leading-42 text-FFFAF6 text-center dmb-40 px-p-p">Frequently Asked Questions</div>
@@ -983,24 +1018,18 @@ if(!empty($farmhouse_items)):
                     class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2 active">
                     VIEW ALL
                 </button>
-                <button data-filter="faq-1"
+                <?php foreach ($cats as $cat) : ?>           
+                <button data-filter="<?php echo $cat->slug; ?>"
                     class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
-                    FILTER 1
+                    <?php echo $cat->name; ?>
                 </button>
-                <button data-filter="faq-2"
-                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
-                    FILTER 2
-                </button>
-                <button data-filter="faq-3"
-                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
-                    FILTER 3
-                </button>
+                <?php endforeach; ?>
             </div>
             <div class="px-p-p">
                 <div class="faq-search col-xl-7 col-lg-10 col-12 px-lg-1 mx-auto dmb-50">
                     <div class="col-lg-11 col-12 mx-auto position-relative">
                         <input class="faq-input border-0 dpt-25 dpb-25 radius-3 ps-4 w-100 "
-                            placeholder="Search for your question…" />
+                            placeholder="Search for your question…" type="search" />
                         <div class="position-absolute bottom-0 end-0 dpb-25 pe-4">
                             <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/search.svg" alt="">
                         </div>
@@ -1010,14 +1039,20 @@ if(!empty($farmhouse_items)):
                     <div class="closet-accordion">
                         <div class=" col-lg-11 col-12 px-lg-3 mx-auto">
                             <div class="px-lg-3">
-                                <div class="faq-closet-item faq-1 dmb-15">
+                            <?php while ($faq->have_posts()) : $faq->the_post();
+                                $id       = get_the_ID();
+                                $ntitle   = get_the_title();
+                                $content  = get_the_content();
+                                $current = get_the_terms($id, 'faq-term');
+                                $button  = get_field('button',$id);
+                            ?>
+                                <div class="faq-closet-item dmb-15">
                                     <div class="faq-closet closet-item ps-3 ps-lg-5">
                                         <div
                                             class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
                                             <div
                                                 class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
-                                                Do we get our
-                                                deposit back?
+                                                <?php echo $ntitle; ?>
                                             </div>
                                             <div class="pe-lg-4 pe-2">
                                                 <img class="accordion-header-img"
@@ -1027,177 +1062,15 @@ if(!empty($farmhouse_items)):
                                         </div>
                                         <div class="closet-content">
                                             <div class="col-lg-10 col-11 pe-4 dpb-60">
-                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
-                                                    dolor
-                                                    sit
-                                                    amet,
-                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                                    ut
-                                                    labore et
-                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                                    accusam et
-                                                    justo duo
-                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                                    sanctus
-                                                    est
-                                                    Lorem
-                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                                    sadipscing
-                                                    elitr, sed
-                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                    aliquyam
-                                                    erat,
-                                                    sed diam
-                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                                    Stet
-                                                    clita kasd
-                                                    gubergren, no sea
+                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3"><?php echo $content; ?>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="faq-closet-item faq-2 dmb-15">
-                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
-                                        <div
-                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
-                                            <div
-                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
-                                                What months do
-                                                you cater for What months do you cater for?
-                                            </div>
-                                            <div class="pe-lg-4 pe-2">
-                                                <img class="accordion-header-img"
-                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                        <div class="closet-content">
-                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
-                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
-                                                    dolor
-                                                    sit
-                                                    amet,
-                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                                    ut
-                                                    labore et
-                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                                    accusam et
-                                                    justo duo
-                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                                    sanctus
-                                                    est
-                                                    Lorem
-                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                                    sadipscing
-                                                    elitr, sed
-                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                    aliquyam
-                                                    erat,
-                                                    sed diam
-                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                                    Stet
-                                                    clita kasd
-                                                    gubergren, no sea
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="faq-closet-item faq-3 dmb-15">
-                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
-                                        <div
-                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
-                                            <div
-                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
-                                                Is glamping
-                                                included?
-                                            </div>
-                                            <div class="pe-lg-4 pe-2">
-                                                <img class="accordion-header-img"
-                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                        <div class="closet-content">
-                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
-                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
-                                                    dolor
-                                                    sit
-                                                    amet,
-                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                                    ut
-                                                    labore et
-                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                                    accusam et
-                                                    justo duo
-                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                                    sanctus
-                                                    est
-                                                    Lorem
-                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                                    sadipscing
-                                                    elitr, sed
-                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                    aliquyam
-                                                    erat,
-                                                    sed diam
-                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                                    Stet
-                                                    clita kasd
-                                                    gubergren, no sea
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="faq-closet-item faq-2 dmb-15">
-                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
-                                        <div
-                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
-                                            <div
-                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
-                                                Can I use my
-                                                own suppliers?
-                                            </div>
-                                            <div class="pe-lg-4 pe-2">
-                                                <img class="accordion-header-img"
-                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
-                                                    alt="">
-                                            </div>
-                                        </div>
-                                        <div class="closet-content">
-                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
-                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
-                                                    dolor
-                                                    sit
-                                                    amet,
-                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                                                    ut
-                                                    labore et
-                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-                                                    accusam et
-                                                    justo duo
-                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
-                                                    sanctus
-                                                    est
-                                                    Lorem
-                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-                                                    sadipscing
-                                                    elitr, sed
-                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                                    aliquyam
-                                                    erat,
-                                                    sed diam
-                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-                                                    Stet
-                                                    clita kasd
-                                                    gubergren, no sea
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endwhile; 
+                                wp_reset_postdata();
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -1206,6 +1079,45 @@ if(!empty($farmhouse_items)):
             </div>
         </div>
     </section>
+    <script>
+        jQuery(document).on("click", ".faq-section .faq-category button", function () {
+            call_faq_filter();
+        });
+
+        jQuery(document).on("keyup", ".faq-search input", function () {
+        call_faq_filter();
+        });
+        function call_faq_filter() {
+            var is_sel = 0;
+            var art_arr = [];
+            var art_link = window.location.pathname + "?";
+            var s_txt = jQuery(".faq-search input").val();
+            var sel_filter =  jQuery('.faq-section .faq-category button.active').attr('data-filter');
+
+            if (sel_filter != '') {
+
+                if (is_sel == 1) {
+                art_link += "&faq_main=" + sel_filter;
+                } else {
+                art_link += "faq_main=" + sel_filter;
+                is_sel = 1;
+                }
+
+            }
+            if (is_sel == 1) {
+                art_link += "&search_faq=" + s_txt;
+            } else {
+                art_link += "search_faq=" + s_txt;
+                is_sel = 1;
+            }
+            jQuery.get(art_link, function (res4) {
+
+                jQuery(".faq-activity").html(jQuery(res4).find(".faq-activity").html());
+            });
+
+        }
+    </script>
+    <?php endif; ?>
     <?php elseif (get_row_layout() == 'privacy_policy') : 
     $privacy_policy_items = get_sub_field('items');  
     if(!empty($privacy_policy_items)):
