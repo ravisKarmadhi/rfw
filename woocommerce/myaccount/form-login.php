@@ -19,7 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
-do_action( 'woocommerce_before_customer_login_form' ); ?>
+do_action( 'woocommerce_before_customer_login_form' );
+$heading = get_field('heading');
+$lists = get_field('lists');
+?>
 
 <?php if ( 'yes' === get_option( 'woocommerce_enable_myaccount_registration' ) ) : ?>
 
@@ -62,13 +65,16 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 		</form>
 		</div>
 		<div class="col-6">
-			<h2>Once you have paid the deposit you will receive access to:</h2>
+			<?php if(!empty($heading)): ?>
+			<h2><?php echo $heading; ?></h2>
+			<?php endif; ?>
+			<?php if(!empty($lists)): ?>
 			<ul>
-				<li>Invoice Management</li>
-				<li>Downloads</li>
-				<li>Offers from our suppliers</li>
-				<li>Your own planing portal</li>
+				<?php foreach($lists as $list_custom): ?>
+				<li><?php echo $list_custom['list']; ?></li>
+				<?php endforeach; ?>
 			</ul>
+			<?php endif; ?>
 		</div>
 		</div>
 

@@ -3,8 +3,17 @@
   * Template Name: Page Builder
 */
 $page_builder = get_field('page_builder');
+$body_background_color = get_field('body_background_color');
+$background_color_body = "";
+if($body_background_color == 'skin'): 
+  $background_color_body = "bgcream-content-img";
+elseif($body_background_color == 'black'):
+  $background_color_body = "bg-2C2924";
+elseif($body_background_color == 'yellow'):
+  $background_color_body = "bg-BDA673";
+endif;
 ?>
-<main>
+<main class="<?php echo $background_color_body; ?>">
     <?php if (have_rows('page_builder')) :
     $i = 1;
         while (have_rows('page_builder')) : the_row();
@@ -963,6 +972,395 @@ if(!empty($farmhouse_items)):
         <?php endif; 
         wp_reset_postdata();
         ?>
+
+<?php elseif (get_row_layout() == 'faq') : ?>
+  <section class="faq-section">
+        <div class="container px-p-0">
+            <div class="classic font-44 leading-42 text-FFFAF6 text-center dmb-40 px-p-p">Frequently Asked Questions</div>
+            <div
+                class="faq-category d-flex justify-content-md-center align-items-center pe-lg-0 overflow-x-auto dmb-35 ">
+                <button data-filter="all"
+                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2 active">
+                    VIEW ALL
+                </button>
+                <button data-filter="faq-1"
+                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
+                    FILTER 1
+                </button>
+                <button data-filter="faq-2"
+                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
+                    FILTER 2
+                </button>
+                <button data-filter="faq-3"
+                    class="faq-button transition classic font-12 leading-16 spacing-1_2 text-uppercase border-0 text-nowrap text-FFFAF6 px-3 mx-2">
+                    FILTER 3
+                </button>
+            </div>
+            <div class="px-p-p">
+                <div class="faq-search col-xl-7 col-lg-10 col-12 px-lg-1 mx-auto dmb-50">
+                    <div class="col-lg-11 col-12 mx-auto position-relative">
+                        <input class="faq-input border-0 dpt-25 dpb-25 radius-3 ps-4 w-100 "
+                            placeholder="Search for your question…" />
+                        <div class="position-absolute bottom-0 end-0 dpb-25 pe-4">
+                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/search.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-activity dmb-50">
+                    <div class="closet-accordion">
+                        <div class=" col-lg-11 col-12 px-lg-3 mx-auto">
+                            <div class="px-lg-3">
+                                <div class="faq-closet-item faq-1 dmb-15">
+                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
+                                        <div
+                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
+                                            <div
+                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
+                                                Do we get our
+                                                deposit back?
+                                            </div>
+                                            <div class="pe-lg-4 pe-2">
+                                                <img class="accordion-header-img"
+                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="closet-content">
+                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
+                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet,
+                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                                                    ut
+                                                    labore et
+                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                                    accusam et
+                                                    justo duo
+                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                                    sanctus
+                                                    est
+                                                    Lorem
+                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                                    sadipscing
+                                                    elitr, sed
+                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                    aliquyam
+                                                    erat,
+                                                    sed diam
+                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stet
+                                                    clita kasd
+                                                    gubergren, no sea
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-closet-item faq-2 dmb-15">
+                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
+                                        <div
+                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
+                                            <div
+                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
+                                                What months do
+                                                you cater for What months do you cater for?
+                                            </div>
+                                            <div class="pe-lg-4 pe-2">
+                                                <img class="accordion-header-img"
+                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="closet-content">
+                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
+                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet,
+                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                                                    ut
+                                                    labore et
+                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                                    accusam et
+                                                    justo duo
+                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                                    sanctus
+                                                    est
+                                                    Lorem
+                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                                    sadipscing
+                                                    elitr, sed
+                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                    aliquyam
+                                                    erat,
+                                                    sed diam
+                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stet
+                                                    clita kasd
+                                                    gubergren, no sea
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-closet-item faq-3 dmb-15">
+                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
+                                        <div
+                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
+                                            <div
+                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
+                                                Is glamping
+                                                included?
+                                            </div>
+                                            <div class="pe-lg-4 pe-2">
+                                                <img class="accordion-header-img"
+                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="closet-content">
+                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
+                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet,
+                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                                                    ut
+                                                    labore et
+                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                                    accusam et
+                                                    justo duo
+                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                                    sanctus
+                                                    est
+                                                    Lorem
+                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                                    sadipscing
+                                                    elitr, sed
+                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                    aliquyam
+                                                    erat,
+                                                    sed diam
+                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stet
+                                                    clita kasd
+                                                    gubergren, no sea
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="faq-closet-item faq-2 dmb-15">
+                                    <div class="faq-closet closet-item ps-3 ps-lg-5">
+                                        <div
+                                            class="closet-header cursor-pointer d-flex justify-content-between py-3 align-items-center">
+                                            <div
+                                                class="classic font-22 res-font-18 leading-30 res-leading-26 text-FFFAF6 dpt-20 dpb-20">
+                                                Can I use my
+                                                own suppliers?
+                                            </div>
+                                            <div class="pe-lg-4 pe-2">
+                                                <img class="accordion-header-img"
+                                                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/faq.svg"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="closet-content">
+                                            <div class="col-lg-10 col-11 pe-4 dpb-60">
+                                                <div class="classic font-15 leading-26 text-FFFAF6 pe-3">Lorem ipsum
+                                                    dolor
+                                                    sit
+                                                    amet,
+                                                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
+                                                    ut
+                                                    labore et
+                                                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et
+                                                    accusam et
+                                                    justo duo
+                                                    dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                                                    sanctus
+                                                    est
+                                                    Lorem
+                                                    ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
+                                                    sadipscing
+                                                    elitr, sed
+                                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                                    aliquyam
+                                                    erat,
+                                                    sed diam
+                                                    voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+                                                    Stet
+                                                    clita kasd
+                                                    gubergren, no sea
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php elseif (get_row_layout() == 'privacy_policy') : 
+    $privacy_policy_items = get_sub_field('items');  
+    if(!empty($privacy_policy_items)):
+    ?>
+      <section class="privacy-page">
+        <div class="container px-p-0">
+            <div class="row flex-column flex-lg-row">
+                <div class="col-lg-3 col-12 privacy-left-content">
+                    <div class="col-lg-10 col-12 position-sticky p-initial tmt-180 privacy-links">
+                        <div class="dpt-40 dpb-40 tpt-30 tpb-30 privacy-bg">
+                            <ul class="mb-0" id="privacy-links">
+                                <li class="list-none mb-lg-3 mx-3 mx-lg-0 active">
+                                  <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): ?>
+                                    <a href="#privacy<?php echo $key; ?>"
+                                        class="classic font-15 res-font-16 leading-41 text-FFFAF6 text-decoration-none transition"><?php echo $privacy_policy_items_custom['heading']; ?></a>
+                                </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-12 px-p-p overflow-hidden">
+                    <div class="position-relative">
+                    <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): 
+                    $margin_value = ($key == '0') ? "" : "dmt-100";  
+                    ?>
+                        <div class="col-lg-11 col-12 ms-auto privacy-content <?php echo $margin_value; ?>" id="privacy<?php echo $key; ?>">
+                            <div class="classic font-44 res-font-37 leading-43 res-leading-45 tpb-10 text-FFFAF6">
+                            <?php echo $privacy_policy_items_custom['heading']; ?></div>
+                            <div class="classic font-15 leading-26 text-FFFAF6">
+                               <?php echo $privacy_policy_items_custom['content']; ?>
+                            </div>
+                            <div class="dmt-120 tmt-50">
+                                <div class="classic font-31 leading-43 text-FFFAF6 tpb-10">  <?php echo $privacy_policy_items_custom['sub_content']['sub_heading']; ?></div>
+                                <div class="classic font-15 leading-26 text-FFFAF6">
+                                <?php echo $privacy_policy_items_custom['sub_content']['content']; ?>
+                                </div>
+                            </div>
+                        </div>
+                      <?php endforeach; ?>
+                    </div>
+                </div>
+                <div class="spacing dpb-60"></div>
+            </div>
+        </div>
+        <div class="position-relative overflow-hidden h-100 w-100">
+            <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
+                <img class="h-100 w-100 object-cover"
+                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/Layer_1-2.svg" alt="">
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
+    <?php elseif (get_row_layout() == 'contact_us') : 
+      $contact_us_contact_us_heading = get_sub_field('contact_us_heading');
+      $contact_us_phone_number = get_sub_field('phone_number');
+      $contact_us_email = get_sub_field('email');
+      $contact_us_find_us_heading = get_sub_field('find_us_heading');
+      $contact_us_location = get_sub_field('location');
+      $contact_us_location_link = get_sub_field('location_link');
+      $contact_us_form_heading = get_sub_field('form_heading');
+    ?>
+     <section class="contact-section contact-bg">
+        <div class="container">
+            <div class="row ">
+                <div class="col-12 col-xl-8 mx-auto px-lg-4 mpt-235 tpt-185 dpt-135">
+                    <div
+                        class="col-lg-9 mx-auto px-4 px-lg-3 d-flex flex-wrap justify-content-between dmb-55 tmb-0 tpb-30">
+                        <div class="col-12 col-md-5 tmb-65">
+                          <?php if(!empty($contact_us_contact_us_heading)): ?>
+                            <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25"><?php echo  $contact_us_contact_us_heading; ?></div>
+                          <?php endif; ?>
+                          <?php if(!empty($contact_us_phone_number)): ?>
+                            <div class="d-flex align-items-center justify-content-center dmb-10">
+                                <div class="me-2 contact-icon">
+                                    <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-call.svg"
+                                        alt="">
+                                </div>
+                                <a href="tel:<?php echo $contact_us_phone_number; ?>"
+                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_phone_number; ?>
+                                </a>
+                            </div>
+                            <?php endif; ?>
+                            <?php if(!empty($contact_us_email)): ?>
+                            <div class="d-flex align-items-center justify-content-center dmb-10">
+                                <div class="me-2 contact-icon">
+                                    <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-mail.svg"
+                                        alt="">
+                                </div>
+                                <a href="mailto:<?php echo $contact_us_email; ?>"
+                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_email; ?>
+                                </a>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                        <div class="col-12 col-md-5 tmb-65">
+                          <?php if(!empty($contact_us_find_us_heading)): ?>
+                            <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25"><?php echo $contact_us_find_us_heading; ?></div>
+                          <?php endif; ?>
+                          <?php if(!empty($contact_us_location)): ?>
+                            <div class="d-inline-flex ">
+                                <div class="me-2 contact-icon">
+                                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/contact-location.svg"
+                                        alt="">
+                                </div>
+                                <a href="<?php echo $contact_us_location_link['url']; ?>"
+                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_location; ?>
+                                </a>
+                            </div>
+                          <?php endif; ?>
+                        </div>
+                    </div>
+                    <div>
+                      <?php if(!empty($contact_us_form_heading)): ?>
+                        <div class="font-25 lh-1 classic fw-normal text-center text-FFFAF6 tmb-30 dmb-20"><?php echo $contact_us_form_heading; ?></div>
+                      <?php endif; ?>
+                        <form>
+                           <?php echo do_shortcode('[contact-form-7 id="b6f617f" title="Contact form 1"]'); ?>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <?php elseif (get_row_layout() == 'three_block_section') : 
+    $three_block_section_items = get_sub_field('items');
+    if(!empty($three_block_section_items)):
+    ?>
+     <section class="three-card-section">
+        <div class="container px-p-0">
+            <div class="row row-8">
+              <?php foreach($three_block_section_items as $three_block_section_items_custom): 
+               if(!empty($three_block_section_items_custom['button']['url'])): 
+                  $target_12 = ($three_block_section_items_custom['button']['target'] == "_blank") ? "_blank" : "";      
+              ?>
+                <div class="col-12 col-lg-4 px-2 three-cards mb-2">
+                    <a href="<?php echo $three_block_section_items_custom['button']['url']; ?>"
+                        class="three-card h-100 w-100 card-hover position-relative overflow-hidden d-inline-block">
+                        <img src="<?php echo $three_block_section_items_custom['image']['url']; ?>" alt=""
+                            class="w-100 h-100 object-cover img">
+                        <div class="card-layer position-absolute w-100 h-100 bg-black top-0"></div>
+                        <div class="position-absolute top-left-center">
+                            <div
+                                class="btnA bgdark-BDA673-btn res-bg-2C2924-btn classic font-14 leading-16 text-capitalize text-decoration-none mx-auto">
+                                <?php echo $three_block_section_items_custom['button']['title']; ?>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+              <?php 
+              endif;
+              endforeach; ?>
+            </div>
+        </div>
+    </section>
+    <?php endif; ?>
     <?php
             endif;
         endwhile;
