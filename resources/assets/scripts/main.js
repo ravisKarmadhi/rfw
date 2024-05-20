@@ -12,6 +12,7 @@ import { Filter } from './parts/filter.js';
 import { Header } from './parts/header.js';
 import { Select } from './parts/select.js';
 import { Menulink } from './parts/menulink.js';
+import { Events } from './parts/events.js';
 import { Accordion } from "./parts/accordion.js";
 import { Privacy } from "./parts/privacy.js";
 
@@ -59,6 +60,8 @@ $(function () {
   window.menulink = new Menulink();
   window.menulink.init();
 
+  window.events = new Events();
+  window.events.init();
   window.video = new Accordion();
   window.video.init();
 
