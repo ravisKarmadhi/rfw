@@ -20,15 +20,23 @@ button,
     @include generate-transition(all, 0.3s, ease-in-out);
 
     &.w-110px {
-        width: 110px;
+        min-width: 110px;
+    }
+
+    &.w-120px {
+        min-width: 120px;
     }
 
     &.w-204px {
-        width: 204px;
+        min-width: 204px;
     }
 
     &.w-126px {
-        width: 126px;
+        min-width: 126px;
+    }
+
+    &.w-172px {
+        min-width: 172px;
     }
 
     &.h-50px {

@@ -143,6 +143,15 @@ textarea {
   background: $black;
 }
 
+// order css
+.order-6 {
+  order: 6;
+}
+
+.order-7 {
+  order: 7;
+}
+
 // SPACING CSS
 .dmt-0 {
   margin-top: 0px !important;
@@ -175,6 +184,10 @@ textarea {
 
   .tpb-0 {
     padding-bottom: 0px !important;
+  }
+  
+  .tpt-0 {
+    padding-top: 0px !important;
   }
 }
 

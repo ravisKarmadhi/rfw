@@ -416,7 +416,7 @@
 
 // opacity css
 
-.opacity-20{
+.opacity-20 {
     opacity: 20%;
 }
 
@@ -437,6 +437,13 @@
 }
 
 @include media-breakpoint-down(lg) {
+
+    .res-opacity-50 {
+        opacity: 50%;
+    }
+    .res-bg-transparent {
+        background-color: transparent !important;
+    }
 
     // font size
     .res-font-10 {
