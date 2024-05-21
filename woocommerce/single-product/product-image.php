@@ -23,33 +23,33 @@ if ( ! function_exists( 'wc_get_gallery_image_html' ) ) {
 }
 
 global $product;
+$attachment_ids = $product->get_gallery_image_ids();
 
-$columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
-$post_thumbnail_id = $product->get_image_id();
-$wrapper_classes   = apply_filters(
-	'woocommerce_single_product_image_gallery_classes',
-	array(
-		'woocommerce-product-gallery',
-		'woocommerce-product-gallery--' . ( $post_thumbnail_id ? 'with-images' : 'without-images' ),
-		'woocommerce-product-gallery--columns-' . absint( $columns ),
-		'images',
-	)
-);
 ?>
-<div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>" style="opacity: 0; transition: opacity .25s ease-in-out;">
-	<div class="woocommerce-product-gallery__wrapper">
-		<?php
-		if ( $post_thumbnail_id ) {
-			$html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-		} else {
-			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-			$html .= '</div>';
-		}
-
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
-		do_action( 'woocommerce_product_thumbnails' );
-		?>
+<section>
+	<div class="container px-p-0">
+		<div class="d-flex flex-wrap dmb-100 tmb-0">
+<div class="col-lg-6 col-12 pe-lg-5 overflow-hidden">
+	<div class="pe-lg-4"> 
+		<div class="single-product-slider mb-lg-2 mb-1">
+			<div>
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="<?= $product->get_name(); ?>" class="h-100 w-100 object-cover">
+			</div>
+			<?php foreach ($attachment_ids as $attachment_id) : ?>
+			<div>
+				<img src="<?php echo $Original_image_url = wp_get_attachment_url($attachment_id); ?>" alt="<?= $product->get_name(); ?>" class="h-100 w-100 object-cover">
+			</div>
+			<?php endforeach; ?>
+		</div>
+		<div class="single-product-group col-lg-12 col-10">
+			<div>
+				<img src="<?php echo get_the_post_thumbnail_url(get_the_ID()); ?>" alt="<?= $product->get_name(); ?>" class="h-100 w-100 object-cover">
+			</div>
+			<?php foreach ($attachment_ids as $attachment_id) : ?>
+			<div>
+				<img src="<?php echo $Original_image_url = wp_get_attachment_url($attachment_id); ?>" alt="<?= $product->get_name(); ?>" class="h-100 w-100 object-cover">
+			</div>
+			<?php endforeach; ?>
+		</div>
 	</div>
 </div>

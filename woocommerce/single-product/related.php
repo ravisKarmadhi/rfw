@@ -20,18 +20,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( $related_products ) : ?>
+    <div class="spacing dmb-75 tmb-170"></div>
 
-	<section class="related products">
-
+	<section class="related-section overflow-hidden">
+        <div class="container">
 		<?php
 		$heading = apply_filters( 'woocommerce_product_related_products_heading', __( 'Related products', 'woocommerce' ) );
 
 		if ( $heading ) :
 			?>
-			<h2><?php echo esc_html( $heading ); ?></h2>
+			<div class="classic font-38 leading-40 fw-normal text-2C2924 dmb-60 res-font-24 res-leading-30 tmb-45" data-bs-toggle="modal" data-bs-target="#logoutModal"><?php echo esc_html( $heading ); ?></div>
 		<?php endif; ?>
-		
-		<?php woocommerce_product_loop_start(); ?>
+		<div class="related-slider col-sm-12 col-10">
+
 
 			<?php foreach ( $related_products as $related_product ) : ?>
 
@@ -44,9 +45,8 @@ if ( $related_products ) : ?>
 					?>
 
 			<?php endforeach; ?>
-
-		<?php woocommerce_product_loop_end(); ?>
-
+			</div>
+		</div>
 	</section>
 	<?php
 endif;

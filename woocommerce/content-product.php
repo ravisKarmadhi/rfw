@@ -23,45 +23,20 @@ global $product;
 if ( empty( $product ) || ! $product->is_visible() ) {
 	return;
 }
+if (get_the_post_thumbnail_url($pro_id, 'medium_large')) {
+	$image = get_the_post_thumbnail_url($pro_id, 'medium_large');
+} else {
+	$image = '/wp-content/uploads/woocommerce-placeholder.png';
+}
 ?>
-<li <?php wc_product_class( '', $product ); ?>>
-	<?php
-	/**
-	 * Hook: woocommerce_before_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_open - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item' );
-
-	/**
-	 * Hook: woocommerce_before_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_show_product_loop_sale_flash - 10
-	 * @hooked woocommerce_template_loop_product_thumbnail - 10
-	 */
-	do_action( 'woocommerce_before_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_product_title - 10
-	 */
-	do_action( 'woocommerce_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item_title.
-	 *
-	 * @hooked woocommerce_template_loop_rating - 5
-	 * @hooked woocommerce_template_loop_price - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item_title' );
-
-	/**
-	 * Hook: woocommerce_after_shop_loop_item.
-	 *
-	 * @hooked woocommerce_template_loop_product_link_close - 5
-	 * @hooked woocommerce_template_loop_add_to_cart - 10
-	 */
-	do_action( 'woocommerce_after_shop_loop_item' );
-	?>
-</li>
+<div class="related-item">
+	<a href="<?php the_permalink(); ?>" class="d-inline-block text-decoration-none w-100">
+		<div class="related-img dmb-30">
+			<img src="<?php echo $image; ?>" alt="<?= $product->get_name(); ?>" class="w-100 h-100 object-cover">
+		</div>
+		<div class="related-content">
+			<div class="classic font-14 leading-20 fw-normal text-2C2924 dmb-25 tmb-20">April 4 @ 9.30am - April 5th @ 9.30 am</div>
+			<div class="classic font-28 leading-30 fw-normal text-2C2924 res-font-22 res-leading-28"><?= $product->get_name(); ?></div>
+		</div>
+	</a>
+</div>

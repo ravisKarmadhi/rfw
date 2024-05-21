@@ -7,9 +7,16 @@ $menu = get_field('menu','option');
 $button_1 = get_field('button_1','option');
 $button_2 = get_field('button_2','option');
 $login_button = get_field('login_button','option');
+$header_color = get_field('header_color');
+$header_color_main = "";
+if($header_color == 'white'): 
+$header_color_main = '';
+else:
+$header_color_main = 'header-black';
+endif;
 ?>
 
-<header class="header position-fixed top-0 w-100 dpt-50 tpt-70 dpb-30">
+<header class="header position-fixed top-0 w-100 dpt-50 tpt-70 dpb-30 <?php echo $header_color_main; ?>">
     <div class="header-section">
         <div class="container">
             <div class="d-flex">
