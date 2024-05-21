@@ -1,7 +1,17 @@
+.faq-input {
+    background-color: rgba($color: $color-707070, $alpha: 0.1);
+
+    &::placeholder {
+        font-size: 15px;
+        line-height: 20px;
+        color: rgba($color: $color-FFFAF6, $alpha: 0.33);
+    }
+}
+
 .closet-header {
     &.active {
-        .accordion-header-img{
-            transform:  rotate(45deg) !important;
+        .accordion-header-img {
+            transform: rotate(45deg) !important;
         }
     }
 }
@@ -11,7 +21,7 @@
     cursor: pointer;
 }
 
-.faq-closet-item{
+.faq-closet-item {
     background-color: rgba($color: $color-707070, $alpha: 0.1);
 }
 

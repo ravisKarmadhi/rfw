@@ -1,84 +1,51 @@
-.login-input {
-    background-color: rgba($color: $color-36332D, $alpha: 0.1);
-
-    &::placeholder {
-        font-family: "URWClassico";
-        font-size: $font-15;
-        line-height: $Leading-16;
-        color: $color-2C2924;
-    }
-}
-
-.login {
-    .form-row-wide {
-        .show-password-input {
-            display: none;
-            top: 50%;
-            right: 24px;
-            transform: translateY(-50%);
+.tabs-navigation{
+    top: 200px;
+    background-color: rgba($color: $color-FFFAF6, $alpha: 0.1);
+    li{
+        &:last-child{
+            margin-bottom: 0 !important;
+        }
+        &.active{
+            background-color: $color-BDA673;
         }
     }
 }
-
-.main-label {
-    display: block;
-    position: relative;
-    padding-left: 32px;
-
-    &li {
-        &:last-child {
-            margin-bottom: 0 !important;
+.invoice-info{
+    background-color: rgba($color: $color-FFFAF6, $alpha: 0.1);
+    padding-left: 45px;
+    padding-right: 65px;
+    @include media-breakpoint-down(lg){
+        padding-left: 25px;
+        padding-right: 20px;
+    }
+}
+.payment-info{
+    background-color: rgba($color: $color-FFFAF6, $alpha: 0.1);
+    .payment-row{
+        border-bottom: 1px solid rgba($color: $white, $alpha: 0.17);
+        &:first-child{
+            padding-top: 0 !important;
         }
     }
-
-    @include media-breakpoint-down(lg) {
-        &:last-child {
-            margin-bottom: 0 !important;
+}   
+.supplier-item{
+    &:last-child{
+        margin-bottom: 0 !important;
+    }
+    .supplier-social{
+        .supplier-social-item{
+            background-color: rgba($color: $white, $alpha: 0.1);
+            height: 40px;
+            width: 40px;
+            &:last-child{
+                margin-right: 0 !important;
+            }
         }
     }
-
-    .login-check-input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-    }
-
-    .login-checkmark {
-        height: 18px;
-        width: 18px;
-        border: 1px solid $color-8B6E3D;
-
-        &::after {
-            content: "";
-            position: absolute;
-            display: none;
-            left: 6px;
-            top: 3px;
-            width: 5px;
-            height: 8px;
-            border: solid $white;
-            border-width: 0 2px 2px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-        }
-    }
-
-    .login-check-input:checked~.login-checkmark {
-        background-color: $color-8B6E3D;
-    }
-
-    .login-check-input:checked~.login-checkmark::after {
-        display: block;
-    }
-
-    &.valid {
-        .login-checkmark {
-            background-color: $color-8B6E3D;
-        }
-
-        .login-checkmark::after {
-            display: block;
-        }
+}
+.review-star{
+    width: 23px;
+    @include media-breakpoint-down(lg){
+        width: 37px;
     }
 }
