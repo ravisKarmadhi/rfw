@@ -670,6 +670,7 @@ endif;
           </button>
         </div> 
       <?php endif; ?>
+      
     <?php elseif (get_row_layout() == 'left_right_image_content') :
       $left_right_image_content_background_color = get_sub_field('background_color');
       $left_right_image_content_left__right_image = get_sub_field('left__right_image');
@@ -807,6 +808,7 @@ endif;
             </div>
           </div>
         </section>
+        
     <?php elseif (get_row_layout() == 'page_tabbing_for_section_scroll'):
       $page_tabbing_for_section_scroll_items = get_sub_field('items');
       if (!empty($page_tabbing_for_section_scroll_items)): ?>
@@ -886,6 +888,7 @@ endif;
           </div>
         </div>
       </section>
+
     <?php elseif (get_row_layout() == 'farmhouse'):
         $farmhouse_items = get_sub_field('items');
         if (!empty($farmhouse_items)): ?>
@@ -921,6 +924,7 @@ endif;
             </div>
           </section>
         <?php endif;?>
+
     <?php elseif (get_row_layout() == 'left_right_image_content_8_4'):
       $left_right_image_content_8_4_sleep = get_sub_field('sleep');
       $left_right_image_content_8_4_heading = get_sub_field('heading');
@@ -971,6 +975,7 @@ endif;
           </div>
         </div>
       </section>
+
     <?php elseif (get_row_layout() == 'gallery'):
       $gallery_heading = get_sub_field('heading');
       $args_gallery = array(
@@ -1117,10 +1122,9 @@ endif;
                           <?php echo $sleeps; ?> <?php if (!empty($night)): ?>| <?php echo $night; ?><?php endif;?>
                         </div>
                         <div class="classic font-14 leading-24 text-2C2924 dpt-30 dpb-30 col-lg-10 col-12"><?php echo $post_excerpt; ?></div>
-                          <div class="d-flex align-items-center">
-                            <div class="classic-med font-16 leading-20 text-2C2924 me-2">From</div>
-                            <div class="classic font-16 leading-20 text-2C2924"><?php echo $price_htm_1; ?></div>
-                          </div>
+                        <div class="d-flex align-items-center">
+                          <div class="classic-med font-16 leading-20 text-2C2924 me-2">From</div>
+                          <div class="classic font-16 leading-20 text-2C2924"><?php echo $price_htm_1; ?></div>
                         </div>
                         <div class="col-lg-5 col-12 order-0 order-lg-1 ps-lg-2">
                           <div class="farmhouse-img w-100 tmb-35 card-hover overflow-hidden">
@@ -1239,8 +1243,7 @@ endif;
                     <ul class="mb-0" id="privacy-links">
                       <?php foreach ($privacy_policy_items as $key => $privacy_policy_items_custom): ?>
                         <li class="list-none mb-lg-3 mx-3 mx-lg-0">
-                            <a href="#privacy<?php echo $key; ?>"
-                                class="classic font-15 res-font-16 leading-41 text-FFFAF6 text-decoration-none transition"><?php echo $privacy_policy_items_custom['heading']; ?></a>
+                          <a href="#privacy<?php echo $key; ?>" class="classic font-15 res-font-16 leading-41 text-FFFAF6 text-decoration-none transition"><?php echo $privacy_policy_items_custom['heading']; ?></a>
                         </li>
                       <?php endforeach;?>
                     </ul>
@@ -1251,17 +1254,18 @@ endif;
                 <div class="position-relative">
                   <?php foreach ($privacy_policy_items as $key => $privacy_policy_items_custom): $margin_value = ($key == '0') ? "" : "dmt-100"; ?>
                     <div class="col-lg-11 col-12 ms-auto privacy-content <?php echo $margin_value; ?>" id="privacy<?php echo $key; ?>">
-                        <div class="classic font-44 res-font-37 leading-43 res-leading-45 tpb-10 text-FFFAF6">
-                        <?php echo $privacy_policy_items_custom['heading']; ?></div>
+                      <div class="classic font-44 res-font-37 leading-43 res-leading-45 tpb-10 text-FFFAF6">
+                        <?php echo $privacy_policy_items_custom['heading']; ?>
+                      </div>
+                      <div class="classic font-15 leading-26 text-FFFAF6">
+                        <?php echo $privacy_policy_items_custom['content']; ?>
+                      </div>
+                      <div class="dmt-120 tmt-50">
+                        <div class="classic font-31 leading-43 text-FFFAF6 tpb-10">  <?php echo $privacy_policy_items_custom['sub_content']['sub_heading']; ?></div>
                         <div class="classic font-15 leading-26 text-FFFAF6">
-                            <?php echo $privacy_policy_items_custom['content']; ?>
+                        <?php echo $privacy_policy_items_custom['sub_content']['content']; ?>
                         </div>
-                        <div class="dmt-120 tmt-50">
-                            <div class="classic font-31 leading-43 text-FFFAF6 tpb-10">  <?php echo $privacy_policy_items_custom['sub_content']['sub_heading']; ?></div>
-                            <div class="classic font-15 leading-26 text-FFFAF6">
-                            <?php echo $privacy_policy_items_custom['sub_content']['content']; ?>
-                            </div>
-                        </div>
+                      </div>
                     </div>
                   <?php endforeach;?>
                 </div>
@@ -1270,10 +1274,9 @@ endif;
             </div>
           </div>
           <div class="position-relative overflow-hidden h-100 w-100">
-              <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
-                  <img class="h-100"
-                      src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
-              </div>
+            <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
+              <img class="h-100" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
+            </div>
           </div>
         </section>
       <?php endif;?>
@@ -1383,6 +1386,6 @@ endif;
 
     <?php elseif (get_row_layout() == 'event_table'): ?>
       <?php echo do_shortcode('[tribe_events]'); ?>
+    <?php endif; ?>
 
-<?php endif; endwhile; endif;
-?>
+<?php endif; endwhile; endif;?>
