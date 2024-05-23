@@ -39,18 +39,18 @@ endif;
                         <?php if(!empty($hero_section_bottom_heading)): ?>
                           <span class="text-FFFAF6 lh-1 mt-lg-n3 mt-n2 d-block font-64 text-uppercase classic res-font-40"><?php echo $hero_section_bottom_heading; ?></span>
                         <?php endif; ?>
-                          <div class="d-lg-flex align-items-center justify-content-center dmt-20 tmt-30">
+                          <div class="d-flex flex-wrap align-items-center justify-content-center dmt-20 tmt-30">
                             <?php if(!empty($hero_section_button_1['url'])): 
                               $target_1 = ($hero_section_button_1['target'] == "_blank") ? "_blank" : "";          
                             ?>
-                              <a href="<?php echo $hero_section_button_1['url']; ?>" target="<?php echo $target_1; ?>" class="btnA bgdark-BDA673-btn text-decoration-none classic font-15 me-lg-2 mx-auto">
+                              <a href="<?php echo $hero_section_button_1['url']; ?>" target="<?php echo $target_1; ?>" class="btnA bgdark-BDA673-btn text-decoration-none classic font-15 tmb-10 mx-lg-0 mx-2">
                                 <?php echo $hero_section_button_1['title']; ?>
                               </a>
                             <?php endif; ?>
                             <?php if(!empty($hero_section_button_2['url'])): 
                               $target_2 = ($hero_section_button_2['target'] == "_blank") ? "_blank" : "";          
                             ?>
-                              <a href="<?php echo $hero_section_button_2['url']; ?>" target="<?php echo $target_2; ?>" class="btnA border-FFFAF6-btn text-decoration-none classic  font-15 ms-lg-2 tmt-10 mx-auto">
+                              <a href="<?php echo $hero_section_button_2['url']; ?>" target="<?php echo $target_2; ?>" class="btnA border-FFFAF6-btn text-decoration-none classic font-15 tmb-10 mx-lg-0 mx-2">
                               <?php echo $hero_section_button_2['title']; ?>
                               </a>
                             <?php endif; ?>
@@ -291,8 +291,8 @@ endif;
         $background_color_all = "bg-FFFAF6-sec";
       elseif($all_side_image_section_background_color == 'green'):
         $background_color_all = "bg-2D4232-sec";
-      elseif($all_side_image_section_background_color == 'yellow'):
-        $background_color_all = "";
+      elseif($all_side_image_section_background_color == 'black'):
+        $background_color_all = "bg-2C2924-sec";
       endif;
   ?>
   <section class="view-gallery-sec <?php echo $background_color_all; ?>  dpt-160 tpt-105 dpb-160 overflow-hidden" id="image-section-<?php echo $i; ?>">
@@ -328,17 +328,17 @@ endif;
                     <div class="text-center dpt-55 tpt-175 dpb-350 tpb-250">
                         <span class="d-block louise font-137 lh-1 text res-font-105"><?php echo  $all_side_image_section_top_heading; ?></span>
                         <span class="classic font-87 text-uppercase lh-1 mt-lg-n5 mt-n4 d-block text res-font-48"><?php echo  $all_side_image_section_bottom_heading; ?></span>
-                        <div class="dmt-15 tmt-25 classic font-15 text leading-26">
+                        <div class="dmt-15 tmt-25 classic font-15 text leading-26 col-lg-10 col-12">
                             <?php echo $all_side_image_section_content; ?>
                         </div>
-                        <?php
-                        if (!empty( $all_side_image_section_button['url'])) :
-                            $target_6 = ( $all_side_image_section_button['target'] == "_blank") ? "_blank" : "";    
-                        ?>
-                        <a href="<?php echo $all_side_image_section_button['url']; ?>" target="<?php echo $target_6; ?>" class="btnA link text-decoration-none classic font-15 text-capitalize mx-auto dmt-15 tmt-25">
-                        <?php echo $all_side_image_section_button['title']; ?>
-                        </a>
-                        <?php endif; ?>
+                        <div class="d-flex flex-wrap align-items-center justify-content-center dmt-20 tmt-30">
+                            <?php if (!empty( $all_side_image_section_button['url'])) :
+                            $target_6 = ( $all_side_image_section_button['target'] == "_blank") ? "_blank" : ""; ?>
+                            <a href="<?php echo $all_side_image_section_button['url']; ?>" target="<?php echo $target_6; ?>" class="btnA link text-decoration-none classic font-15 text-capitalize tmt-15">
+                                <?php echo $all_side_image_section_button['title']; ?>
+                            </a>
+                            <?php endif; ?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -960,7 +960,6 @@ if(!empty($farmhouse_items)):
                                 </div>
                             </div>
                         </a>
-
                     </div>
                     <?php
                 endwhile; ?>
@@ -1007,7 +1006,7 @@ if (isset($_GET['search_faq']) && !empty($_GET['search_faq'])) {
 $faq = new WP_Query($args_cat);    
  if ($faq->have_posts()) : 
 ?>
-  <section class="faq-section">
+    <section class="faq-section">
         <div class="container px-p-0">
             <div class="classic font-44 leading-42 text-FFFAF6 text-center dmb-40 px-p-p">Frequently Asked Questions</div>
             <div
@@ -1042,8 +1041,7 @@ $faq = new WP_Query($args_cat);
                                 $ntitle   = get_the_title();
                                 $content  = get_the_content();
                                 $current = get_the_terms($id, 'faq-term');
-                                $button  = get_field('button',$id);
-                            ?>
+                                $button  = get_field('button',$id);?>
                                 <div class="faq-closet-item dmb-15">
                                     <div class="faq-closet closet-item ps-3 ps-lg-5">
                                         <div
@@ -1066,13 +1064,10 @@ $faq = new WP_Query($args_cat);
                                         </div>
                                     </div>
                                 </div>
-                                <?php endwhile; 
-                                wp_reset_postdata();
-                                ?>
+                                <?php endwhile; wp_reset_postdata(); ?>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -1117,58 +1112,55 @@ $faq = new WP_Query($args_cat);
     </script>
     <?php endif; ?>
     <?php elseif (get_row_layout() == 'privacy_policy') : 
-    $privacy_policy_items = get_sub_field('items');  
-    if(!empty($privacy_policy_items)):
-    ?>
-      <section class="privacy-page">
-        <div class="container px-p-0">
-            <div class="row flex-column flex-lg-row">
-                <div class="col-lg-3 col-12 privacy-left-content">
-                    <div class="col-lg-10 col-12 position-sticky p-initial tmt-180 privacy-links">
-                        <div class="dpt-40 dpb-40 tpt-30 tpb-30 privacy-bg">
-                            <ul class="mb-0" id="privacy-links">
-                                <li class="list-none mb-lg-3 mx-3 mx-lg-0 active">
-                                  <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): ?>
-                                    <a href="#privacy<?php echo $key; ?>"
-                                        class="classic font-15 res-font-16 leading-41 text-FFFAF6 text-decoration-none transition"><?php echo $privacy_policy_items_custom['heading']; ?></a>
-                                </li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9 col-12 px-p-p overflow-hidden">
-                    <div class="position-relative">
-                    <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): 
-                    $margin_value = ($key == '0') ? "" : "dmt-100";  
-                    ?>
-                        <div class="col-lg-11 col-12 ms-auto privacy-content <?php echo $margin_value; ?>" id="privacy<?php echo $key; ?>">
-                            <div class="classic font-44 res-font-37 leading-43 res-leading-45 tpb-10 text-FFFAF6">
-                            <?php echo $privacy_policy_items_custom['heading']; ?></div>
-                            <div class="classic font-15 leading-26 text-FFFAF6">
-                               <?php echo $privacy_policy_items_custom['content']; ?>
-                            </div>
-                            <div class="dmt-120 tmt-50">
-                                <div class="classic font-31 leading-43 text-FFFAF6 tpb-10">  <?php echo $privacy_policy_items_custom['sub_content']['sub_heading']; ?></div>
-                                <div class="classic font-15 leading-26 text-FFFAF6">
-                                <?php echo $privacy_policy_items_custom['sub_content']['content']; ?>
+        $privacy_policy_items = get_sub_field('items');  
+        if(!empty($privacy_policy_items)): ?>
+            <section class="privacy-page">
+                <div class="container px-p-0">
+                    <div class="row flex-column flex-lg-row">
+                        <div class="col-lg-3 col-12 privacy-left-content">
+                            <div class="col-lg-10 col-12 position-sticky p-initial tmt-180 privacy-links">
+                                <div class="dpt-40 dpb-40 tpt-30 tpb-30 privacy-bg">
+                                    <ul class="mb-0" id="privacy-links">
+                                        <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): ?>
+                                            <li class="list-none mb-lg-3 mx-3 mx-lg-0">
+                                                <a href="#privacy<?php echo $key; ?>" class="classic font-15 res-font-16 leading-41 text-FFFAF6 text-decoration-none transition"><?php echo $privacy_policy_items_custom['heading']; ?></a>
+                                            </li>
+                                        <?php endforeach; ?>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
-                      <?php endforeach; ?>
+                        <div class="col-lg-9 col-12 px-p-p overflow-hidden">
+                            <div class="position-relative">
+                                <?php foreach($privacy_policy_items as $key => $privacy_policy_items_custom): 
+                                $margin_value = ($key == '0') ? "" : "dmt-100"; ?>
+                                    <div class="col-lg-11 col-12 ms-auto privacy-content <?php echo $margin_value; ?>" id="privacy<?php echo $key; ?>">
+                                        <div class="classic font-44 res-font-37 leading-43 res-leading-45 tpb-10 text-FFFAF6">
+                                        <?php echo $privacy_policy_items_custom['heading']; ?></div>
+                                        <div class="classic font-15 leading-26 text-FFFAF6">
+                                        <?php echo $privacy_policy_items_custom['content']; ?>
+                                        </div>
+                                        <div class="dmt-120 tmt-50">
+                                            <div class="classic font-31 leading-43 text-FFFAF6 tpb-10">  <?php echo $privacy_policy_items_custom['sub_content']['sub_heading']; ?></div>
+                                            <div class="classic font-15 leading-26 text-FFFAF6">
+                                            <?php echo $privacy_policy_items_custom['sub_content']['content']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <div class="spacing dpb-60"></div>
                     </div>
                 </div>
-                <div class="spacing dpb-60"></div>
-            </div>
-        </div>
-        <div class="position-relative overflow-hidden h-100 w-100">
-            <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
-                <img class="h-100 w-100 object-cover"
-                    src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/Layer_1-2.svg" alt="">
-            </div>
-        </div>
-    </section>
-    <?php endif; ?>
+                <div class="position-relative overflow-hidden h-100 w-100">
+                    <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
+                    <img class="h-100" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
+                    </div>
+                </div>
+            </section>
+        <?php endif; ?>
+        
     <?php elseif (get_row_layout() == 'contact_us') : 
       $contact_us_contact_us_heading = get_sub_field('contact_us_heading');
       $contact_us_phone_number = get_sub_field('phone_number');
@@ -1176,103 +1168,99 @@ $faq = new WP_Query($args_cat);
       $contact_us_find_us_heading = get_sub_field('find_us_heading');
       $contact_us_location = get_sub_field('location');
       $contact_us_location_link = get_sub_field('location_link');
-      $contact_us_form_heading = get_sub_field('form_heading');
-    ?>
-     <section class="contact-section contact-bg">
-        <div class="container">
-            <div class="row ">
-                <div class="col-12 col-xl-8 mx-auto px-lg-4 mpt-235 tpt-185 dpt-135">
-                    <div
-                        class="col-lg-9 mx-auto px-4 px-lg-3 d-flex flex-wrap justify-content-between dmb-55 tmb-0 tpb-30">
-                        <div class="col-12 col-md-5 tmb-65">
-                          <?php if(!empty($contact_us_contact_us_heading)): ?>
-                            <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25"><?php echo  $contact_us_contact_us_heading; ?></div>
-                          <?php endif; ?>
-                          <?php if(!empty($contact_us_phone_number)): ?>
-                            <div class="d-flex align-items-center justify-content-center dmb-10">
-                                <div class="me-2 contact-icon">
-                                    <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-call.svg"
-                                        alt="">
-                                </div>
-                                <a href="tel:<?php echo $contact_us_phone_number; ?>"
-                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_phone_number; ?>
-                                </a>
+      $contact_us_form_heading = get_sub_field('form_heading');?>
+        <section class="contact-section tpt-235 dpt-230">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-xl-8 mx-auto px-lg-4">
+                        <div class="col-lg-9 mx-auto px-4 px-lg-3 d-flex flex-wrap justify-content-between dmb-55 tmb-0 tpb-30">
+                            <div class="col-12 col-md-5 tmb-65">
+                                <?php if(!empty($contact_us_contact_us_heading)): ?>
+                                    <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25">
+                                        <?php echo  $contact_us_contact_us_heading; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if(!empty($contact_us_phone_number)): ?>
+                                    <div class="d-flex align-items-center justify-content-center dmb-10">
+                                        <div class="me-2 contact-icon">
+                                            <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-call.svg"
+                                                alt="">
+                                        </div>
+                                        <a href="tel:<?php echo $contact_us_phone_number; ?>"
+                                            class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_phone_number; ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if(!empty($contact_us_email)): ?>
+                                    <div class="d-flex align-items-center justify-content-center dmb-10">
+                                        <div class="me-2 contact-icon">
+                                            <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-mail.svg"
+                                                alt="">
+                                        </div>
+                                        <a href="mailto:<?php echo $contact_us_email; ?>"
+                                            class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_email; ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <?php endif; ?>
-                            <?php if(!empty($contact_us_email)): ?>
-                            <div class="d-flex align-items-center justify-content-center dmb-10">
-                                <div class="me-2 contact-icon">
-                                    <img src="<?php echo get_home_url(); ?> /wp-content/uploads/2024/05/contact-mail.svg"
-                                        alt="">
-                                </div>
-                                <a href="mailto:<?php echo $contact_us_email; ?>"
-                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_email; ?>
-                                </a>
+                            <div class="col-12 col-md-5 tmb-65">
+                                <?php if(!empty($contact_us_find_us_heading)): ?>
+                                    <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25">
+                                        <?php echo $contact_us_find_us_heading; ?>
+                                    </div>
+                                <?php endif; ?>
+                                <?php if(!empty($contact_us_location)): ?>
+                                    <div class="d-inline-flex ">
+                                        <div class="me-2 contact-icon">
+                                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/contact-location.svg"
+                                                alt="">
+                                        </div>
+                                        <a href="<?php echo $contact_us_location_link['url']; ?>"
+                                            class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_location; ?>
+                                        </a>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <?php endif; ?>
                         </div>
-                        <div class="col-12 col-md-5 tmb-65">
-                          <?php if(!empty($contact_us_find_us_heading)): ?>
-                            <div class="font-50 leading-56 louise text-center text-FFFAF6 dmb-25"><?php echo $contact_us_find_us_heading; ?></div>
-                          <?php endif; ?>
-                          <?php if(!empty($contact_us_location)): ?>
-                            <div class="d-inline-flex ">
-                                <div class="me-2 contact-icon">
-                                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/contact-location.svg"
-                                        alt="">
-                                </div>
-                                <a href="<?php echo $contact_us_location_link['url']; ?>"
-                                    class="font-15 leading-20 classic fw-normal text-center text-FFFAF6 text-decoration-none"><?php echo $contact_us_location; ?>
-                                </a>
+                        <div>
+                        <?php if(!empty($contact_us_form_heading)): ?>
+                            <div class="font-25 lh-1 classic fw-normal text-center text-FFFAF6 tmb-30 dmb-20">
+                                <?php echo $contact_us_form_heading; ?>
                             </div>
-                          <?php endif; ?>
+                        <?php endif; ?>
+                            <form>
+                            <?php echo do_shortcode('[contact-form-7 id="b6f617f" title="Contact form 1"]'); ?>
+                            </form>
                         </div>
-                    </div>
-                    <div>
-                      <?php if(!empty($contact_us_form_heading)): ?>
-                        <div class="font-25 lh-1 classic fw-normal text-center text-FFFAF6 tmb-30 dmb-20"><?php echo $contact_us_form_heading; ?></div>
-                      <?php endif; ?>
-                        <form>
-                           <?php echo do_shortcode('[contact-form-7 id="b6f617f" title="Contact form 1"]'); ?>
-                        </form>
                     </div>
                 </div>
             </div>
-    </section>
+        </section>
     <?php elseif (get_row_layout() == 'three_block_section') : 
-    $three_block_section_items = get_sub_field('items');
-    if(!empty($three_block_section_items)):
-    ?>
-     <section class="three-card-section">
-        <div class="container px-p-0">
-            <div class="row row-8">
-              <?php foreach($three_block_section_items as $three_block_section_items_custom): 
-               if(!empty($three_block_section_items_custom['button']['url'])): 
-                  $target_12 = ($three_block_section_items_custom['button']['target'] == "_blank") ? "_blank" : "";      
-              ?>
-                <div class="col-12 col-lg-4 px-2 three-cards mb-2">
-                    <a href="<?php echo $three_block_section_items_custom['button']['url']; ?>"
-                        class="three-card h-100 w-100 card-hover position-relative overflow-hidden d-inline-block">
-                        <img src="<?php echo $three_block_section_items_custom['image']['url']; ?>" alt=""
-                            class="w-100 h-100 object-cover img">
-                        <div class="card-layer position-absolute w-100 h-100 bg-black top-0"></div>
-                        <div class="position-absolute top-left-center">
-                            <div
-                                class="btnA bgdark-BDA673-btn res-bg-2C2924-btn classic font-14 leading-16 text-capitalize text-decoration-none mx-auto">
-                                <?php echo $three_block_section_items_custom['button']['title']; ?>
-                            </div>
-                        </div>
-                    </a>
+        $three_block_section_items = get_sub_field('items');
+        if(!empty($three_block_section_items)): ?>
+            <section class="three-card-section">
+                <div class="container px-p-0">
+                    <div class="row row-8">
+                        <?php foreach($three_block_section_items as $three_block_section_items_custom): 
+                            if(!empty($three_block_section_items_custom['button']['url'])): 
+                            $target_12 = ($three_block_section_items_custom['button']['target'] == "_blank") ? "_blank" : ""; ?>
+                                <div class="col-12 col-lg-4 px-2 three-cards mb-2">
+                                    <a href="<?php echo $three_block_section_items_custom['button']['url']; ?>"
+                                        class="three-card h-100 w-100 card-hover position-relative overflow-hidden d-inline-block">
+                                        <img src="<?php echo $three_block_section_items_custom['image']['url']; ?>" alt=""
+                                            class="w-100 h-100 object-cover img">
+                                        <div class="card-layer position-absolute w-100 h-100 bg-black top-0"></div>
+                                        <div class="position-absolute top-left-center">
+                                            <div class="btnA bgdark-BDA673-btn res-bg-2C2924-btn classic font-14 leading-16 text-capitalize text-decoration-none mx-auto">
+                                                <?php echo $three_block_section_items_custom['button']['title']; ?>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                        <?php endif; endforeach; ?>
+                    </div>
                 </div>
-              <?php 
-              endif;
-              endforeach; ?>
-            </div>
-        </div>
-    </section>
+            </section>
     <?php endif; ?>
-    <?php
-            endif;
-        endwhile;
-    endif;
-    ?>
+<?php endif; endwhile; endif; ?>
