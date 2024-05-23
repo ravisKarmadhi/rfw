@@ -9,6 +9,25 @@ $address_link = get_field('address_link','option');
 $website_design_by = get_field('website_design_by','option');
 $links = get_field('links','option');
 $website_design_logo = get_field('website_design_logo','option');
+$footer_color = get_field('footer_desktop_color');
+$footer_color_main = "";
+if($footer_color == 'white'): 
+$footer_color_main = 'white-footer';
+else:
+$footer_color_main = '';
+endif;
+echo $footer_color;
+
+
+$res_footer_color = get_field('responsive_footer_color');
+$footer_color_main_res = "";
+if($res_footer_color == 'white'): 
+$footer_color_main_res = 'white-footer';
+elseif($res_footer_color == 'black'):
+$footer_color_main_res = '';
+elseif($res_footer_color == 'yellow'):
+$footer_color_main_res = 'res-yellow-footer';
+endif;
 ?>
 <!-- other footer color class - white-footer , responsive yellow footer class - res-yellow-footer -->
 <footer class="footer position-relative overflow-hidden <?php echo $footer_color_main; ?> <?php echo $footer_color_main_res; ?>">

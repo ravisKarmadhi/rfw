@@ -3,6 +3,15 @@
  * Template Name: Page Builder
  */
 $page_builder = get_field('page_builder');
+$body_background_color = get_field('body_background_color');
+$background_color_body = "";
+if($body_background_color == 'skin'): 
+  $background_color_body = "bgcream-content-img";
+elseif($body_background_color == 'black'):
+  $background_color_body = "bg-2C2924";
+elseif($body_background_color == 'yellow'):
+  $background_color_body = "bg-BDA673";
+endif;
 ?>
 <main>
   <?php if (have_rows('page_builder')): $i = 1;
@@ -13,7 +22,6 @@ $page_builder = get_field('page_builder');
         $hero_section_bottom_heading = get_sub_field('bottom_heading');
         $hero_section_button_1 = get_sub_field('button_1');
         $hero_section_button_2 = get_sub_field('button_2'); ?>
-
 			    <section class="w-100 vh-100 position-relative overflow-hidden home-hero" id="hero-section-<?php echo $i; ?>">
 			      <?php if (!empty($hero_section_background_image['url'])): ?>
 			        <img src="<?php echo $hero_section_background_image['url']; ?>" class="w-100 h-100 object-cover position-absolute top-0 start-0" alt="" />
@@ -120,123 +128,123 @@ $page_builder = get_field('page_builder');
       endif;
       $clas = ($left_right_image_content_left__right_image == 'left') ? "image-content-left " : ""; ?>
 
-	    <section class="image-content overflow-hidden position-relative <?php echo $clas; ?> <?php echo $background_color; ?> tpt-70" id="<?php echo $master_slug; ?>">
-	      <div class="container px-p-0">
-          <div class="row">
-            <?php if ($left_right_image_content_left__right_image == 'left'): ?>
-              <div class="col-lg-6 h-100 tmt-40  half-image">
-                <div class="content-image position-absolute start-0 top-0 p-relative h-100">
-                  <div>
-                    <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
-                    <?php if ($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
-                      <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal<?php echo $i; ?>">
-                          <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
-                      </button>
-                    <?php endif;?>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center ms-auto">
-                <div class="me-lg-4 px-p-p">
-                  <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45"><?php echo $left_right_image_content_heading; ?></div>
-                  <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25"><?php echo $left_right_image_content_content; ?></div>
-                  <?php if (!empty($left_right_image_content_lists)): ?>
-                    <ul class="ps-0 mb-0 row dmt-10">
-                      <?php foreach ($left_right_image_content_lists as $left_right_image_content_lists_custom): if (!empty($left_right_image_content_lists_custom['list'])): ?>
-                        <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
-                            <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
-                        </li>
-                      <?php endif; endforeach;?>
-                    </ul>
-                  <?php endif;?>
-                </div>
-                <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
-                  <?php if (!empty($left_right_image_content_button_1['url'])): $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : ""; ?>
-                    <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10 transition">
-                    <?php echo $left_right_image_content_button_1['title']; ?>
-                    </a>
-                  <?php endif;?>
-                  <?php if (!empty($left_right_image_content_button_2['url'])): $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : ""; ?>
-                    <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10 transition">
-                      <?php echo $left_right_image_content_button_2['title']; ?>
-                    </a>
-                  <?php endif;?>
-                </div>
-              </div>
-            <?php else: ?>
-              <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center">
-                <div class="me-lg-4 px-p-p">
-                  <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">
-                    <?php echo $left_right_image_content_heading; ?>
-                  </div>
-                  <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">
-                    <?php echo $left_right_image_content_content; ?>
-                  </div>
-                  <?php if (!empty($left_right_image_content_lists)): ?>
-                    <ul class="ps-0 mb-0 row dmt-10">
-                      <?php foreach ($left_right_image_content_lists as $left_right_image_content_lists_custom): if (!empty($left_right_image_content_lists_custom['list'])): ?>
-                        <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
-                            <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
-                        </li>
-                      <?php endif; endforeach;?>
-                    </ul>
-                  <?php endif;?>
-                </div>
-                <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
-                  <?php if (!empty($left_right_image_content_button_1['url'])): $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : ""; ?>
-                    <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
-                      <?php echo $left_right_image_content_button_1['title']; ?>
-                    </a>
-                  <?php endif;?>
-                  <?php if (!empty($left_right_image_content_button_2['url'])): $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : ""; ?>
-                    <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
-                      <?php echo $left_right_image_content_button_2['title']; ?>
-                    </a>
-                  <?php endif;?>
-                </div>
-              </div>
-              <div class="col-lg-6 h-100 tmt-40  half-image">
-                <div class="content-image position-absolute p-relative end-0 top-0 h-100">
-                  <div>
-                    <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
+        <section class="image-content overflow-hidden position-relative <?php echo $clas; ?> <?php echo $background_color; ?> tpt-70" id="<?php echo $master_slug; ?>">
+          <div class="container px-p-0">
+            <div class="row">
+              <?php if ($left_right_image_content_left__right_image == 'left'): ?>
+                <div class="col-lg-6 h-100 tmt-40  half-image">
+                  <div class="content-image position-absolute start-0 top-0 p-relative h-100">
+                    <div>
+                      <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
                       <?php if ($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
                         <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal<?php echo $i; ?>">
                             <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
                         </button>
                       <?php endif;?>
+                    </div>
                   </div>
                 </div>
-              </div>
-            <?php endif;?>
+                <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center ms-auto">
+                  <div class="me-lg-4 px-p-p">
+                    <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45"><?php echo $left_right_image_content_heading; ?></div>
+                    <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25"><?php echo $left_right_image_content_content; ?></div>
+                    <?php if (!empty($left_right_image_content_lists)): ?>
+                      <ul class="ps-0 mb-0 row dmt-10">
+                        <?php foreach ($left_right_image_content_lists as $left_right_image_content_lists_custom): if (!empty($left_right_image_content_lists_custom['list'])): ?>
+                          <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
+                              <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
+                          </li>
+                        <?php endif; endforeach;?>
+                      </ul>
+                    <?php endif;?>
+                  </div>
+                  <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
+                    <?php if (!empty($left_right_image_content_button_1['url'])): $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10 transition">
+                      <?php echo $left_right_image_content_button_1['title']; ?>
+                      </a>
+                    <?php endif;?>
+                    <?php if (!empty($left_right_image_content_button_2['url'])): $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10 transition">
+                        <?php echo $left_right_image_content_button_2['title']; ?>
+                      </a>
+                    <?php endif;?>
+                  </div>
+                </div>
+              <?php else: ?>
+                <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center">
+                  <div class="me-lg-4 px-p-p">
+                    <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">
+                      <?php echo $left_right_image_content_heading; ?>
+                    </div>
+                    <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">
+                      <?php echo $left_right_image_content_content; ?>
+                    </div>
+                    <?php if (!empty($left_right_image_content_lists)): ?>
+                      <ul class="ps-0 mb-0 row dmt-10">
+                        <?php foreach ($left_right_image_content_lists as $left_right_image_content_lists_custom): if (!empty($left_right_image_content_lists_custom['list'])): ?>
+                          <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
+                              <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
+                          </li>
+                        <?php endif; endforeach;?>
+                      </ul>
+                    <?php endif;?>
+                  </div>
+                  <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
+                    <?php if (!empty($left_right_image_content_button_1['url'])): $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                        <?php echo $left_right_image_content_button_1['title']; ?>
+                      </a>
+                    <?php endif;?>
+                    <?php if (!empty($left_right_image_content_button_2['url'])): $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                        <?php echo $left_right_image_content_button_2['title']; ?>
+                      </a>
+                    <?php endif;?>
+                  </div>
+                </div>
+                <div class="col-lg-6 h-100 tmt-40  half-image">
+                  <div class="content-image position-absolute p-relative end-0 top-0 h-100">
+                    <div>
+                      <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
+                        <?php if ($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
+                          <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal<?php echo $i; ?>">
+                              <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                          </button>
+                        <?php endif;?>
+                    </div>
+                  </div>
+                </div>
+              <?php endif;?>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    <?php if ($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
-      <!-- Modal -->
-      <div class="modal video-modal fade" id="videoModal<?php echo $i; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content border-0 rounded-0 bg-transparent">
-            <div class="modal-body p-0 position-relative">
-              <button class="p-0 bg-transparent border-0 pause-video mt-n5 bg-2D4232 rounded-circle p-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
-                  <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close-header.svg" class="" />
-              </button>
-              <?php if ($left_right_image_content_video_image_select == 'video'): if (!empty($left_right_image_content_video['url'])): ?>
-                <video autoplay loop class="w-100 " id="myVideo">
-                    <source src="<?php echo $left_right_image_content_video['url'] ?>" type="video/mp4">
-                </video>
-              <?php endif;?>
-              <?php elseif ($left_right_image_content_video_image_select == 'youtube'): if (!empty($left_right_image_content_youtube['url'])): ?>
-                <iframe id="autoplay-video" class="w-100" src="<?php echo $left_right_image_content_youtube['url'] ?>" allow="autoplay; fullscreen"></iframe>
-              <?php endif;?>
-              <?php elseif ($left_right_image_content_video_image_select == 'vimeo'): if (!empty($left_right_image_content_vimeo['url'])): ?>
-                <iframe src="<?php echo $left_right_image_content_vimeo['url'] ?>" class="" width="100%" height="100%" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
-              <?php endif; endif;?>
+      <?php if ($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
+        <!-- Modal -->
+        <div class="modal video-modal fade" id="videoModal<?php echo $i; ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 rounded-0 bg-transparent">
+              <div class="modal-body p-0 position-relative">
+                <button class="p-0 bg-transparent border-0 pause-video mt-n5 bg-2D4232 rounded-circle p-2 position-absolute top-0 end-0" data-bs-dismiss="modal" aria-label="Close">
+                    <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close-header.svg" class="" />
+                </button>
+                <?php if ($left_right_image_content_video_image_select == 'video'): if (!empty($left_right_image_content_video['url'])): ?>
+                  <video autoplay loop class="w-100 " id="myVideo">
+                      <source src="<?php echo $left_right_image_content_video['url'] ?>" type="video/mp4">
+                  </video>
+                <?php endif;?>
+                <?php elseif ($left_right_image_content_video_image_select == 'youtube'): if (!empty($left_right_image_content_youtube['url'])): ?>
+                  <iframe id="autoplay-video" class="w-100" src="<?php echo $left_right_image_content_youtube['url'] ?>" allow="autoplay; fullscreen"></iframe>
+                <?php endif;?>
+                <?php elseif ($left_right_image_content_video_image_select == 'vimeo'): if (!empty($left_right_image_content_vimeo['url'])): ?>
+                  <iframe src="<?php echo $left_right_image_content_vimeo['url'] ?>" class="" width="100%" height="100%" frameborder="0" allow="fullscreen; picture-in-picture" allowfullscreen></iframe>
+                <?php endif; endif;?>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    <?php endif;?>
+      <?php endif;?>
 
     <?php elseif (get_row_layout() == 'left_right_image_content'):
       $left_right_image_content_background_color = get_sub_field('background_color');
@@ -473,49 +481,50 @@ $page_builder = get_field('page_builder');
           </div>
         </section>
 
-    <?php elseif (get_row_layout() == 'event_section'):
-      $event_section_heading = get_sub_field('heading');
-      $event_section_items = get_sub_field('items');
-      if (!empty($event_section_items)): ?>
-        <section class="overflow-hidden" id="event-<?php echo $i; ?>">
-          <div class="container">
+    <?php elseif (get_row_layout() == 'event_section') : 
+     $event_section_heading = get_sub_field('heading');  
+     $event_section_items = get_sub_field('items');  
+     if(!empty($event_section_items)): ?>
+      <section class="overflow-hidden" id="event-<?php echo $i; ?>">
+        <div class="container">
             <div class="row">
-              <div class="dmb-35 d-flex align-items-center justify-content-between">
-                <?php if (!empty($event_section_heading)): ?>
-                  <div class="classic font-44 text-2C2924 res-font-31 lh-1"><?php echo $event_section_heading; ?></div>
-                <?php endif;?>
-                <div class="d-lg-flex d-none align-items-center justify-content-end events-card-btn">
-                  <button class="p-0 bg-transparent border-0 slick--prev rotate-circle-negative-full">
-                    <img src="<?php get_home_url();?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
-                  </button>
-                  <button class="p-0 bg-transparent border-0 slick--next ms-3">
-                    <img src="<?php get_home_url();?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
-                  </button>
-                </div>
-              </div>
-              <div class="col-12 events-card-slider">
-                <?php foreach ($event_section_items as $event_section_items_custom):
-                  $id = $event_section_items_custom->ID;
-                  $ntitle = $event_section_items_custom->post_title;
-                  $content = $event_section_items_custom->post_excerpt; ?>
-                    <div class="single-events">
-                      <a href="<?php echo get_permalink($id); ?>" class="d-block card-hover w-100 text-decoration-none">
-                        <div class="events-img  overflow-hidden">
-                          <img src="<?php echo get_the_post_thumbnail_url($id); ?>" class="w-100 h-100 object-cover img" alt="<?php echo $ntitle; ?>">
-                        </div>
-                        <div class="classic font-20 text-2C2924 dmt-35 lh-1"><?php echo $ntitle; ?></div>
-                        <div class="classic font-15 text-2C2924 dmt-20 opacity-50"><?php echo $content; ?></div>
-                        <div class="mt-3">
-                          <img src="<?php get_home_url();?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
-                        </div>
-                      </a>
+                <div class="dmb-35 d-flex align-items-center justify-content-between">
+                  <?php if(!empty($event_section_heading)): ?>
+                    <div class="classic font-44 text-2C2924 res-font-31 lh-1"><?php echo $event_section_heading; ?></div>
+                  <?php endif; ?>
+                    <div class="d-lg-flex d-none align-items-center justify-content-end events-card-btn">
+                        <button class="p-0 bg-transparent border-0 slick--prev rotate-circle-negative-full">
+                            <img src="<?php get_home_url(); ?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
+                        </button>
+                        <button class="p-0 bg-transparent border-0 slick--next ms-3">
+                            <img src="<?php get_home_url(); ?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
+                        </button>
                     </div>
-                <?php endforeach;?>
-              </div>
+                </div>
+                <div class="col-12 events-card-slider">
+                  <?php foreach ($event_section_items as $event_section_items_custom): 
+                  $id = $event_section_items_custom->ID;  
+                  $ntitle = $event_section_items_custom->post_title;  
+                  $content = $event_section_items_custom->post_excerpt;  
+                  ?>
+                    <div class="single-events">
+                        <a href="<?php echo get_permalink($id); ?>" class="d-block card-hover w-100 text-decoration-none">
+                            <div class="events-img  overflow-hidden">
+                                <img src="<?php echo get_the_post_thumbnail_url($id); ?>" class="w-100 h-100 object-cover img" alt="<?php echo $ntitle; ?>">
+                            </div>
+                            <div class="classic font-20 text-2C2924 dmt-35 lh-1"><?php echo $ntitle; ?></div>
+                            <div class="classic font-15 text-2C2924 dmt-20 opacity-50"><?php echo $content; ?></div>
+
+                            <div class="mt-3">
+                                <img src="<?php get_home_url(); ?>/wp-content/uploads/2024/05/arrow-black.svg" class="" alt="" />
+                            </div>
+                        </a>
+                    </div>
+                  <?php endforeach; ?>
+                </div>
             </div>
-          </div>
-        </section>
-      <?php endif;?>
+        </div>
+      </section>
 
     <?php elseif (get_row_layout() == 'our_history'):
       $our_history_heading = get_sub_field('heading');
@@ -639,17 +648,160 @@ $page_builder = get_field('page_builder');
                   <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/explore-layer-res.svg" class="position-absolute h-100 top-0 start-0 d-lg-none" alt="" />
                 </div>
               </div>
-            <?php endif;?>
+            <?php endif; ?>
           </div>
-          <div class="top-left-center w-100 position-absolute">
-            <div class="container">
-              <div class="col-lg-10 mx-auto d-lg-flex align-items-center justify-content-between">
-                <div class="classic font-31 text-FFFAF6 lh-1 text-lg-start text-center"><?php echo $single_panel_heading; ?></div>
-                  <?php if (!empty($single_panel_button['url'])): $target_10 = ($single_panel_button['target'] == "_blank") ? "_blank" : ""; ?>
-                    <a href="<?php echo $single_panel_button['url']; ?>" target="<?php echo $target_10; ?>" class="btnA bg-FFFAF6-btn text-141414 text-decoration-none classic font-15 mx-lg-0 mx-auto tmt-15">
-                      <?php echo $single_panel_button['title']; ?>
-                    </a>
-                  <?php endif;?>
+        </section>
+
+    <?php elseif (get_row_layout() == 'bottom_fix_line') :
+      $bottom_fix_line_text = get_sub_field('text');
+      $bottom_fix_line_link = get_sub_field('link');
+      if(!empty($bottom_fix_line_text)):  ?>
+        <div class="bg-BDA673  lh-1 py-2 position-fixed z-2 bottom-0 left-0 w-100 text-center " id="bottom-home">
+          <p class="text-decoration-none text-FFFAF6 classic fw-normal font-14 leading-20 col-9 mx-auto d-block">
+              <?php echo $bottom_fix_line_text; ?> 
+              <?php if(!empty($bottom_fix_line_link['url'])): 
+              $target_3 = ($bottom_fix_line_link['target'] == "_blank") ? "_blank" : "";
+              ?>
+              <span class="d-lg-inline-block d-block"> <a href="<?php echo $bottom_fix_line_link['url']; ?>" target="<?php echo $target_3; ?>" class="text-decoration-none text-FFFAF6 classic fw-normal font-14 lh-1"> <?php echo $bottom_fix_line_link['title']; ?> </a></span>
+              <?php endif; ?>
+          </p>
+          <button class="bg-transparent p-0 bg-transparent border-0 position-absolute end-0 top-center me-4" id="close-bottom-home">
+              <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/close.svg" class="" alt="" />
+          </button>
+        </div> 
+      <?php endif; ?>
+    <?php elseif (get_row_layout() == 'left_right_image_content') :
+      $left_right_image_content_background_color = get_sub_field('background_color');
+      $left_right_image_content_left__right_image = get_sub_field('left__right_image');
+      $left_right_image_content_heading = get_sub_field('heading');
+      $left_right_image_content_content = get_sub_field('content');
+      $left_right_image_content_button_1 = get_sub_field('button_1');
+      $left_right_image_content_button_2 = get_sub_field('button_2');
+      $left_right_image_content_lists = get_sub_field('lists');
+      $left_right_image_content_video_image_select = get_sub_field('video_image_select');
+      $left_right_image_content_image = get_sub_field('image');
+      $left_right_image_content_video = get_sub_field('video');
+      $left_right_image_content_youtube = get_sub_field('youtube');
+      $left_right_image_content_vimeo = get_sub_field('vimeo');
+      $master_slug_1 = str_replace(' ', '', $left_right_image_content_heading);
+      $master_slug = str_replace( array( '\'', '"',',' , ';', '<', '>', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '(', ')', '.', ',' ), '', $master_slug_1);
+      $background_color = "";
+      if($left_right_image_content_background_color == 'skin'): 
+        $background_color = "bgcream-content-img";
+      elseif($left_right_image_content_background_color == 'black'):
+        $background_color = "bgblack-content-img";
+      elseif($left_right_image_content_background_color == 'yellow'):
+        $background_color = "bggold-content-img";
+      elseif($left_right_image_content_background_color == 'green'):
+        $background_color = "bgdarkgeen-content-img";
+      endif;
+      $clas = ($left_right_image_content_left__right_image == 'left') ? "image-content-left " : ""; ?>
+        <section class="image-content overflow-hidden  position-relative <?php echo $clas; ?> <?php echo $background_color; ?> tpt-70" id="<?php echo $master_slug; ?>">
+          <div class="container px-p-0">
+            <div class="row">
+              <?php if($left_right_image_content_left__right_image == 'left'): ?>
+                <div class="col-lg-6 h-100 tmt-40  half-image">
+                  <div class="content-image position-absolute start-0 top-0 p-relative h-100">
+                    <div>
+                      <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
+                      <?php if($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
+                        <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal<?php echo $i; ?>">
+                            <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                        </button>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center ms-auto">
+                  <div class="me-lg-4 px-p-p">
+                    <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45"><?php echo $left_right_image_content_heading; ?></div>
+                    <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25">
+                      <?php echo $left_right_image_content_content; ?>
+                    </div>
+                    <?php if(!empty($left_right_image_content_lists)): ?>
+                      <ul class="ps-0 mb-0 row dmt-10">
+                        <?php foreach($left_right_image_content_lists as $left_right_image_content_lists_custom): 
+                          if(!empty($left_right_image_content_lists_custom['list'])): ?>  
+                        <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
+                            <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
+                        </li>
+                        <?php endif; endforeach; ?>
+                      </ul>
+                    <?php endif; ?>
+                  </div>
+                  <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
+                    <?php if (!empty($left_right_image_content_button_1['url'])) :
+                      $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : "";  ?>
+                        <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                        <?php echo $left_right_image_content_button_1['title']; ?>
+                        </a>
+                    <?php endif; ?>
+                    <?php if (!empty($left_right_image_content_button_2['url'])) :
+                      $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                        <?php echo $left_right_image_content_button_2['title']; ?>
+                        </a>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              <?php else: ?>
+                <div class="col-lg-5 pe-lg-5 details-content d-flex flex-column justify-content-center">
+                  <div class="me-lg-4 px-p-p">
+                    <div class="text classic fw-normal font-50 lh-1 leading-56 pe-lg-4 res-font-45">
+                      <?php echo $left_right_image_content_heading; ?>
+                    </div>
+                    <div class="text classic fw-normal font-15 leading-26 dmt-40 tmt-25"><?php echo $left_right_image_content_content; ?></div>
+                      <?php if(!empty($left_right_image_content_lists)): ?>
+                        <ul class="ps-0 mb-0 row dmt-10">
+                          <?php foreach($left_right_image_content_lists as $left_right_image_content_lists_custom): 
+                            if(!empty($left_right_image_content_lists_custom['list'])): ?>  
+                          <li class="col-lg-6 list-none classic fw-normal font-15 text-FFFAF6 dmt-15">
+                              <span class="font-12">•</span> <?php echo $left_right_image_content_lists_custom['list']; ?>
+                          </li>
+                          <?php endif; endforeach; ?>
+                        </ul>
+                      <?php endif; ?>
+                    </div>
+                    <div class="btns-row d-lg-flex align-items-center dmt-35 tmt-30 px-p-p">
+                      <?php if (!empty($left_right_image_content_button_1['url'])) :
+                        $target_4 = ($left_right_image_content_button_1['target'] == "_blank") ? "_blank" : "";  ?>
+                          <a href="<?php echo $left_right_image_content_button_1['url']; ?>" target="<?php echo $target_4; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                          <?php echo $left_right_image_content_button_1['title']; ?>
+                          </a>
+                      <?php endif; ?>
+                      <?php if (!empty($left_right_image_content_button_2['url'])) :  $target_5 = ($left_right_image_content_button_2['target'] == "_blank") ? "_blank" : "";
+                        ?>
+                        <a href="<?php echo $left_right_image_content_button_2['url']; ?>" target="<?php echo $target_5; ?>" class="classic font-15 btnA text-capitalize text-decoration-none dmb-10">
+                          <?php echo $left_right_image_content_button_2['title']; ?>
+                        </a>
+                      <?php endif; ?>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 h-100 tmt-40  half-image">
+                    <div class="content-image position-absolute p-relative end-0 top-0 h-100">
+                        <div>
+                            <img src="<?php echo $left_right_image_content_image['url']; ?>" class="w-100 h-100 object-cover" alt="" />
+                            <?php if($left_right_image_content_video_image_select == 'video' || $left_right_image_content_video_image_select == 'youtube' || $left_right_image_content_video_image_select == 'vimeo'): ?>
+                            <button class="position-absolute top-left-center p-0 border-0 bg-transparent play-video-modal" data-bs-toggle="modal" data-bs-target="#videoModal<?php echo $i; ?>">
+                                <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/play.svg" class="" alt="" />
+                            </button>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+              <?php endif;?>
+            </div>
+            <div class="top-left-center w-100 position-absolute">
+              <div class="container">
+                <div class="col-lg-10 mx-auto d-lg-flex align-items-center justify-content-between">
+                  <div class="classic font-31 text-FFFAF6 lh-1 text-lg-start text-center"><?php echo $single_panel_heading; ?></div>
+                    <?php if (!empty($single_panel_button['url'])): $target_10 = ($single_panel_button['target'] == "_blank") ? "_blank" : ""; ?>
+                      <a href="<?php echo $single_panel_button['url']; ?>" target="<?php echo $target_10; ?>" class="btnA bg-FFFAF6-btn text-141414 text-decoration-none classic font-15 mx-lg-0 mx-auto tmt-15">
+                        <?php echo $single_panel_button['title']; ?>
+                      </a>
+                    <?php endif;?>
+                  </div>
                 </div>
               </div>
             </div>
@@ -892,9 +1044,10 @@ $page_builder = get_field('page_builder');
                             $ntitle = get_the_title();
                             $clss = ($i == 1) ? "active" : "";?>
                               <div class="carousel-item h-100 <?php echo $clss; ?>">
-                                <img src="<?php echo get_the_post_thumbnail_url($id); ?>" alt="" class="w-100 h-100 object-cover">
+                                  <img src="<?php echo get_the_post_thumbnail_url($id); ?>" alt=""
+                                      class="w-100 h-100 object-cover">
                               </div>
-                          <?php $i++;endwhile;?>
+                          <?php $i++; endwhile;?>
                         </div>
                         <div class="carousel-arrows w-100 position-absolute bottom-0 z-3 d-inline-flex justify-content-center tpt-35 dpb-45 tpb-0 p-initial">
                           <button class="carousel-control-prev carousel-arrow position-initial mx-1" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -1230,4 +1383,6 @@ $page_builder = get_field('page_builder');
 
     <?php elseif (get_row_layout() == 'event_table'): ?>
       <?php echo do_shortcode('[tribe_events]'); ?>
-<?php endif; endwhile; endif;?>
+
+<?php endif; endwhile; endif;
+?>

@@ -17,6 +17,8 @@
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
-}
-
-the_title( '<h1 class="product_title entry-title">', '</h1>' );
+}?>
+<div class="col-12 ps-lg-1 dpt-20 tpt-45 px-p-p">
+<div class="classic font-38 leading-40 fw-normal text-2C2924 text-capitalize dmb-20">
+<?php the_title( '<h1 class="product_title entry-title">', '</h1>' ); ?>
+</div>

@@ -26,8 +26,13 @@ $short_description = apply_filters( 'woocommerce_short_description', $post->post
 if ( ! $short_description ) {
 	return;
 }
-
+$sleeps = get_field('sleeps',get_the_ID()); 
+$night = get_field('night',get_the_ID()); 
 ?>
-<div class="woocommerce-product-details__short-description">
-	<?php echo $short_description; // WPCS: XSS ok. ?>
+
+<div class="classic font-16 leading-20 fw-normal text-2C2924 dmb-40">
+	<?php echo $sleeps; ?> | <?php echo $night; ?>
+</div>
+<div class="classic font-14 leading-24 fw-normal text-2C2924 col-lg-10 col-12 pe-lg-3 dmb-40">
+<?php echo $short_description; // WPCS: XSS ok. ?>
 </div>
