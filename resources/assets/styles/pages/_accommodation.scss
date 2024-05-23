@@ -41,28 +41,3 @@
         }
     }
 }
-
-.single-product-slider {
-    height: 422px;
-    @include media-breakpoint-down(lg){
-        height: 360px;
-    }
-}
-
-.single-product-group {
-    height: 100px;
-    @include media-breakpoint-down(lg){
-        height: 76px;
-    }
-}
-
-.dates-group {
-    &:last-child {
-        margin-bottom: 0 !important;
-    }
-
-    .dates-item {
-        height: 21px;
-        width: 21px;
-    }
-}

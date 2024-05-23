@@ -59,6 +59,29 @@ div#footer {
         display: none;
     }
 
+    .tribe-events-single{
+        padding-top: 232px;
+
+        .tribe-events-back{
+            a{
+                font-size: 18px;
+                line-height: 24px;
+                margin-bottom: 50px;
+                display: inline-block;
+                padding-left: 18px;
+                background-image: url('http://localhost:8080/RFW/wp-content/uploads/2024/05/arrow-prev.svg');
+                background-repeat: no-repeat;
+                background-size: 8px 14px;
+                background-position-y: center;
+            }
+        }
+        .tribe-events-schedule{
+            font-size: 18px;
+            line-height: 20px;
+            color: $color-2C2924;
+        }
+    }
+
     .tribe-events-notices {
         display: none !important;
     }

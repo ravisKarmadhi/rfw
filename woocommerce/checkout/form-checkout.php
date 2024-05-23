@@ -25,68 +25,71 @@ do_action( 'woocommerce_before_checkout_form', $checkout );
 if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 	echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'woocommerce' ) ) );
 	return;
-}
-
-?>
-<div class="delivery-details d-flex container-checkbox-password ps-0">
-	<div class="delivery-btn-main w-100">
-		<!-- <input type="radio" checked name="checkout-radio" id="checkout-radio-1">
-		<label for="checkout-radio-1" class="font-sackers fontS leading16 spacing1-2 textlight-border position-relative cursor-pointer w-100 fw-400">delivery details</label> -->
-
-		<label class="container-checkbox-password dmsans-regular textblack fontS textblack text-nowrap ms-lg-0 me-4 position-relative d-flex align-items-center" for="checkout-radio-1">
-			<span>
-				delivery details
-			</span>
-			<input type="radio" class="position-absolute opacity-0" checked name="checkout-radio" id="checkout-radio-1">
-			<span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle  border-lightgray"></span>
-		</label>
-	</div>
-	<div class="payment-btn-main w-100">
-		<!-- <input type="radio" name="checkout-radio" id="checkout-radio-2">
-		<label class="font-sackers w-100 fontS fw-400 leading16 spacing1-2 textlight-border position-relative cursor-pointer payment-details" for="checkout-radio-2">review & payments</label> -->
-		<label class="container-checkbox-password disable dmsans-regular textblack fontS textblack text-nowrap ms-lg-0 me-4 position-relative d-flex align-items-center" for="checkout-radio-2">
-			<span>
-				review & payments
-			</span>
-			<input type="radio" class="position-absolute opacity-0" checked name="checkout-radio" id="checkout-radio-2">
-			<span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle  border-lightgray"></span>
-		</label>
-	</div>
-</div>
+}?>
 <form name="checkout" method="post" class="checkout woocommerce-checkout" action="<?php echo esc_url(wc_get_checkout_url()); ?>" enctype="multipart/form-data">
 	<div class="d-lg-flex justify-content-between billing-method-checkout-page ">
-		<div class="checkout-left-content dpb-100">
-			<?php if ($checkout->get_checkout_fields()) : ?>
+		<div class="checkout-left-content col-6 pe-4">
+			<div class="col-11 pe-3">
+				<div class="delivery-details d-flex flex-wrap container-checkbox-password ps-0 dmb-35">
+					<div class="delivery-btn-main">
+						<!-- <input type="radio" checked name="checkout-radio" id="checkout-radio-1">
+						<label for="checkout-radio-1" class="font-sackers fontS leading16 spacing1-2 textlight-border position-relative cursor-pointer w-100 fw-400">delivery details</label> -->
 
-				<?php do_action('woocommerce_checkout_before_customer_details'); ?>
-
-				<div class="" id="customer_details">
-
-					<div class="second-option">
-						<?php do_action('woocommerce_checkout_billing'); ?>
+						<label class="container-checkbox-password classic font-15 leading-20 text-2C2924 text-nowrap ms-lg-0 me-4 position-relative d-flex align-items-center" for="checkout-radio-1">
+							<span>
+								Delivery Details
+							</span>
+							<input type="radio" class="position-absolute opacity-0" checked name="checkout-radio" id="checkout-radio-1">
+							<span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle  border-lightgray"></span>
+						</label>
 					</div>
-
-					<div class="second-option master-second-part">
-						<?php do_action('woocommerce_checkout_shipping'); ?>
+					<div class="payment-btn-main">
+						<!-- <input type="radio" name="checkout-radio" id="checkout-radio-2">
+						<label class="font-sackers w-100 fontS fw-400 leading16 spacing1-2 textlight-border position-relative cursor-pointer payment-details" for="checkout-radio-2">review & payments</label> -->
+						<label class="container-checkbox-password disable classic font-15 leading-20 text-2C2924 text-nowrap ms-lg-0 me-4 position-relative d-flex align-items-center" for="checkout-radio-2">
+							<span>
+								review & payments
+							</span>
+							<input type="radio" class="position-absolute opacity-0" checked name="checkout-radio" id="checkout-radio-2">
+							<span class="checkmark position-absolute top-0 start-0 bg-transparent rounded-circle  border-lightgray"></span>
+						</label>
 					</div>
 				</div>
 
-				<?php do_action('woocommerce_checkout_after_customer_details'); ?>
-			<?php endif; ?>
+				<?php if ($checkout->get_checkout_fields()) : ?>
+
+					<?php do_action('woocommerce_checkout_before_customer_details'); ?>
+
+					<div class="" id="customer_details">
+
+						<div class="second-option">
+							<?php do_action('woocommerce_checkout_billing'); ?>
+						</div>
+
+						<div class="second-option master-second-part">
+							<?php do_action('woocommerce_checkout_shipping'); ?>
+						</div>
+					</div>
+
+					<?php do_action('woocommerce_checkout_after_customer_details'); ?>
+				<?php endif; ?>
+			</div>
 		</div>
 
 		<?php do_action('woocommerce_checkout_before_order_review_heading'); ?>
 
 
-		<div class="checkout-right-content tmt-50">
+		<div class="checkout-right-content col-6 ps-5">
 			<?php do_action('woocommerce_checkout_before_order_review'); ?>
 
-			<div id="order_review" class="woocommerce-checkout-review-order">
-				<div class="d-flex">
-					<h2>Your Order</h2>
-					<a href="<?php echo get_home_url(); ?>/cart">Amend</a>
+			<div id="order_review" class="woocommerce-checkout-review-order ps-3">
+				<div class="checkout-order-box">
+					<div class="d-flex align-items-center justify-content-between dmb-25">
+						<h2 class="classic font-31 leading-42 text-2C2924">Your Order</h2>
+						<a href="<?php echo get_home_url(); ?>/cart" class="text-decoration-none d-inline-block classic font-15 leading-20 text-2C2924">Amend</a>
+					</div>
+					<?php do_action('woocommerce_checkout_order_review'); ?>
 				</div>
-				<?php do_action('woocommerce_checkout_order_review'); ?>
 
 			</div>
 

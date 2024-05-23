@@ -1,0 +1,116 @@
+.checkout-left-content {
+    .woocommerce-billing-fields {
+        .form-row {
+            padding: 0 !important;
+            margin-bottom: 12px !important;
+
+            &:first-child {
+                margin-bottom: 33px !important;
+                padding-bottom: 30px !important;
+                border-bottom: 1px solid rgba($color: #BCBCBC, $alpha: 0.94);
+
+                .woocommerce-input-wrapper {
+                    width: 70%;
+                }
+            }
+
+            label {
+                font-size: 0;
+            }
+
+            .woocommerce-input-wrapper {
+                .input-text {
+                    background-color: rgba($color: $color-36332D, $alpha: 0.1);
+                    border: 0 !important;
+                    padding: 20px 24px;
+                    font-family: "URWClassico";
+                    font-size: $font-15;
+                    color: $color-2C2924;
+                    line-height: $Leading-16;
+
+                    &::placeholder {
+                        font-family: "URWClassico";
+                        font-size: $font-15;
+                        line-height: $Leading-16;
+                        color: $color-2C2924;
+                    }
+                }
+            }
+
+            &.form-row-first {
+                padding-right: 8px !important;
+            }
+
+            &.form-row-last {
+                padding-left: 8px !important;
+            }
+
+            &.form-row-first,
+            &.form-row-last {
+                width: 50%;
+            }
+
+            &:last-child {
+                margin-bottom: 0 !important;
+            }
+
+            .woocommerce-input-wrapper {
+                display: inline-flex;
+                width: 100%;
+
+                .select2-container {
+                    height: 56px;
+                    display: inline-flex;
+
+                    &.select2-container--open {
+                        .selection {
+                            .select2-selection--single {
+                                background-color: rgba($color: $color-36332D, $alpha: 0.1) !important;
+
+                            }
+                        }
+                    }
+
+                    .selection {
+                        display: inline-flex;
+                        height: 100%;
+
+                        .select2-selection--single {
+                            height: 100% !important;
+                            border: 0;
+                            background-color: rgba($color: $color-36332D, $alpha: 0.1);
+
+                            .select2-selection__rendered {
+                                line-height: 54px;
+                                padding: 0 24px;
+                                font-family: "URWClassico";
+                                font-size: $font-15;
+                                color: $color-2C2924;
+                            }
+
+                            .select2-selection__arrow {
+                                height: 4px;
+                                width: 9px;
+                                right: 26px;
+                                background-image: url('http://localhost:8080/RFW/wp-content/uploads/2024/05/arrow-down.svg');
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .second-option {
+        &.master-second-part{
+            display: none;
+        }
+    }
+}
+
+.checkout-right-content {
+    .checkout-order-box {
+        box-shadow: 0px 3px 36px #00000014;
+        padding: 64px 96px 74px 62px;
+    }
+}

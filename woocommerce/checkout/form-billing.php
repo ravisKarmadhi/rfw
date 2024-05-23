@@ -21,11 +21,11 @@ defined( 'ABSPATH' ) || exit;
 <div class="woocommerce-billing-fields">
 	<?php if ( wc_ship_to_billing_address_only() && WC()->cart->needs_shipping() ) : ?>
 
-		<h3><?php esc_html_e( 'Delivery Address', 'woocommerce' ); ?></h3>
+		<h3 class="classic font-31 leading-43 text-2C2924 dmb-20"><?php esc_html_e( 'Delivery Address', 'woocommerce' ); ?></h3>
 
 	<?php else : ?>
 
-		<h3><?php esc_html_e( 'Delivery Address', 'woocommerce' ); ?></h3>
+		<h3 class="classic font-31 leading-43 text-2C2924 dmb-20"><?php esc_html_e( 'Delivery Address', 'woocommerce' ); ?></h3>
 
 	<?php endif; ?>
 

@@ -152,7 +152,9 @@
                 }
 
                 .canvas-close {
-                    opacity: 0.16;
+                    @include media-breakpoint-down(lg){
+                        opacity: 0.16;
+                    }
                 }
 
                 .navigation {
@@ -167,16 +169,18 @@
 
                 .header-btn-group {
                     .btnA {
+                        margin-right: 14px !important;
+
                         &:last-child {
                             margin-right: 0 !important;
                         }
 
                         &:nth-child(1) {
-                            width: 155px;
+                            min-width: 155px;
                         }
 
                         &:nth-child(2) {
-                            width: 183px;
+                            min-width: 183px;
                         }
                     }
                 }

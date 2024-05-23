@@ -65,13 +65,11 @@ $login_button = get_field('login_button','option');
                                 if (!empty($button_1['url'])) :
                                     $target_2 = ($button_1['target'] == "_blank") ? "_blank" : "";    
                                 ?>
-                            <a href="<?php echo $button_1['url']; ?>" target="<?php echo $target_2; ?>" class="text-decoration-none btnA border-FFFAF6-btn classic font-15 leading-20 text-FFFAF6 me-3 mb-3"><?php echo $button_1['title']; ?></a>
+                            <a href="<?php echo $button_1['url']; ?>" target="<?php echo $target_2; ?>" class="text-decoration-none btnA border-FFFAF6-btn classic font-15 leading-20 mb-3"><?php echo $button_1['title']; ?></a>
                             <?php endif; ?>
-                            <?php
-                                if (!empty($button_2['url'])) :
-                                    $target_3 = ($button_2['target'] == "_blank") ? "_blank" : "";    
-                                ?>
-                            <a href="<?php echo $button_2['url']; ?>" target="<?php echo $target_3; ?>" class="text-decoration-none btnA border-FFFAF6-btn classic font-15 leading-20 text-FFFAF6 me-3 mb-3"><?php echo $button_2['title']; ?></a>
+                            <?php if (!empty($button_2['url'])) :
+                                    $target_3 = ($button_2['target'] == "_blank") ? "_blank" : "";   ?>
+                                <a href="<?php echo $button_2['url']; ?>" target="<?php echo $target_3; ?>" class="text-decoration-none btnA border-FFFAF6-btn classic font-15 leading-20 mb-3"><?php echo $button_2['title']; ?></a>
                             <?php endif; ?>
                         </div>
                         <?php

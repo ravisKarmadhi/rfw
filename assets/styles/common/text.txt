@@ -122,3 +122,15 @@
 .louise 
 .classic 
 .classic-med
+
+.louise {
+    font-family: "LouiseWalkerScriptDEMO";
+}
+
+.classic {
+    font-family: "URWClassico";
+}
+
+.classic-med {
+    font-family: "URWClassicoMed";
+}

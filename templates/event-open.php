@@ -8,7 +8,7 @@
     <section class="event-open-section">
         <div class="container px-p-0">
             <div class="px-p-p">
-                <a href="" class="text-decoration-none back-all d-flex align-item-center dmb-50 classic font-18 leading-20 fw-normal text-2C2924">
+                <a href="" class="text-decoration-none back-all d-flex align-items-center dmb-50 classic font-18 leading-20 fw-normal text-2C2924">
                     <img src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/arrow-prev.svg" alt="arrow-prev.svg" class="me-2">
                     Back To All
                 </a>
@@ -34,15 +34,15 @@
                 <div class="col-lg-3 col-12 dmb-65 tmb-70">
                     <div class="classic font-16 leading-28 fw-normal text-2C2924 dmb-30 opacity-55 dmb-25 tmb-30">Details</div>
                     <div class="event-open-details">
-                        <div class="d-flex align-item-center dmb-30">
+                        <div class="d-flex align-items-center dmb-30">
                             <div class="classic font-20 leading-24 fw-normal text-2C2924 col-4 res-font-16 res-leading-20">Date:</div>
                             <div class="classic-med font-20 leading-24 text-2C2924 col-8 res-font-16 res-leading-20">April 9</div>
                         </div>
-                        <div class="d-flex align-item-center dmb-30">
+                        <div class="d-flex align-items-center dmb-30">
                             <div class="classic font-20 leading-24 fw-normal text-2C2924 col-4 res-font-16 res-leading-20">Starts:</div>
                             <div class="classic-med font-20 leading-24 text-2C2924 col-8 res-font-16 res-leading-20">9.30 am</div>
                         </div>
-                        <div class="d-flex align-item-center dmb-30">
+                        <div class="d-flex align-items-center dmb-30">
                             <div class="classic font-20 leading-24 fw-normal text-2C2924 col-4 res-font-16 res-leading-20">Cost:</div>
                             <div class="classic-med font-20 leading-24 text-2C2924 col-8 res-font-16 res-leading-20">Free</div>
                         </div>
@@ -52,7 +52,7 @@
             <div class="col-xl-6 col-lg-7 col-12 pe-xl-2 dmb-30 px-lg-0 px-2">
                 <div class="book-ticket-box border-EBEBEB dpt-35 dpb-40 radius-5">
                     <div class="classic font-16 leading-20 fw-normal text-2C2924 dpb-25">Book tickets</div>
-                    <div class="d-flex align-item-center book-ticket-item border-top-EBEBEB border-bottom-EBEBEB dpt-30 dpb-30 tpt-35 tpb-25 dmb-25">
+                    <div class="d-flex align-items-center book-ticket-item border-top-EBEBEB border-bottom-EBEBEB dpt-30 dpb-30 tpt-35 tpb-25 dmb-25">
                         <div class="col-xl-8 col-lg-7 col-6 classic font-22 leading-24 fw-normal text-2C2924 text-capitalize pe-3 res-font-18 res-leading-20">Wine Tasting</div>
                         <div class="col-xl-1 col-lg-2 col-2 classic font-22 leading-24 fw-normal text-2C2924 text-capitalize text-center res-font-18 res-leading-20">Free</div>
                         <div class="col-lg-3 col-4 classic-med font-16 leading-24 text-2C2924 text-capitalize text-end res-font-18 res-leading-20">2 available</div>

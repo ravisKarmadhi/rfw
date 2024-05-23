@@ -1,0 +1,102 @@
+.single-product-slider {
+    height: 422px;
+
+    @include media-breakpoint-down(lg) {
+        height: 360px;
+    }
+}
+
+.single-product-group {
+    height: 100px;
+
+    @include media-breakpoint-down(lg) {
+        height: 76px;
+    }
+}
+
+.dates-group {
+    &:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    .dates-item {
+        height: 21px;
+        width: 21px;
+    }
+}
+
+.woocommerce-breadcrumb {
+    display: none;
+}
+
+.entry-summary{
+    .wc-bookings-booking-form {
+        border: 0 !important;
+        padding: 0 !important;
+        width: 58%;
+    
+        .wc-bookings-date-picker {
+            padding: 0 !important;
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -12px;
+            margin-right: -12px;
+    
+            .label {
+                display: none;
+            }
+    
+            .picker.hasDatepicker {
+                width: 100%;
+            }
+    
+            .wc-bookings-date-picker-date-fields {
+                width: 50%;
+                font-size: 0;
+                padding-left: 12px;
+                padding-right: 12px;
+    
+                &>span {
+                    font-family: "URWClassicoMed";
+                    font-size: $font-16;
+                    line-height: $Leading-20;
+                    color: $color-2C2924;
+                }
+    
+                label {
+                    width: 33.33%;
+                    background: $color-EFEFEF;
+    
+                    input {
+                        width: 100%;
+                        background: transparent;
+                        border: 0;
+                        padding: 22px;
+                    }
+    
+                    span {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .single_add_to_cart_button {
+        background: $color-BDA673 !important;
+        border: 1px solid $color-BDA673;
+        border-radius: 0 !important;
+        width: 126px;
+        height: 45px;
+        font-family: "URWClassicoMed";
+        font-size: $font-14 !important;
+        line-height: $Leading-16 !important;
+        font-weight: 500 !important;
+        transition: all 0.3s ease-in-out;
+    
+        &:hover {
+            background: transparent !important;
+            color: $color-2C2924 !important;
+            border: 1px solid $color-BDA673;
+        }
+    }
+}

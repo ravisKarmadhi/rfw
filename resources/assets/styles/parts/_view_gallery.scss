@@ -17,6 +17,14 @@
         }
     }
 
+    &.bg-2C2924-sec {
+        background-color: $color-2C2924;
+
+        .text {
+            color: $color-FFFAF6;
+        }
+    }
+
     .image-timeless {
         .first-img {
             width: 247px;

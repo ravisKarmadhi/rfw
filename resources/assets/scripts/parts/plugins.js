@@ -26,7 +26,6 @@ export class Plugins {
         }
       ]
     });
-
     $('.events-card-slider').slick({
       infinite: true,
       slidesToShow: 3,
@@ -99,6 +98,32 @@ export class Plugins {
         }
       ]
     });
+    $('.history-slider').slick({
+      arrows: true,
+      prevArrow: $(".our-history-section .slick--prev"),
+      nextArrow: $(".our-history-section .slick--next"),
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      infinite: false,
+      autoplay: false,
+      dots: false,
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 2,
+          }
+        },
+        {
+          breakpoint: 510,
+          settings: {
+            slidesToShow: 1,
+            arrows: true,
+          }
+        },
+      ]
+    });
+
 
     // accommodation slider js
     $('.single-product-slider').slick({

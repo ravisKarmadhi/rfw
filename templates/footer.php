@@ -11,7 +11,7 @@ $links = get_field('links','option');
 $website_design_logo = get_field('website_design_logo','option');
 ?>
 <!-- other footer color class - white-footer , responsive yellow footer class - res-yellow-footer -->
-<footer class="footer overflow-hidden">
+<footer class="footer position-relative overflow-hidden <?php echo $footer_color_main; ?> <?php echo $footer_color_main_res; ?>">
     <div class="container px-p-0">
         <div class="instagram-section dmb-85 tmb-75">
             <div class="d-flex flex-wrap align-items-center justify-content-center dmb-30">

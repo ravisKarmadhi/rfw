@@ -1,24 +1,24 @@
-.contact-bg {
-    background-image: url('http://localhost/rfw/wp-content/uploads/2024/05/contact-bg-logo.svg');
-    background-repeat: no-repeat;
-    background-size: 78% 80%;
-    background-position: -90%;
-    padding-top: 92px;
+// .contact-bg {
+//     background-image: url('http://localhost/rfw/wp-content/uploads/2024/05/contact-bg-logo.svg');
+//     background-repeat: no-repeat;
+//     background-size: 78% 80%;
+//     background-position: -90%;
+//     padding-top: 92px;
 
-    @include media-breakpoint-down(xl) {
-        background-position: -60%;
-    }
+//     @include media-breakpoint-down(xl) {
+//         background-position: -60%;
+//     }
 
-    @include media-breakpoint-down(lg) {
-        padding-top: 0px;
-    }
+//     @include media-breakpoint-down(lg) {
+//         padding-top: 0px;
+//     }
 
-    @include media-breakpoint-down(md) {
-        background-size: 113%;
-        background-position: 180% 33%;
-        padding-top: 0px;
-    }
-}
+//     @include media-breakpoint-down(md) {
+//         background-size: 113%;
+//         background-position: 180% 33%;
+//         padding-top: 0px;
+//     }
+// }
 
 .three-card-section {
     .container {
