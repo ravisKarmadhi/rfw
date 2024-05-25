@@ -16,13 +16,12 @@ $footer_color_main = 'white-footer';
 else:
 $footer_color_main = '';
 endif;
-echo $footer_color;
 
 
 $res_footer_color = get_field('responsive_footer_color');
 $footer_color_main_res = "";
 if($res_footer_color == 'white'): 
-$footer_color_main_res = 'white-footer';
+$footer_color_main_res = '';
 elseif($res_footer_color == 'black'):
 $footer_color_main_res = '';
 elseif($res_footer_color == 'yellow'):

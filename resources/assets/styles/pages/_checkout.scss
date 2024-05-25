@@ -102,15 +102,50 @@
     }
 
     .second-option {
-        &.master-second-part{
+        &.master-second-part {
             display: none;
         }
     }
 }
 
 .checkout-right-content {
+    .BCBCBC-border-bottom {
+        border-bottom: 1px solid #BCBCBC;
+    }
+
     .checkout-order-box {
         box-shadow: 0px 3px 36px #00000014;
         padding: 64px 96px 74px 62px;
+    }
+
+    .tribe-checkout-backlinks {
+        display: none;
+    }
+
+    .product-img {
+        width: 20%;
+    }
+    
+    .product-name {
+        width: 56.5%;
+    }
+    
+    .product-qty {
+        width: 7.3%;
+    }
+    
+    .product-total {
+        width: 16.2%;
+    }
+    
+    .cart_item{
+        .product-img {
+            height: 110px;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
     }
 }

@@ -43,14 +43,14 @@ endif;
                             <?php if(!empty($hero_section_button_1['url'])): 
                               $target_1 = ($hero_section_button_1['target'] == "_blank") ? "_blank" : "";          
                             ?>
-                              <a href="<?php echo $hero_section_button_1['url']; ?>" target="<?php echo $target_1; ?>" class="btnA bgdark-BDA673-btn text-decoration-none classic font-15 tmb-10 mx-lg-0 mx-2">
+                              <a href="<?php echo $hero_section_button_1['url']; ?>" target="<?php echo $target_1; ?>" class="btnA bgdark-BDA673-btn text-decoration-none classic font-15 tmb-10 mx-2">
                                 <?php echo $hero_section_button_1['title']; ?>
                               </a>
                             <?php endif; ?>
                             <?php if(!empty($hero_section_button_2['url'])): 
                               $target_2 = ($hero_section_button_2['target'] == "_blank") ? "_blank" : "";          
                             ?>
-                              <a href="<?php echo $hero_section_button_2['url']; ?>" target="<?php echo $target_2; ?>" class="btnA border-FFFAF6-btn text-decoration-none classic font-15 tmb-10 mx-lg-0 mx-2">
+                              <a href="<?php echo $hero_section_button_2['url']; ?>" target="<?php echo $target_2; ?>" class="btnA border-FFFAF6-btn text-decoration-none classic font-15 tmb-10 mx-2">
                               <?php echo $hero_section_button_2['title']; ?>
                               </a>
                             <?php endif; ?>
@@ -334,9 +334,15 @@ endif;
                         <div class="d-flex flex-wrap align-items-center justify-content-center dmt-20 tmt-30">
                             <?php if (!empty( $all_side_image_section_button['url'])) :
                             $target_6 = ( $all_side_image_section_button['target'] == "_blank") ? "_blank" : ""; ?>
-                            <a href="<?php echo $all_side_image_section_button['url']; ?>" target="<?php echo $target_6; ?>" class="btnA link text-decoration-none classic font-15 text-capitalize tmt-15">
+                            <a href="<?php echo $all_side_image_section_button['url']; ?>" target="<?php echo $target_6; ?>" class="btnA link text-decoration-none classic font-15 text-capitalize tmt-15 mx-2">
                                 <?php echo $all_side_image_section_button['title']; ?>
                             </a>
+                            <?php endif; ?>
+                            <?php if(!empty($all_side_image_section_download_brochure_button)): ?>
+                            <a data-bs-toggle="modal" data-bs-target="#downloadModal"
+                                    class="text-decoration-none btnA border-FFFAF6-btn classic font-15 leading-20">
+                                   <?php echo $all_side_image_section_download_brochure_button; ?>
+                                </a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -345,6 +351,39 @@ endif;
         </div>
     </div>
   </section>
+<?php if(!empty($all_side_image_section_download_brochure_button)): ?>
+<div class="modal download-modal fade" id="downloadModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="downloadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="col-10 col-lg-12 mx-auto">
+                <div class="d-flex align-items-center justify-content-between justify-content-lg-end tpt-70">
+                    <div class="modal-logo d-inline-flex d-lg-none">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/res-black-logo.svg"
+                            alt="" class="res-head-black-logo w-100">
+                    </div>
+                    <button type="button" class="close-icon border-0 bg-transparent tmb-0 dmb-50"
+                        data-bs-dismiss="modal" aria-label="Close">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="21.952" height="21.953"
+                            viewBox="0 0 21.952 21.953">
+                            <path id="noun_Close_961416"
+                                d="M12.483,10.976l9.47,9.47-1.507,1.507-9.47-9.47-9.47,9.47L0,20.446l9.47-9.47L0,1.507,1.507,0l9.47,9.47L20.446,0l1.507,1.507Z"
+                                fill="#2C2924" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div class="col-10 px-lg-3 mx-auto tpb-0 dpb-90">
+                    <?php if(!empty($all_side_image_section_form_text)): ?>
+                    <div class="font-30 leading-40 res-font-36 classic text-2C2924 text-center dmb-25 px-3 px-lg-0"><?php echo $all_side_image_section_form_text; ?></div>
+                    <?php endif; ?>
+                    <?php echo do_shortcode('[contact-form-7 id="5ecf9b2" title="Download Form"]'); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php endif; ?>
     <?php elseif (get_row_layout() == 'want_to_download') : 
     $want_to_download_heading = get_sub_field('heading');  
     $want_to_download_button = get_sub_field('button');  
@@ -375,8 +414,8 @@ endif;
     </section>
     <?php elseif (get_row_layout() == 'event_section') : 
      $event_section_heading = get_sub_field('heading');  
-     $event_section_items = get_sub_field('items');  
-     if(!empty($event_section_items)):
+     $event_section_all_event = get_sub_field('all_event');  
+     if(!empty($event_section_all_event)):
     ?>
     <section class="overflow-hidden" id="event-<?php echo $i; ?>">
       <div class="container">
@@ -395,10 +434,11 @@ endif;
                   </div>
               </div>
               <div class="col-12 events-card-slider">
-                <?php foreach ($event_section_items as $event_section_items_custom): 
-                $id = $event_section_items_custom->ID;  
-                $ntitle = $event_section_items_custom->post_title;  
-                $content = $event_section_items_custom->post_excerpt;  
+                <?php foreach ($event_section_all_event as $event_section_items_custom): 
+                $id = $event_section_items_custom;  
+                $queried_post = get_post($id); 
+                $ntitle = $queried_post->post_title;  
+                $content = $queried_post->post_excerpt;  
                 ?>
                   <div class="single-events">
                       <a href="<?php echo get_permalink($id); ?>" class="d-block card-hover w-100 text-decoration-none">
@@ -424,6 +464,46 @@ endif;
     $our_history_items = get_sub_field('items'); 
     if(!empty($our_history_items)): 
     ?>
+        <section class="our-history-section res-triangle-shape overflow-hidden">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center">
+                <?php if(!empty($our_history_heading)): ?>
+                <h5 class="classic font-50 leading-56 text-black tmb-45 res-font-40 res-w-100"><?php echo $our_history_heading; ?></h5>
+                <?php endif; ?>
+                <div class="d-flex align-items-center">
+                    <button class="btn border-0 bg-transparent d-flex align-items-center slick--prev p-0">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/arrow-golden.svg" alt="">
+                    </button>
+                    <button class="btn border-0 bg-transparent d-flex align-items-center slick--next p-0 ms-3">
+                        <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/arrow-golden.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="history-slider col-12 dmt-55">
+                <?php foreach($our_history_items as $our_history_items_custom): ?>
+                <div class="our-history">
+                    <div class="history-line position-relative">
+                        <div class="history-number bg-BDA673 rounded-circle dmb-35 d-flex align-items-center">
+                        </div>
+                    </div>
+                    <div class="our-history-item card-hover">
+                        <div class="our-history-img dmb-25 overflow-hidden">
+                            <img src="<?php echo $our_history_items_custom['image']['url'] ?>" alt="" class="h-100 w-100 object-cover img">
+                        </div>
+                        <div class="our-history-part pe-4">
+                            <h6 class="classic font-15 leading-20 text-2C2924 dmb-15"><?php echo $our_history_items_custom['date'];?></h6>
+                            <h5 class="classic font-22 leading-26 text-2C2924 dmb-15"><?php echo $our_history_items_custom['heading'];?></h5>
+                            <h6 class="classic font-15 leading-26 text-2C2924"> 
+                            <?php echo $our_history_items_custom['content'];?>
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+    </section>
+
     <?php endif; ?>
     <?php elseif (get_row_layout() == 'two_block_section') :
     $two_block_section_items = get_sub_field('items'); 
@@ -673,15 +753,17 @@ if(!empty($farmhouse_items)):
     <div class="container px-p-0">
         <div class="row mx-n2">
           <?php foreach($farmhouse_items as $farmhouse_items_custom): 
-          $id = $farmhouse_items_custom->ID;  
-          $ntitle = $farmhouse_items_custom->post_title;  
-          $content = $farmhouse_items_custom->post_excerpt;    
-          $sleeps = get_field('sleeps',$id);
+          $ntitle = $farmhouse_items_custom['heading'];  
+          $content = $farmhouse_items_custom['content'];    
+          $sleeps = $farmhouse_items_custom['sleeps'];
+          $image = $farmhouse_items_custom['image'];
+          $link = $farmhouse_items_custom['link'];
+          $target_13 = ($single_panel_button['target'] == "_blank") ? "_blank" : "";
           ?>
             <div class="col-lg-6 px-2">
                 <div class="single-sleeps w-100 overflow-hidden">
-                    <a href="<?php echo get_permalink($id); ?>" class="w-100 h-100 card-hover position-relative d-block">
-                        <img src="<?php echo get_the_post_thumbnail_url($id); ?>" class="w-100 h-100 img object-cover position-absolute top-0 start-0" alt="<?php echo $ntitle; ?>" />
+                    <a href="<?php echo $link['url']; ?>" target="<?php echo $target_13; ?>" class="w-100 h-100 card-hover position-relative d-block">
+                        <img src="<?php echo $image['url']; ?>" class="w-100 h-100 img object-cover position-absolute top-0 start-0" alt="<?php echo $ntitle; ?>" />
                         <div class="bg-2C2924 w-100 h-100 position-absolute top-0 left-0 opacity-75"></div>
 
                         <div class="position-absolute top-0 dpt-125 tpt-00 left-center text-center col-lg-8 col-10 px-3 mx-auto single-sleeps-content">
@@ -693,7 +775,7 @@ if(!empty($farmhouse_items)):
                             <div class="classic font-15 fw-normal text-FFFAF6 leading-26 mt-3"><?php echo $content; ?></div>
 
                             <button class="btnA border-0 p-0 bg-8B6E3D text-center text-FFFAF6 font-15 classic mx-auto dmt-30 tmt-20 d-block">
-                                Take A Look Around
+                            <?php echo $link['title']; ?>
                             </button>
                         </div>
                     </a>
@@ -977,34 +1059,34 @@ $args = array(
     'order'   => 'ASC',
     'hide_empty' => 0
   );
-
+  
   $cats = get_categories($args);
- $args_cat = [
+  $args_cat = [
     'post_type' => 'faq',
     'posts_per_page' => 5,
     'orderby' => 'date',
     'order' => 'ASC',
     'paged' => get_query_var('paged') ? get_query_var('paged') : 1
-];
-
-if (isset($_GET['faq_main']) && !empty($_GET['faq_main']) && $_GET['faq_main'] != 'all') {
-
+  ];
+  
+  if (isset($_GET['faq_main']) && !empty($_GET['faq_main']) && $_GET['faq_main'] != 'all') {
+  
     $tax_query = array(
-        array(
-            'taxonomy' => 'faq-type',
-            'field' => 'slug',
-            'terms' => explode(',', $_GET['faq_main']),
-        ),
+      array(
+        'taxonomy' => 'faq-type',
+        'field' => 'slug',
+        'terms' => explode(',', $_GET['faq_main']),
+      ),
     );
     $args_cat['tax_query'] = $tax_query;
-}
-if (isset($_GET['search_faq']) && !empty($_GET['search_faq'])) {
-
+  }
+  if (isset($_GET['search_faq']) && !empty($_GET['search_faq'])) {
+  
     $args_cat['s'] = $_GET['search_faq'];
-}
-
-$faq = new WP_Query($args_cat);    
- if ($faq->have_posts()) : 
+  }
+  
+  $faq = new WP_Query($args_cat); 
+ 
 ?>
     <section class="faq-section">
         <div class="container px-p-0">
@@ -1025,7 +1107,7 @@ $faq = new WP_Query($args_cat);
             <div class="px-p-p">
                 <div class="faq-search col-xl-7 col-lg-10 col-12 px-lg-1 mx-auto dmb-50">
                     <div class="col-lg-11 col-12 mx-auto position-relative">
-                        <input class="faq-input border-0 dpt-25 dpb-25 radius-3 ps-4 w-100 "
+                        <input class="faq-input border-0 dpt-25 dpb-25 radius-3 ps-4 w-100 " name="s"
                             placeholder="Search for your question…" type="search" />
                         <div class="position-absolute bottom-0 end-0 dpb-25 pe-4">
                             <img src="<?php echo get_home_url(); ?>/wp-content/uploads/2024/05/search.svg" alt="">
@@ -1036,7 +1118,9 @@ $faq = new WP_Query($args_cat);
                     <div class="closet-accordion">
                         <div class=" col-lg-11 col-12 px-lg-3 mx-auto">
                             <div class="px-lg-3">
-                            <?php while ($faq->have_posts()) : $faq->the_post();
+                            <?php 
+                            if ($faq->have_posts()) : 
+                            while ($faq->have_posts()) : $faq->the_post();
                                 $id       = get_the_ID();
                                 $ntitle   = get_the_title();
                                 $content  = get_the_content();
@@ -1064,7 +1148,13 @@ $faq = new WP_Query($args_cat);
                                         </div>
                                     </div>
                                 </div>
-                                <?php endwhile; wp_reset_postdata(); ?>
+                                <?php endwhile; wp_reset_postdata(); 
+                                else :
+                                ?>
+                                <div class="not-found text-center text-white">
+                                Not Found
+                                </div>
+                            <?php endif; ?>
                             </div>
                         </div>
                     </div>
@@ -1074,26 +1164,30 @@ $faq = new WP_Query($args_cat);
     </section>
     <script>
         jQuery(document).on("click", ".faq-section .faq-category button", function () {
+            jQuery('.faq-section .faq-category button').removeClass('active');
+            jQuery(this).addClass('active');
             call_faq_filter();
         });
 
-        jQuery(document).on("keyup", ".faq-search input", function () {
-        call_faq_filter();
+
+
+        jQuery(document).on("keyup", ".faq-input", function () {
+            call_faq_filter();
         });
         function call_faq_filter() {
             var is_sel = 0;
             var art_arr = [];
             var art_link = window.location.pathname + "?";
-            var s_txt = jQuery(".faq-search input").val();
-            var sel_filter =  jQuery('.faq-section .faq-category button.active').attr('data-filter');
+            var s_txt = jQuery(".faq-input").val();
+            var sel_filter = jQuery('.faq-section .faq-category button.active').attr('data-filter');
 
             if (sel_filter != '') {
 
                 if (is_sel == 1) {
-                art_link += "&faq_main=" + sel_filter;
+                    art_link += "&faq_main=" + sel_filter;
                 } else {
-                art_link += "faq_main=" + sel_filter;
-                is_sel = 1;
+                    art_link += "faq_main=" + sel_filter;
+                    is_sel = 1;
                 }
 
             }
@@ -1104,13 +1198,12 @@ $faq = new WP_Query($args_cat);
                 is_sel = 1;
             }
             jQuery.get(art_link, function (res4) {
-
+                console.log(2);
                 jQuery(".faq-activity").html(jQuery(res4).find(".faq-activity").html());
             });
 
         }
     </script>
-    <?php endif; ?>
     <?php elseif (get_row_layout() == 'privacy_policy') : 
         $privacy_policy_items = get_sub_field('items');  
         if(!empty($privacy_policy_items)): ?>
@@ -1155,7 +1248,7 @@ $faq = new WP_Query($args_cat);
                 </div>
                 <div class="position-relative overflow-hidden h-100 w-100">
                     <div class="position-fixed top-0 privacy-re-img dmt-95 tmt-280">
-                    <img class="h-100" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
+                        <img class="h-100" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
                     </div>
                 </div>
             </section>
@@ -1169,8 +1262,8 @@ $faq = new WP_Query($args_cat);
       $contact_us_location = get_sub_field('location');
       $contact_us_location_link = get_sub_field('location_link');
       $contact_us_form_heading = get_sub_field('form_heading');?>
-        <section class="contact-section tpt-235 dpt-230">
-            <div class="container">
+        <section class="contact-section position-relative tpt-235 dpt-230 overflow-hidden">
+            <div class="container position-relative z-3">
                 <div class="row">
                     <div class="col-12 col-xl-8 mx-auto px-lg-4">
                         <div class="col-lg-9 mx-auto px-4 px-lg-3 d-flex flex-wrap justify-content-between dmb-55 tmb-0 tpb-30">
@@ -1235,17 +1328,20 @@ $faq = new WP_Query($args_cat);
                     </div>
                 </div>
             </div>
+            <div class="position-absolute top-0 privacy-re-img dmt-95 tmt-280">
+                <img class="h-100" src="<?php echo get_home_url() ?>/wp-content/uploads/2024/05/logo-layer.svg" alt="">
+            </div>
         </section>
     <?php elseif (get_row_layout() == 'three_block_section') : 
         $three_block_section_items = get_sub_field('items');
         if(!empty($three_block_section_items)): ?>
             <section class="three-card-section">
                 <div class="container px-p-0">
-                    <div class="row row-8">
+                    <div class="row row-8 mx-m-0">
                         <?php foreach($three_block_section_items as $three_block_section_items_custom): 
                             if(!empty($three_block_section_items_custom['button']['url'])): 
                             $target_12 = ($three_block_section_items_custom['button']['target'] == "_blank") ? "_blank" : ""; ?>
-                                <div class="col-12 col-lg-4 px-2 three-cards mb-2">
+                                <div class="col-12 col-lg-4 px-lg-2 px-p-0 three-cards mb-2">
                                     <a href="<?php echo $three_block_section_items_custom['button']['url']; ?>"
                                         class="three-card h-100 w-100 card-hover position-relative overflow-hidden d-inline-block">
                                         <img src="<?php echo $three_block_section_items_custom['image']['url']; ?>" alt=""
@@ -1263,4 +1359,14 @@ $faq = new WP_Query($args_cat);
                 </div>
             </section>
     <?php endif; ?>
+    <?php elseif (get_row_layout() == 'event_table') : 
+    echo do_shortcode('[tribe_events filter-bar="yes"]');  
+    ?>
+
+<?php elseif (get_row_layout() == 'booking_widget') : 
+    if(!empty(get_sub_field('widget'))):
+    echo get_sub_field('widget');  
+    endif;
+    ?>
+    </main>
 <?php endif; endwhile; endif; ?>

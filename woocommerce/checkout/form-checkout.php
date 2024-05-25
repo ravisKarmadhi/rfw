@@ -84,7 +84,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 			<div id="order_review" class="woocommerce-checkout-review-order ps-3">
 				<div class="checkout-order-box">
-					<div class="d-flex align-items-center justify-content-between dmb-25">
+					<div class="BCBCBC-border-bottom d-flex align-items-center justify-content-between dpb-25 dmb-35">
 						<h2 class="classic font-31 leading-42 text-2C2924">Your Order</h2>
 						<a href="<?php echo get_home_url(); ?>/cart" class="text-decoration-none d-inline-block classic font-15 leading-20 text-2C2924">Amend</a>
 					</div>
